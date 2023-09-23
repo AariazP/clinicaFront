@@ -1,0 +1,68 @@
+.nav{
+  background-color: #252525;
+  color: white;
+}
+
+#ul .item{
+
+  border-radius: 20px ;
+  background-color: #505050;
+  cursor: Hand;
+
+}
+
+#ul li a{
+  color: white;
+}
+
+
+.nav .div .a{
+  color: white;
+  font-size: 20rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', sans-serif;
+}
+
+.section{
+  background-color: #252525;
+  color: white;
+}
+
+
+.title-personas {
+  color: rgb(228, 138, 32);
+}
+
+#mensaje-personas{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#text-final{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48vh;
+  font-size: 5vh;
+  text-align: center;
+}
+
+#btnInscribete{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+#btnInscribete a{
+
+  background-color: rgb(228, 138, 32);
+  font-size: 4vh;
+  color: white;
+  box-shadow: 5px 10px 0px 0px rgb(255, 255, 255);
+  border-radius: 20px;
+}

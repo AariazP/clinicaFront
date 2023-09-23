@@ -13,3 +13,57 @@
     height: 100%;
   }
 }
+
+.div-general{
+  background-color: #252525;
+}
+
+form{
+
+  color: white;
+
+}
+
+
+.bi-boostrap i{
+  color: white;
+  font-size: 13px;
+}
+
+#ul .item{
+
+  border-radius: 10px ;
+  background-color: #505050;
+  cursor: Hand;
+
+}
+.nav{
+  background-color: #252525;
+  color: white;
+}
+
+#ul li a{
+  color: white;
+  cursor: Hand;
+}
+
+#btnInscribete{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+#btnInscribete a{
+
+  background-color: rgb(228, 138, 32);
+  font-size: 2vh;
+  color: white;
+  box-shadow: 5px 10px 0px 0px rgb(255, 255, 255);
+  border-radius: 20px;
+  margin: 0 0 2rem 0;
+}
+
+
