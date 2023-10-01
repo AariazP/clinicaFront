@@ -17,7 +17,7 @@ export class IndexComponent {
 
 
   public singUp(): void {
-    this.route.navigate(["/auth/login"]).then(r => console.log(r));
+    this.route.navigate(["/auth/login"]);
   }
 
 
