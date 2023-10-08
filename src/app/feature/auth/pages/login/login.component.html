@@ -4,7 +4,8 @@
       <img src="/assets/index/logoEvovital.svg" alt="Logo" width="30" height="24">
       Evovital
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,51 +25,61 @@
 
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <h1 class="text-center mb-4 text-light">Inicia sesión</h1>
-          <form role="form" [formGroup]="loginForm">
+          <form role="form" [formGroup]="loginForm" (ngSubmit)="signIn()" >
             <!-- Email input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="form3Example3">Email address</label>
-              <input formControlName="email" type="email" id="form3Example3" class="form-control form-control-lg"
-                     placeholder="Enter a valid email address" [ngClass]="{'error':isTouchedField(loginForm, 'email')}"/>
-              <span class="text-danger">{{getErrorsForm('email')}}</span>
+              <input type="email" id="form3Example3" class="form-control form-control-lg"
+                     placeholder="Enter a valid email address" formControlName="email"
+                     [class.is-invalid] = "emailNoValid"/>
+              <small *ngIf="emailNoValid" class="text-danger">Ingrese un email válido</small>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
               <label class="form-label" for="form3Example4">Password</label>
-              <input formControlName="password" type="password" id="form3Example4" class="form-control form-control-lg"
-                     placeholder="Enter password" [ngClass]="{'error':isTouchedField(loginForm, 'password')}" />
-             <span class="text-danger" >{{getErrorsForm('password')}}</span>
+              <input  type="password" id="form3Example4" class="form-control form-control-lg"
+                      [class.is-invalid] = "passwordNoValid"
+                     placeholder="Enter password" formControlName="password"/>
+              <small *ngIf="passwordNoValid" class="text-danger">Ingrese una contraseña con minímo 6 caracteres</small>
             </div>
 
             <div class="d-flex justify-content-between align-items-center">
               <!-- Checkbox -->
               <div class="form-check mb-0">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3"/>
                 <label class="form-check-label" for="form2Example3">
                   Recuérdame
                 </label>
               </div>
-              <a href="#!" class="text-body">Forgot password?</a>
+              <a href="#!" class="text-light">Forgot password?</a>
             </div>
 
             <div class="text-center text-lg-start mt-4 pt-2">
 
               <div id="btnInscribete" class="col-auto ">
-                <a class="btn" (click)="signIn()" >Inscríbete</a>
+                <a class="btn" (click)="signIn()">Inscríbete</a>
               </div>
 
-              <p class="small fw-bold mt-2 pt-1 mb-0"> ¿No tienes una cuenta? <a href="#!"
-                                                                                class="link-info">Registrate</a></p>
+              <p class="small fw-bold mt-2 pt-1 mb-0"> ¿No tienes una cuenta?
+                <a href="#!" class="link-info">Registrate</a>
+              </p>
             </div>
           </form>
         </div>
         <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="/assets/login/rectangles.png"
-               class="img-fluid" alt="Sample image">
+          <img ngSrc="/assets/login/rectangles.png"
+               class="img-fluid" alt="Sample image" height="729" width="883">
         </div>
       </div>
     </div>
 
   </section>
+
+  <pre class="text-light">
+    Estado formulario: {{loginForm.valid}}
+    Status: {{loginForm.status}}
+    {{loginForm.value | json}}
+  </pre>
+
 </div>

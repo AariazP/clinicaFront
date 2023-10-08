@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AppBaseComponent} from "../../../../core/utils/AppBaseComponent";
 import {AuthLoginDTO} from "../../../../core/dto/authLoginDTO";
 import {AuthService} from "../../../../core/services/auth.service";
 
@@ -10,17 +9,36 @@ import {AuthService} from "../../../../core/services/auth.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent extends AppBaseComponent{
+export class LoginComponent {
 
   private router:Router;
   public loginForm:FormGroup;
 
-  constructor(router:Router, fb:FormBuilder, private authService:AuthService) {
-    super();
+  constructor(router:Router, private fb:FormBuilder, private authService:AuthService) {
     this.router = router;
-    this.loginForm = fb.group({
-      email: ['',Validators.required, Validators.email, Validators.maxLength(50)],
-      password: ['',Validators.required, Validators.minLength(8)]});
+
+    this.initializeForm();
+
+  }
+
+
+  get emailNoValid(){
+    return this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched;
+  }
+
+
+  get passwordNoValid(){
+    return this.loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched;
+  }
+
+  private initializeForm():void {
+
+    this.loginForm = this.fb.group({
+
+      email: ['',[Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'), Validators.maxLength(31)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(31)]],
+
+    });
 
   }
 
@@ -38,33 +56,16 @@ export class LoginComponent extends AppBaseComponent{
 
     let dtoLogin:AuthLoginDTO;
 
-   // if(this.loginForm.valid){
-      console.log('El formulario es valido');
+   if(this.loginForm.valid){
       dtoLogin={
         email: this.loginForm.get('email')?.value,
         password: this.loginForm.get('password')?.value
       }
       this.authService.login(dtoLogin);
       console.log(dtoLogin);
-   // }
-  //  else console.log('El formulario es invalido');
+   }
+   else console.log('El formulario es invalido');
   }
 
-  public getErrorsForm(field:string):string {
-
-    if(this.loginForm.get(field)?.errors?.['required']){
-      return 'El campo es requerido';
-    }
-    else if(this.loginForm.get(field)?.errors?.['email']){
-      return 'El campo debe ser un email';
-    }
-    else if(this.loginForm.get(field)?.errors?.['minlength']){
-      return 'El campo debe tener minimo 8 caracteres';
-    }
-    else if(this.loginForm.get(field)?.errors?.['maxlength']){
-      return 'El campo debe tener maximo 50 caracteres';
-    }
-    else return '';
-  }
 
 }
