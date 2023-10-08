@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AppBaseComponent} from "../../../../core/utils/AppBaseComponent";
+import {AuthLoginDTO} from "../../../../core/dto/authLoginDTO";
+import {AuthService} from "../../../../core/services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,7 @@ export class LoginComponent extends AppBaseComponent{
   private router:Router;
   public loginForm:FormGroup;
 
-  constructor(router:Router, fb:FormBuilder) {
+  constructor(router:Router, fb:FormBuilder, private authService:AuthService) {
     super();
     this.router = router;
     this.loginForm = fb.group({
@@ -34,12 +36,18 @@ export class LoginComponent extends AppBaseComponent{
    */
   public signIn():void {
 
-    if(this.loginForm.valid){
-      console.log(this.loginForm.get('email')?.value);
-      console.log(this.loginForm.get('password')?.value);
-    }
-    else console.log('El formulario es invalido');
+    let dtoLogin:AuthLoginDTO;
 
+   // if(this.loginForm.valid){
+      console.log('El formulario es valido');
+      dtoLogin={
+        email: this.loginForm.get('email')?.value,
+        password: this.loginForm.get('password')?.value
+      }
+      this.authService.login(dtoLogin);
+      console.log(dtoLogin);
+   // }
+  //  else console.log('El formulario es invalido');
   }
 
   public getErrorsForm(field:string):string {

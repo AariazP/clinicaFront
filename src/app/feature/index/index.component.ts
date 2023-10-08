@@ -21,5 +21,7 @@ export class IndexComponent {
   }
 
 
-
+  SignIn() {
+    this.route.navigate(["/register1"]);
+  }
 }
