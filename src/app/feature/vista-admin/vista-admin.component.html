@@ -1,0 +1,76 @@
+<div class="container">
+  <h1>Panel de control del médico</h1>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo electrónico</th>
+          <th>Contraseña</th>
+          <th>Especialidad</th>
+          <th>Hora de inicio</th>
+          <th>Hora de finalización</th>
+        </tr>
+        </thead>
+        <tbody>
+       <!-- <tr ng-repeat="medico in medicos">
+          <td>{{medico.id}}</td>
+          <td>{{medico.nombre}}</td>
+          <td>{{medico.apellido}}</td>
+          <td>{{medico.correo}}</td>
+          <td>{{medico.contraseña}}</td>
+          <td>{{medico.especialidad}}</td>
+          <td>{{medico.horaInicio}}</td>
+          <td>{{medico.horaFin}}</td>
+        </tr>-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary" ng-click="mostrarFormulario()">Crear médico</button>
+    </div>
+  </div>
+
+  <div class="row" id="formulario">
+    <div class="col-md-12">
+      <form ng-submit="crearMedico()">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" ng-model="medico.nombre">
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" class="form-control" id="apellido" ng-model="medico.apellido">
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" class="form-control" id="correo" ng-model="medico.correo">
+        </div>
+        <div class="form-group">
+          <label for="contraseña">Contraseña</label>
+          <input type="password" class="form-control" id="contraseña" ng-model="medico.contraseña">
+        </div>
+        <div class="form-group">
+          <label for="especialidad">Especialidad</label>
+          <input type="text" class="form-control" id="especialidad" ng-model="medico.especialidad">
+        </div>
+        <div class="form-group">
+          <label for="horaInicio">Hora de inicio</label>
+          <input type="time" class="form-control" id="horaInicio" ng-model="medico.horaInicio">
+        </div>
+        <div class="form-group">
+          <label for="horaFin">Hora de finalización</label>
+          <input type="time" class="form-control" id="horaFin" ng-model="medico.horaFin">
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,7 @@ import {Observable, Subscription} from "rxjs";
 import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {environmentDevelopment} from "../../../environments/environment.development";
+import {AuthLoginResponseDto} from "../dto/authLoginResponseDto";
 
 
 @Injectable({
@@ -18,14 +19,7 @@ export class AuthService {
     this.http = http;
   }
 
-  public login(login:AuthLoginDTO): Subscription{
-    return this.http.post(`${this.apiUrl}/login`, login).subscribe({
-      next: data => {
-          console.log(data);
-      },
-      error: error => {
-        console.log(error);
-      }
-    })
+  public login(login:AuthLoginDTO): Observable<AuthLoginResponseDto>{
+    return this.http.post<AuthLoginResponseDto>(`${this.apiUrl}/login`, login);
   }
 }
