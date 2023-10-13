@@ -96,7 +96,7 @@ export class LoginComponent {
   private navigateToRole(response: AuthLoginResponseDto): void {
 
     if (response.rol === 'ADMIN') this.router.navigate([`/admin`]);
-    
+
 
   }
 

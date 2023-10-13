@@ -1,76 +1,223 @@
-<div class="container">
-  <h1>Panel de control del médico</h1>
+<div class="background text-light" >
 
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table">
-        <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Correo electrónico</th>
-          <th>Contraseña</th>
-          <th>Especialidad</th>
-          <th>Hora de inicio</th>
-          <th>Hora de finalización</th>
-        </tr>
-        </thead>
-        <tbody>
-       <!-- <tr ng-repeat="medico in medicos">
-          <td>{{medico.id}}</td>
-          <td>{{medico.nombre}}</td>
-          <td>{{medico.apellido}}</td>
-          <td>{{medico.correo}}</td>
-          <td>{{medico.contraseña}}</td>
-          <td>{{medico.especialidad}}</td>
-          <td>{{medico.horaInicio}}</td>
-          <td>{{medico.horaFin}}</td>
-        </tr>-->
-        </tbody>
-      </table>
+  <nav class="nav navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center text-light">
+        <img src="/assets/index/logoEvovital.svg" alt="Logo" width="30" height="24">
+        Evovital
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="ul" class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+          <li class=" sobre-nosotros nav-item button-nav">
+            <img src="./assets/admin/logoMedicos.png" alt="Gestionar médicos" width="50" height="50">
+          </li>
+          <li class=" sobre-nosotros nav-item button-nav">
+            <img src="./assets/admin/citas_proximas.png" alt="Gestionar médicos" width="50" height="50">
+          </li>
+          <li class="item nav-item button-nav d-inline">
+            <a class="nav-link">Salir</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <h1 class="text-center">Panel de control del médicos</h1>
+  <div class="vh-100 container ">
+    <div class="row">
+      <div class="col">
+      <div class="row">
+        <div class="container-fluid">
+
+          <div class="row pane-formulario text-dark" id="formulario">
+            <div class="col-md-12">
+              <form class="formulario">
+
+                <h2 class="text-center">Crear un médico</h2>
+
+                <div class="justify-content-center row">
+
+                  <img class="img-fluid"  width="50" height="50">
+
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-4">
+                    <label>Nombre</label>
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <input placeholder="Escribe el nombre aquí..." type="text" class="form-control"  ng-model="medico.nombre">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-4">
+                    <label>Apellido</label>
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <input  placeholder="Escribe los apellidos aquí..." type="text" class="form-control"  ng-model="medico.apellido">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-4">
+                    <label >Correo electrónico</label>
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <input type="text"  placeholder="Escribe el correo aquí..." class="form-control"  ng-model="medico.apellido">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-4">
+                    <label >Contraseña</label>
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <input type="password" placeholder="Escribe una contraseña aquí..." class="form-control"  ng-model="medico.contraseña">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-4">
+                    <label >Especialidad</label>
+                  </div>
+                  <div class="col-8">
+                    <div class="dropdown">
+                      <button class="text-dark bg-light btn btn-secondary dropdown-toggle" type="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+
+                        Dropdown
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><button class="dropdown-item" type="button">Action</button></li>
+                        <li><button class="dropdown-item" type="button">Another action</button></li>
+                        <li><button class="dropdown-item" type="button">Something else here</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-4">
+                    <label >Hora de inicio</label>
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <input type="time" class="form-control" ng-model="medico.horaInicio">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-4">
+                    <label>Hora de finalización</label>
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <input type="time" class="form-control" ng-model="medico.horaFin">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-4">
+                    <label >Ciudad de residencia</label>
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <input type="text"  placeholder="Escribe la ciudad aquí..." class="form-control"  ng-model="medico.apellido">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-4">
+                    <label >Télefono</label>
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <input type="text"  placeholder="Escribe el télefono aquí..." class="form-control"  ng-model="medico.apellido">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center">
+                  <div class="col-6 text-center">
+                    <button type="button" class="btn btnLimpiar">Limpiar</button>
+                  </div>
+                  <div class="col-6 text-center">
+                    <button type="submit" class="btn btnAgregar">Agregar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="row pane-formulario">
+         <h3 class="text-center text-dark "> Medicos activos </h3>
+
+
+
+       </div>
+
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo electrónico</th>
+                <th>Contraseña</th>
+                <th>Especialidad</th>
+                <th>Hora de inicio</th>
+                <th>Hora de finalización</th>
+              </tr>
+              </thead>
+              <tbody>
+              <!-- <tr ng-repeat="medico in medicos">
+                 <td>{{medico.id}}</td>
+                 <td>{{medico.nombre}}</td>
+                 <td>{{medico.apellido}}</td>
+                 <td>{{medico.correo}}</td>
+                 <td>{{medico.contraseña}}</td>
+                 <td>{{medico.especialidad}}</td>
+                 <td>{{medico.horaInicio}}</td>
+                 <td>{{medico.horaFin}}</td>
+               </tr>-->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-primary" ng-click="mostrarFormulario()">Crear médico</button>
-    </div>
-  </div>
 
-  <div class="row" id="formulario">
-    <div class="col-md-12">
-      <form ng-submit="crearMedico()">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" ng-model="medico.nombre">
-        </div>
-        <div class="form-group">
-          <label for="apellido">Apellido</label>
-          <input type="text" class="form-control" id="apellido" ng-model="medico.apellido">
-        </div>
-        <div class="form-group">
-          <label for="correo">Correo electrónico</label>
-          <input type="email" class="form-control" id="correo" ng-model="medico.correo">
-        </div>
-        <div class="form-group">
-          <label for="contraseña">Contraseña</label>
-          <input type="password" class="form-control" id="contraseña" ng-model="medico.contraseña">
-        </div>
-        <div class="form-group">
-          <label for="especialidad">Especialidad</label>
-          <input type="text" class="form-control" id="especialidad" ng-model="medico.especialidad">
-        </div>
-        <div class="form-group">
-          <label for="horaInicio">Hora de inicio</label>
-          <input type="time" class="form-control" id="horaInicio" ng-model="medico.horaInicio">
-        </div>
-        <div class="form-group">
-          <label for="horaFin">Hora de finalización</label>
-          <input type="time" class="form-control" id="horaFin" ng-model="medico.horaFin">
-        </div>
-        <button type="submit" class="btn btn-primary">Crear</button>
-      </form>
-    </div>
-  </div>
 </div>
