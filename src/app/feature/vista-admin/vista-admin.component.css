@@ -77,3 +77,33 @@
   border-radius:100px;
 }
 
+.tabla-medicos{
+
+  margin-left: 12px;
+
+
+}
+
+tbody tr td,
+tbody tr th {
+  font-size: 0.8em;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.medicoActivo{
+
+  color: BLACK;
+
+
+}
+
+.paneMedicoActivo{
+
+  margin-top: 12px;
+}
+
+
+
+

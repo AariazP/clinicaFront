@@ -175,46 +175,116 @@
           </div>
         </div>
       </div>
-       <div class="row pane-formulario">
+       <div class="row pane-formulario paneMedicoActivo">
          <h3 class="text-center text-dark "> Medicos activos </h3>
 
+         <div class="row medicoActivo text-light">
+
+           <div class="col-1">
+             <h6>1</h6>
+           </div>
+           <div class="col-4">
+             <h6>Benito Antonio</h6>
+           </div>
+           <div class="col-4">
+             <h6>Martinez Ocasio</h6>
+           </div>
+           <div class="col-3">
+             <img src="./assets/admin/online.png">
+           </div>
+         </div>
+         <div class="row medicoActivo text-light">
+
+           <div class="col-1">
+             <h6>1</h6>
+           </div>
+           <div class="col-4">
+             <h6>Benito Antonio</h6>
+           </div>
+           <div class="col-4">
+             <h6>Martinez Ocasio</h6>
+           </div>
+           <div class="col-3">
+             <img src="./assets/admin/online.png">
+           </div>
+         </div>
+         <div class="row medicoActivo text-light">
+
+           <div class="col-1">
+             <h6>1</h6>
+           </div>
+           <div class="col-4">
+             <h6>Benito Antonio</h6>
+           </div>
+           <div class="col-4">
+             <h6>Martinez Ocasio</h6>
+           </div>
+           <div class="col-3">
+             <img src="./assets/admin/online.png">
+           </div>
+         </div>
+         
 
 
        </div>
 
       </div>
-      <div class="col">
+      <div class="col pane-formulario tabla-medicos">
         <div class="row">
           <div class="col-md-12">
+            <h3 class="text-center text-dark ">Gestionar medicos </h3>
             <table class="table">
               <thead>
               <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Correo electrónico</th>
-                <th>Contraseña</th>
-                <th>Especialidad</th>
-                <th>Hora de inicio</th>
-                <th>Hora de finalización</th>
+                <th scope="col">#id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Especialidad</th>
+                <th scope="col">inicio</th>
+                <th scope="col">fin</th>
+                <th scope="col">Opciones</th>
               </tr>
               </thead>
               <tbody>
-              <!-- <tr ng-repeat="medico in medicos">
-                 <td>{{medico.id}}</td>
-                 <td>{{medico.nombre}}</td>
-                 <td>{{medico.apellido}}</td>
-                 <td>{{medico.correo}}</td>
-                 <td>{{medico.contraseña}}</td>
-                 <td>{{medico.especialidad}}</td>
-                 <td>{{medico.horaInicio}}</td>
-                 <td>{{medico.horaFin}}</td>
-               </tr>-->
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>benitoa.martinezo@gmail.com</td>
+                <td>medicina general</td>
+                <td>8:00</td>
+                <td>12:00</td>
+                <td>
+                  <div class="row">
+
+                    <div class="col-2">
+                      <button type="button" class="btn btnEditar">
+                        <img src="./assets/admin/edit.png" alt="Editar" width="20" height="20">
+                      </button>
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btnEliminar">
+                        <img src="./assets/admin/delete.png" alt="Eliminar" width="20" height="20">
+                      </button>
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btnVer">
+                        <img src="./assets/admin/eye.png" alt="Ver" width="20" height="20">
+                      </button>
+                    </div>
+
+                  </div>
+
+
+                </td>
+              </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
+
 
     </div>
   </div>
