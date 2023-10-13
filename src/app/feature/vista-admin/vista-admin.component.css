@@ -106,4 +106,12 @@ tbody tr th {
 
 
 
+.btnSalir{
 
+  background-color: #5e5e5e;
+  color: #ffffff;
+  border-radius: 60px;
+  cursor: HAND;
+  margin-left: 30px;
+
+}
