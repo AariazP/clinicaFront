@@ -1,3 +1,64 @@
 .background{
   background-color: #252525;
 }
+
+
+
+.form div{
+
+  margin-top: 15px;
+
+
+}
+
+.form .row input {
+
+  background-color: #252525;
+  color: WHITE;
+
+  border: none;
+}
+.form .row input::placeholder{
+  color: white;
+}
+
+.form .row input{
+
+  border-bottom: rgb(228, 138, 32);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-radius: 0px;
+  width: 100%;
+
+}
+
+
+.form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.btn{
+
+  margin-top: 30px;
+  background-color: rgb(228, 138, 32);
+  font-size: 2vh;
+  color: white;
+  box-shadow: 5px 10px 0px 0px rgb(255, 255, 255);
+  border-radius: 20px;
+
+
+}
+
+.btnInicio{
+
+  background-color: #5e5e5e;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: Hand;
+
+}
