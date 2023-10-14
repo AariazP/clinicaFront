@@ -4,6 +4,7 @@ import {LoginComponent} from "./auth/pages/login/login.component";
 import {IndexComponent} from "./index/index.component";
 import {Register1Component} from "./register1/register1.component";
 import {VistaAdminComponent} from "./vista-admin/vista-admin.component";
+import {Register2Component} from "./register2/register2.component";
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: "admin",
     component: VistaAdminComponent
+  },
+  {
+    path:"register2",
+    component: Register2Component
   }
 
 ];

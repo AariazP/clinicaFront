@@ -6,13 +6,15 @@ import { FeatureComponent } from './feature.component';
 import { Register1Component } from './register1/register1.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { VistaAdminComponent } from './vista-admin/vista-admin.component';
+import { Register2Component } from './register2/register2.component';
 
 
 @NgModule({
   declarations: [
     FeatureComponent,
     Register1Component,
-    VistaAdminComponent
+    VistaAdminComponent,
+    Register2Component
   ],
   imports: [
     CommonModule,
