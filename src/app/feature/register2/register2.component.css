@@ -1,3 +1,53 @@
 .background{
   background-color: #252525;
 }
+
+.form-div{
+  margin-right: 5rem;
+  padding: 30px 20px;
+
+}
+
+
+h4{
+
+  margin-top: 3rem;
+  font-weight: bold;
+}
+
+input{
+  background-color: #252525;
+  border-bottom-color: #ffffff;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  margin-top: 5rem;
+  color: white;
+
+}
+
+input .placeholder{
+  color: #ffffff;
+}
+
+
+.badge-enfermedad{
+
+  background-color: #ff4300;
+  font-size: 20px;
+  border-radius: 80px;
+}
+
+.badges{
+  margin-top: 1rem;
+}
+
+.btn-terminar{
+
+  margin-top: 30px;
+  background-color: rgb(228, 138, 32);
+  font-size: 2vh;
+  color: white;
+  box-shadow: 5px 10px 0 0 rgb(255, 255, 255);
+  border-radius: 20px;
+}
