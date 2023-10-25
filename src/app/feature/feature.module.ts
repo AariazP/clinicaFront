@@ -14,6 +14,7 @@ import { MedicoActivoComponentComponent } from './admin/medico-activo-component/
 import { GestionarMedicoComponentComponent } from './admin/gestionar-medico-component/gestionar-medico-component.component';
 import { NavbarComponentComponent } from './admin/navbar-component/navbar-component.component';
 import { MedicoItemComponent } from './admin/medico-item/medico-item.component';
+import { MedicoActivoItemComponent } from './admin/medico-activo-item/medico-activo-item.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MedicoItemComponent } from './admin/medico-item/medico-item.component';
     MedicoActivoComponentComponent,
     GestionarMedicoComponentComponent,
     NavbarComponentComponent,
-    MedicoItemComponent
+    MedicoItemComponent,
+    MedicoActivoItemComponent
   ],
   imports: [
     CommonModule,
