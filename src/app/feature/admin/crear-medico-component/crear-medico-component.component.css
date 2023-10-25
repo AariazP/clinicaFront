@@ -1,0 +1,52 @@
+#div-background{
+  background-color: #ffffff;
+  margin: 3rem 0 0 1rem;
+  padding: 2rem 2rem;
+  border-radius: 10px;
+}
+
+.btnLimpiar{
+
+  background-color: rgba(255, 217, 0, 0.91);
+  color: BLACK;
+
+}
+
+.btnAgregar{
+
+  background-color: rgba(102, 203, 7, 0.91);
+  color: BLACK;
+
+}
+
+
+input{
+
+  border-color: transparent;
+  border-bottom: 1px solid #000000;
+  border-radius: 0;
+
+}
+
+.form-control{
+
+  margin-top: 1rem;
+
+}
+
+label{
+  margin-top: 1.5rem;
+}
+
+.buttons{
+
+  margin-top: 3rem;
+
+}
+
+#img-medico{
+
+    width: 100%;
+    height: 100%;
+
+}

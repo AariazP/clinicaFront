@@ -1,0 +1,39 @@
+.title-item h4{
+  font-size: 12px;
+  color: black;
+
+}
+
+.title{
+  margin-left: 2rem;
+}
+
+.btn{
+  height:1px;
+  width:1px;
+}
+
+.btn img{
+  height:1px;
+  width:1px;
+}
+
+.btn-opcion{
+
+  height: 20px;
+  width: 20px;
+  margin-top: 12px;
+
+}
+
+button{
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+  cursor: Hand;
+}
+
+
+.title-item{
+  margin-top: 1rem;
+}

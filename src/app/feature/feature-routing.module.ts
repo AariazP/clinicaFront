@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {IndexComponent} from "./index/index.component";
 import {Register1Component} from "./registers/register1/register1.component";
-import {VistaAdminComponent} from "./vista-admin/vista-admin.component";
+import {VistaAdminComponent} from "./admin/vista-admin/vista-admin.component";
 import {Register2Component} from "./registers/register2/register2.component";
 
 const routes: Routes = [
