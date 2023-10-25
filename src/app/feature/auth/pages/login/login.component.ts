@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthLoginDTO} from "../../../../core/dto/authLoginDTO";
 import {AuthService} from "../../../../core/services/auth.service";
-import {Utils} from "../../../../core/utils";
+import {Utils} from "../../../../core/utils/utils";
 import {AuthLoginResponseDto} from "../../../../core/dto/authLoginResponseDto";
 
 @Component({

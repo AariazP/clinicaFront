@@ -1,0 +1,25 @@
+.background{
+  background-color: #252525;
+}
+
+.btn{
+
+  margin-top: 30px;
+  background-color: rgb(228, 138, 32);
+  font-size: 2vh;
+  color: white;
+  box-shadow: 5px 10px 0px 0px rgb(255, 255, 255);
+  border-radius: 20px;
+
+
+}
+
+.btnInicio{
+
+  background-color: #5e5e5e;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: Hand;
+
+}

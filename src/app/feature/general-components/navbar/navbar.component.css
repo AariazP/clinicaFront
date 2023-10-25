@@ -1,0 +1,24 @@
+.nav{
+  background-color: #252525;
+  color: white;
+}
+
+#ul .item{
+
+  border-radius: 20px ;
+  background-color: #505050;
+  cursor: Hand;
+
+}
+
+#ul li a{
+  color: white;
+}
+
+
+.nav .div .a{
+  color: white;
+  font-size: 20rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', sans-serif;
+}
