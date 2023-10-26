@@ -2,7 +2,9 @@
   background-color: white;
   margin-top: 1rem;
   border-radius: 10px;
+  margin-bottom: 50px;
 }
 #div-medicos-activos{
-  max-height: 260px;
+  max-height: 220px;
 }
+

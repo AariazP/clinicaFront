@@ -12,9 +12,10 @@ import { NavbarComponent } from './general-components/navbar/navbar.component';
 import { CrearMedicoComponentComponent } from './admin/crear-medico-component/crear-medico-component.component';
 import { MedicoActivoComponentComponent } from './admin/medico-activo-component/medico-activo-component.component';
 import { GestionarMedicoComponentComponent } from './admin/gestionar-medico-component/gestionar-medico-component.component';
-import { NavbarComponentComponent } from './admin/navbar-component/navbar-component.component';
+import { NavbarComponentComponent } from './navbar-component/navbar-component.component';
 import { MedicoItemComponent } from './admin/medico-item/medico-item.component';
 import { MedicoActivoItemComponent } from './admin/medico-activo-item/medico-activo-item.component';
+import { VistaPqrsComponent } from './pqrs/vista-pqrs/vista-pqrs.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MedicoActivoItemComponent } from './admin/medico-activo-item/medico-act
     GestionarMedicoComponentComponent,
     NavbarComponentComponent,
     MedicoItemComponent,
-    MedicoActivoItemComponent
+    MedicoActivoItemComponent,
+    VistaPqrsComponent
   ],
   imports: [
     CommonModule,
