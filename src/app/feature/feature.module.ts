@@ -16,6 +16,12 @@ import { NavbarComponentComponent } from './navbar-component/navbar-component.co
 import { MedicoItemComponent } from './admin/medico-item/medico-item.component';
 import { MedicoActivoItemComponent } from './admin/medico-activo-item/medico-activo-item.component';
 import { VistaPqrsComponent } from './pqrs/vista-pqrs/vista-pqrs.component';
+import { UltimasPqrsComponent } from './pqrs/ultimas-pqrs/ultimas-pqrs.component';
+import { PqrActualComponent } from './pqrs/pqr-actual/pqr-actual.component';
+import { CalificacionPqrComponent } from './pqrs/calificacion-pqr/calificacion-pqr.component';
+import { PqrItemComponent } from './pqrs/pqr-item/pqr-item.component';
+import { DetalleConsultaComponent } from './pqrs/detalle-consulta/detalle-consulta.component';
+import { ChatComponent } from './pqrs/chat/chat.component';
 
 
 @NgModule({
@@ -32,7 +38,13 @@ import { VistaPqrsComponent } from './pqrs/vista-pqrs/vista-pqrs.component';
     NavbarComponentComponent,
     MedicoItemComponent,
     MedicoActivoItemComponent,
-    VistaPqrsComponent
+    VistaPqrsComponent,
+    UltimasPqrsComponent,
+    PqrActualComponent,
+    CalificacionPqrComponent,
+    PqrItemComponent,
+    DetalleConsultaComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,
