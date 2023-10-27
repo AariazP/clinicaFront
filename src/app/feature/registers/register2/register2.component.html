@@ -1,102 +1,77 @@
 <div class="min-vh-100 min-vw-100 background text-light">
-  <div class="background text-light">
-    <nav class="nav navbar navbar-expand-lg ">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center text-light">
-          <img src="../../../../assets/index/logoEvovital.svg" alt="Logo" width="30" height="24">
-          Evovital
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul id="ul" class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-            <li class=" text-light item nav-item button-nav btnInicio">
-              <a class="nav-link active" style="color: white" aria-current="page" >inicio</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
+  <app-navbar></app-navbar>
 
+  <div class="row pane-row">
 
+    <div class="col-5">
+      <img src="../../../../assets/register2/person.png" width="800" height="800" alt="logo">
+    </div>
 
+    <div class="col-7 form text-center">
 
-  <main>
+      <div class="form-div">
+        <h1 class="text-center">Cuéntanos más sobre ti</h1>
 
-    <div class="row">
-
-      <div class="col-5">
-        <img src="../../../../assets/register2/person.png" width="800" height="800" alt="logo">
-      </div>
-
-      <div class="col-7 form text-center" >
-
-        <div class="form-div">
-          <h1>Cuéntanos más sobre ti</h1>
-
-          <form class="form">
-            <div class="row">
-              <h4 >¿Tienes alguna alergia?</h4>
-              <br>
-              <input placeholder="Escribe aquí tu alergia para guardarla">
-              <div class="row badges">
-                <div class="col-3">
-                  <div class="badge-enfermedad"> Polem </div>
-                </div>
-                <div class="col-3">
-                  <div class="badge-enfermedad"> Gluten </div>
-                </div>
-                <div class="col-3">
-                  <div class="badge-enfermedad"> Maní </div>
-                </div>
-                <div class="col-3">
-                  <div class="badge-enfermedad"> Acetaminofen </div>
-                </div>
+        <form class="form">
+          <div class="row">
+            <h4>¿Tienes alguna alergia?</h4>
+            <br>
+            <input placeholder="Escribe aquí tu alergia para guardarla">
+            <div class="row badges">
+              <div class="col-3">
+                <div class="badge-enfermedad"> Polem</div>
+              </div>
+              <div class="col-3">
+                <div class="badge-enfermedad"> Gluten</div>
+              </div>
+              <div class="col-3">
+                <div class="badge-enfermedad"> Maní</div>
+              </div>
+              <div class="col-3">
+                <div class="badge-enfermedad"> Acetaminofen</div>
               </div>
             </div>
+          </div>
 
-            <div >
-              <h4>Selecciona una EPS</h4>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Elige una eps
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
+          <div>
+            <h4>Selecciona una EPS</h4>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Elige una eps
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             </div>
+          </div>
 
-            <div >
-              <h4>Selecciona un tipo de sangre</h4>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Selecciona un tipo de sangre
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
+          <div>
+            <h4>Selecciona un tipo de sangre</h4>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Selecciona un tipo de sangre
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             </div>
+          </div>
 
-          </form>
-          <button class=" btn btn-terminar"> Finalizar </button>
-        </div>
-
+        </form>
+        <button class=" btn btn-terminar"> Finalizar</button>
       </div>
 
     </div>
 
+  </div>
 
 
-
-  </main>
 </div>
 
 
