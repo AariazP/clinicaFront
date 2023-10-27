@@ -37,3 +37,11 @@ button{
 .title-item{
   margin-top: 1rem;
 }
+
+.item{
+  margin-left: 70px;
+}
+
+.title-item h4{
+  font-size: 18px;
+}
