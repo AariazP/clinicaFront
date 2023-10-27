@@ -66,3 +66,16 @@
   box-shadow: 5px 10px 0px 0px rgb(255, 255, 255);
   border-radius: 20px;
 }
+
+#footer{
+  background-color: #252525;
+  margin-bottom: -200px;
+}
+
+.div-pane{
+  background-color: #252525;
+}
+
+Main{
+  background-color: #ffffff;
+}
