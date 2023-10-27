@@ -19,7 +19,7 @@
 
 .form .row input{
 
-  border-bottom: rgb(228, 138, 32);
+  border-bottom: rgb(255, 255, 255);
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-radius: 0;
@@ -38,7 +38,7 @@
 
 .btn{
 
-  margin-top: 30px;
+  margin-top: 150px;
   background-color: rgb(228, 138, 32);
   font-size: 2vh;
   color: white;
@@ -60,11 +60,17 @@
 
 .div-form{
 
-  margin-top: 10rem;
+  margin-top: 1rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
 }
 
 h1{
 
   margin-left: 300px;
 
+}
+
+.input-item{
+  margin-top: 20px;
 }
