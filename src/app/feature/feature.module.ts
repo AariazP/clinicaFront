@@ -27,6 +27,8 @@ import { MensajeRecibidoComponent } from './pqrs/chat/mensaje-recibido/mensaje-r
 import { CalificacionItemComponent } from './pqrs/calificacion-item/calificacion-item.component';
 import { VistaVerConsultasMedicoComponent } from './consultas-medico/vista-ver-consultas-medico/vista-ver-consultas-medico.component';
 import {MedicoComponentComponent} from "./consultas-medico/medico-component/medico-component.component";
+import { ConsultasComponent } from './consultas-medico/consultas/consultas.component';
+import { ConsultaItemComponent } from './consultas-medico/consulta-item/consulta-item.component';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import {MedicoComponentComponent} from "./consultas-medico/medico-component/medi
     MensajeRecibidoComponent,
     CalificacionItemComponent,
     VistaVerConsultasMedicoComponent,
-    MedicoComponentComponent
+    MedicoComponentComponent,
+    ConsultasComponent,
+    ConsultaItemComponent
   ],
   imports: [
     CommonModule,
