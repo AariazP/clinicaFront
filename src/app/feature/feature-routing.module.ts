@@ -5,6 +5,10 @@ import {Register1Component} from "./registers/register1/register1.component";
 import {VistaAdminComponent} from "./admin/vista-admin/vista-admin.component";
 import {Register2Component} from "./registers/register2/register2.component";
 import {VistaPqrsComponent} from "./pqrs/vista-pqrs/vista-pqrs.component";
+import {
+  VistaVerConsultasMedicoComponent
+} from "./consultas-medico/vista-ver-consultas-medico/vista-ver-consultas-medico.component";
+
 
 const routes: Routes = [
   {
@@ -29,8 +33,10 @@ const routes: Routes = [
   {
     path: "pqrs",
     component: VistaPqrsComponent
+  }, {
+    path: "admin-ver-consulta",
+    component: VistaVerConsultasMedicoComponent
   }
-
 ];
 
 @NgModule({
