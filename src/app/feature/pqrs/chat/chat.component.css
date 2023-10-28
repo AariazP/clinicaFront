@@ -1,0 +1,34 @@
+#div-background{
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.panel-mensajes{
+  background-color: white;
+  border-radius: 10px;
+  min-height: 650px;
+  max-height: 650px;
+  margin: 0 20px 0;
+}
+
+.input-mensaje{
+  margin: 10px 0 10px 25px;
+  width: 250px;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 35px;
+}
+
+.input-mensaje:focus{
+  outline: none;
+}
+
+.btn{
+  margin: 5px 0 0 -14px;
+  background-color: #71a9ff;
+  color: black;
+  border-color: transparent;
+  height: 40px;
+}
