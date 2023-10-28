@@ -22,6 +22,8 @@ import { CalificacionPqrComponent } from './pqrs/calificacion-pqr/calificacion-p
 import { PqrItemComponent } from './pqrs/pqr-item/pqr-item.component';
 import { DetalleConsultaComponent } from './pqrs/detalle-consulta/detalle-consulta.component';
 import { ChatComponent } from './pqrs/chat/chat.component';
+import { MensajeEnviadoComponent } from './pqrs/chat/mensaje-enviado/mensaje-enviado.component';
+import { MensajeRecibidoComponent } from './pqrs/chat/mensaje-recibido/mensaje-recibido.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { ChatComponent } from './pqrs/chat/chat.component';
     CalificacionPqrComponent,
     PqrItemComponent,
     DetalleConsultaComponent,
-    ChatComponent
+    ChatComponent,
+    MensajeEnviadoComponent,
+    MensajeRecibidoComponent
   ],
   imports: [
     CommonModule,

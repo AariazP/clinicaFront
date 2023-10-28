@@ -1,0 +1,18 @@
+
+div{
+  margin: 10px 10px 0 40px;
+}
+
+div h5{
+  color: white;
+  background-color: #006cff;
+  border-radius: 3px;
+  font-size: 17px;
+}
+
+div h6{
+  background-color: transparent;
+  margin: 0 0 0 190px;
+  color: #73797e;
+  font-size: 10px;
+}

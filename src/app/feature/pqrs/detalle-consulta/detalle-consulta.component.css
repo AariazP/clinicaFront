@@ -19,7 +19,7 @@ form{
 
 button{
 
-  margin: 50px 0 0 350px;
+  margin: 40px 0 30px 350px;
   background-color: #f56c6c;
   color: black;
   border-color: transparent;
@@ -30,4 +30,9 @@ button:hover{
   background-color: #fc3f3f;
   color: black;
   border-color: transparent;
+}
+
+button:focus{
+  outline: none;
+  background-color: #fc3f3f;
 }
