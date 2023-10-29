@@ -36,6 +36,10 @@ import { HistorialConsultasComponent } from './vista-medico/historial-consultas/
 import { CitaItemComponent } from './vista-medico/cita-item/cita-item.component';
 import { UltimasConsultasItemComponent } from './vista-medico/ultimas-consultas-item/ultimas-consultas-item.component';
 import { DetalleConsultaMedicoComponent } from './vista-medico/detalle-consulta-medico/detalle-consulta-medico.component';
+import { MedicoHacerconsultaComponent } from './medico-hacerconsulta/medico-hacerconsulta.component';
+import { InfoPacienteComponent } from './medico-hacerconsulta/info-paciente/info-paciente.component';
+import { ResumenConsultaComponent } from './medico-hacerconsulta/resumen-consulta/resumen-consulta.component';
+import { HistoriaClinicaComponent } from './medico-hacerconsulta/historia-clinica/historia-clinica.component';
 
 
 @NgModule({
@@ -72,7 +76,11 @@ import { DetalleConsultaMedicoComponent } from './vista-medico/detalle-consulta-
     HistorialConsultasComponent,
     CitaItemComponent,
     UltimasConsultasItemComponent,
-    DetalleConsultaMedicoComponent
+    DetalleConsultaMedicoComponent,
+    MedicoHacerconsultaComponent,
+    InfoPacienteComponent,
+    ResumenConsultaComponent,
+    HistoriaClinicaComponent
   ],
   imports: [
     CommonModule,
