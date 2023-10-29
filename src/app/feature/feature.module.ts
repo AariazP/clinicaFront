@@ -29,6 +29,11 @@ import { VistaVerConsultasMedicoComponent } from './consultas-medico/vista-ver-c
 import {MedicoComponentComponent} from "./consultas-medico/medico-component/medico-component.component";
 import { ConsultasComponent } from './consultas-medico/consultas/consultas.component';
 import { ConsultaItemComponent } from './consultas-medico/consulta-item/consulta-item.component';
+import { VistaMedicoComponent } from './vista-medico/vista-medico.component';
+import { CitasAsignadasComponent } from './vista-medico/citas-asignadas/citas-asignadas.component';
+import { DiaLibreComponent } from './vista-medico/dia-libre/dia-libre.component';
+import { HistorialConsultasComponent } from './vista-medico/historial-consultas/historial-consultas.component';
+import { CitaItemComponent } from './vista-medico/cita-item/cita-item.component';
 
 
 @NgModule({
@@ -58,7 +63,12 @@ import { ConsultaItemComponent } from './consultas-medico/consulta-item/consulta
     VistaVerConsultasMedicoComponent,
     MedicoComponentComponent,
     ConsultasComponent,
-    ConsultaItemComponent
+    ConsultaItemComponent,
+    VistaMedicoComponent,
+    CitasAsignadasComponent,
+    DiaLibreComponent,
+    HistorialConsultasComponent,
+    CitaItemComponent
   ],
   imports: [
     CommonModule,

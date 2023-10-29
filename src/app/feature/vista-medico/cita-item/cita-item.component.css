@@ -1,0 +1,42 @@
+#div-background{
+
+  border-radius: 10px;
+
+}
+
+.bg{
+  background-color: #c4c4c4;
+  border-radius: 10px;
+}
+
+i{
+  margin-left: 170px;
+  margin-top: 10px;
+  font-size: 40px;
+}
+
+.form{
+
+  margin: 50px 30px 0;
+
+}
+
+#item{
+
+  width: 500px;
+  height: 300px;
+  margin-top: 50px;
+}
+
+h3{
+
+    font-size: 15px;
+}
+
+#motivo{
+  width: 300px;
+  height: 100px;
+  margin-left: 110px;
+}
+
+

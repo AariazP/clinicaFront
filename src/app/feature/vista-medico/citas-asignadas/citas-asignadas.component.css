@@ -1,0 +1,44 @@
+#div-background{
+
+  background-color: #fffefe;
+  border-radius: 10px;
+  margin-left: 40px;
+  min-width: 400px;
+
+}
+
+.dropdown button{
+
+  font-size: 10px;
+  margin: 5px 0 0 0;
+  background-color: #dcdcdc;
+  color: #000000;
+
+}
+
+h3{
+  font-size: 15px;
+  margin-top: 12px;
+}
+
+.citas-desde{
+  margin-left: 20px;
+  background-color: #bebebe;
+  margin-right: 300px;
+  max-width: 230px;
+  max-height: 40px;
+  border-radius: 10px;
+}
+
+.citas-asignadas{
+
+  margin: 30px 100px;
+
+}
+
+#carrousel{
+  margin: 30px 1000px 30px 30px;
+}
+
+
+

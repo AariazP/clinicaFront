@@ -8,6 +8,7 @@ import {VistaPqrsComponent} from "./pqrs/vista-pqrs/vista-pqrs.component";
 import {
   VistaVerConsultasMedicoComponent
 } from "./consultas-medico/vista-ver-consultas-medico/vista-ver-consultas-medico.component";
+import {VistaMedicoComponent} from "./vista-medico/vista-medico.component";
 
 
 const routes: Routes = [
@@ -36,6 +37,10 @@ const routes: Routes = [
   }, {
     path: "admin-ver-consulta",
     component: VistaVerConsultasMedicoComponent
+  },
+  {
+    path: "vista-medico",
+    component: VistaMedicoComponent
   }
 ];
 
