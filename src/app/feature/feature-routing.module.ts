@@ -12,6 +12,7 @@ import {VistaMedicoComponent} from "./vista-medico/vista-medico.component";
 import {MedicoHacerconsultaComponent} from "./medico-hacerconsulta/medico-hacerconsulta.component";
 import {VistaPacienteComponent} from "./vista-paciente/vista-paciente.component";
 import {CrearCitaPacienteComponent} from "./crear-cita-paciente/crear-cita-paciente.component";
+import {VerCitasPacienteComponent} from "./ver-citas-paciente/ver-citas-paciente.component";
 
 
 const routes: Routes = [
@@ -55,6 +56,10 @@ const routes: Routes = [
   },{
      path: "crear-cita-paciente",
      component: CrearCitaPacienteComponent
+  },
+  {
+    path:"ver-citas",
+    component: VerCitasPacienteComponent
   }
 ];
 

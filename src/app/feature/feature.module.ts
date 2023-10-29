@@ -50,6 +50,8 @@ import { CalendarioCitasComponent } from './vista-paciente/info-paciente-pacient
 import { PqrItemPacienteComponent } from './vista-paciente/pqrs-paciente/pqr-item-paciente/pqr-item-paciente.component';
 import { CrearCitaPacienteComponent } from './crear-cita-paciente/crear-cita-paciente.component';
 import { AgendarCitaItemComponent } from './crear-cita-paciente/agendar-cita-item/agendar-cita-item.component';
+import { VerCitasPacienteComponent } from './ver-citas-paciente/ver-citas-paciente.component';
+import { ListaCitasComponent } from './ver-citas-paciente/lista-citas/lista-citas.component';
 
 
 @NgModule({
@@ -100,7 +102,9 @@ import { AgendarCitaItemComponent } from './crear-cita-paciente/agendar-cita-ite
     CalendarioCitasComponent,
     PqrItemPacienteComponent,
     CrearCitaPacienteComponent,
-    AgendarCitaItemComponent
+    AgendarCitaItemComponent,
+    VerCitasPacienteComponent,
+    ListaCitasComponent
   ],
   imports: [
     CommonModule,
