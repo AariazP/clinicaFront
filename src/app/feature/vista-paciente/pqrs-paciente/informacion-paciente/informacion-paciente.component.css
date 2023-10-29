@@ -1,0 +1,30 @@
+#div-background{
+  background-color: white;
+  height: 600px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+h2{
+  color: rgb(253, 119, 35);
+  padding-top: 30px;
+}
+
+.form{
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 60px;
+}
+
+input{
+
+  width: 350px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-color: transparent;
+  border-bottom-color: rgb(253, 119, 35);
+}
+
+input::placeholder{
+  color:black;
+}

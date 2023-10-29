@@ -40,6 +40,13 @@ import { MedicoHacerconsultaComponent } from './medico-hacerconsulta/medico-hace
 import { InfoPacienteComponent } from './medico-hacerconsulta/info-paciente/info-paciente.component';
 import { ResumenConsultaComponent } from './medico-hacerconsulta/resumen-consulta/resumen-consulta.component';
 import { HistoriaClinicaComponent } from './medico-hacerconsulta/historia-clinica/historia-clinica.component';
+import { VistaPacienteComponent } from './vista-paciente/vista-paciente.component';
+import { LateralBarComponent } from './lateral-bar/lateral-bar.component';
+import { InfoPacientePacienteComponent } from './vista-paciente/info-paciente-paciente/info-paciente-paciente.component';
+import { PqrsPacienteComponent } from './vista-paciente/pqrs-paciente/pqrs-paciente.component';
+import { PerfilPacienteComponent } from './vista-paciente/pqrs-paciente/perfil-paciente/perfil-paciente.component';
+import { InformacionPacienteComponent } from './vista-paciente/pqrs-paciente/informacion-paciente/informacion-paciente.component';
+import { CalendarioCitasComponent } from './vista-paciente/pqrs-paciente/calendario-citas/calendario-citas.component';
 
 
 @NgModule({
@@ -80,7 +87,14 @@ import { HistoriaClinicaComponent } from './medico-hacerconsulta/historia-clinic
     MedicoHacerconsultaComponent,
     InfoPacienteComponent,
     ResumenConsultaComponent,
-    HistoriaClinicaComponent
+    HistoriaClinicaComponent,
+    VistaPacienteComponent,
+    LateralBarComponent,
+    InfoPacientePacienteComponent,
+    PqrsPacienteComponent,
+    PerfilPacienteComponent,
+    InformacionPacienteComponent,
+    CalendarioCitasComponent
   ],
   imports: [
     CommonModule,
