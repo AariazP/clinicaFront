@@ -22,7 +22,7 @@ h3{
 }
 
 .citas-desde{
-  margin-left: 20px;
+  margin-left: 60px;
   background-color: #bebebe;
   margin-right: 300px;
   max-width: 230px;
@@ -37,7 +37,8 @@ h3{
 }
 
 #carrousel{
-  margin: 30px 1000px 30px 30px;
+  margin: 0 0 30px 30px;
+  max-width: 1220px;
 }
 
 

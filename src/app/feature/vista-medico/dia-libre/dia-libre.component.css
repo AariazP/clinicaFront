@@ -1,0 +1,27 @@
+#div-background{
+
+  background-color: white;
+  margin-left: 40px;
+  margin-top: 40px;
+  width: 1290px;
+  border-radius: 10px;
+  margin-bottom: 220px;
+}
+
+
+.form{
+  margin-left: 200px;
+  margin-right: 90px;
+  margin-top: 40px;
+}
+
+button{
+  margin-left: 500px;
+  background-color: rgba(180,255,128,1);
+  color: black;
+  font-size: 20px;
+  width: 300px;
+  border-color: transparent;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
