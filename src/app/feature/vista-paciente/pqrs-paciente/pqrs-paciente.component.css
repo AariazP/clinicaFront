@@ -6,3 +6,17 @@
   margin-right: 40px;
   margin-top: 40px;
 }
+
+h2{
+  color: rgb(253, 119, 35);
+  padding-top: 10px;
+}
+
+#scroll{
+
+  max-width: 1700px;
+  min-width: 1700px;
+  max-height: 200px;
+  min-height: 200px;
+  margin-left: 40px;
+}

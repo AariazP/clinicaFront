@@ -44,9 +44,10 @@ import { VistaPacienteComponent } from './vista-paciente/vista-paciente.componen
 import { LateralBarComponent } from './lateral-bar/lateral-bar.component';
 import { InfoPacientePacienteComponent } from './vista-paciente/info-paciente-paciente/info-paciente-paciente.component';
 import { PqrsPacienteComponent } from './vista-paciente/pqrs-paciente/pqrs-paciente.component';
-import { PerfilPacienteComponent } from './vista-paciente/pqrs-paciente/perfil-paciente/perfil-paciente.component';
-import { InformacionPacienteComponent } from './vista-paciente/pqrs-paciente/informacion-paciente/informacion-paciente.component';
-import { CalendarioCitasComponent } from './vista-paciente/pqrs-paciente/calendario-citas/calendario-citas.component';
+import { PerfilPacienteComponent } from './vista-paciente/info-paciente-paciente/perfil-paciente/perfil-paciente.component';
+import { InformacionPacienteComponent } from './vista-paciente/info-paciente-paciente/informacion-paciente/informacion-paciente.component';
+import { CalendarioCitasComponent } from './vista-paciente/info-paciente-paciente/calendario-citas/calendario-citas.component';
+import { PqrItemPacienteComponent } from './vista-paciente/pqrs-paciente/pqr-item-paciente/pqr-item-paciente.component';
 
 
 @NgModule({
@@ -94,7 +95,8 @@ import { CalendarioCitasComponent } from './vista-paciente/pqrs-paciente/calenda
     PqrsPacienteComponent,
     PerfilPacienteComponent,
     InformacionPacienteComponent,
-    CalendarioCitasComponent
+    CalendarioCitasComponent,
+    PqrItemPacienteComponent
   ],
   imports: [
     CommonModule,
