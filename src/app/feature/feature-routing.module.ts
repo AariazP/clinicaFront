@@ -11,6 +11,7 @@ import {
 import {VistaMedicoComponent} from "./vista-medico/vista-medico.component";
 import {MedicoHacerconsultaComponent} from "./medico-hacerconsulta/medico-hacerconsulta.component";
 import {VistaPacienteComponent} from "./vista-paciente/vista-paciente.component";
+import {CrearCitaPacienteComponent} from "./crear-cita-paciente/crear-cita-paciente.component";
 
 
 const routes: Routes = [
@@ -51,6 +52,9 @@ const routes: Routes = [
   {
     path: "paciente",
     component: VistaPacienteComponent
+  },{
+     path: "crear-cita-paciente",
+     component: CrearCitaPacienteComponent
   }
 ];
 
