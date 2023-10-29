@@ -1,0 +1,17 @@
+#div-background{
+  background-color: white;
+  height: 1040px;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+
+#ultimas-consultas{
+  height: 500px;
+  background-color: #e5e5e5;
+  margin-left: 20px;
+  margin-right: 20px;
+  min-height: 500px;
+  max-height: 500px;
+  border-radius: 5px;
+}
