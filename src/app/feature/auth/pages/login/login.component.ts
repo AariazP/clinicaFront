@@ -5,6 +5,7 @@ import {AuthLoginDTO} from "../../../../core/dto/authLoginDTO";
 import {AuthService} from "../../../../core/services/auth.service";
 import {Utils} from "../../../../core/utils/utils";
 import {AuthLoginResponseDto} from "../../../../core/dto/authLoginResponseDto";
+import {FormControl, ValidatorFn} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -12,15 +13,12 @@ import {AuthLoginResponseDto} from "../../../../core/dto/authLoginResponseDto";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-  private router: Router;
+private router: Router;
   public loginForm: FormGroup;
 
   constructor(router: Router, private fb: FormBuilder, private authService: AuthService) {
     this.router = router;
-
     this.initializeForm();
-
   }
 
 

@@ -2,30 +2,44 @@
 
   <h1 class="text-center">Registrate</h1>
 
-  <form class="form">
+  <form class="form" [formGroup]="registerForm">
 
     <div class="row">
-      <input class="input-item" type="text" placeholder="Nombre">
+      <input class="input-item" type="text" placeholder="Nombre" formControlName="nombre">
     </div>
+
     <div class="row">
-      <input class="input-item" type="text" placeholder="Edad">
+      <input class="input-item" type="text" placeholder="Cedula" formControlName="cedula">
     </div>
+
     <div class="row">
-      <input class="align-content-around input-item" type="date" placeholder="Fecha de nacimiento">
+      <input class="align-content-around input-item" type="date" placeholder="Fecha de nacimiento"
+             formControlName="fechaNacimiento">
     </div>
+
     <div class="row">
-      <input class="input-item" type="text" placeholder="Email">
+      <input class="input-item" type="text" placeholder="Email" formControlName="email">
     </div>
+
     <div class="row">
-      <input class="input-item" type="password" placeholder="Contraseña">
+      <input class="input-item" type="password" placeholder="Contraseña" formControlName="password">
+      <small *ngIf="passwordsMatch()" class="text-danger">Las contraseñas no coinciden</small>
     </div>
+
     <div class="row">
-      <input class="input-item" type="text" placeholder="Ciudad de residencia">
+      <input class="input-item" type="password" placeholder="Repite tu constraseña" formControlName="confirmation">
+      <small *ngIf="passwordsMatch()" class="text-danger">Las contraseñas no coinciden</small>
     </div>
+
+    <div class="row">
+      <input class="input-item" type="text" placeholder="Ciudad de residencia" formControlName="">
+    </div>
+
+
     <div class="row">
       <input class="input-item" type="text" placeholder="Télefono">
     </div>
 
   </form>
-  <button class="btn">  Continuar </button>
+  <button class="btn" (click)="continuar()"> Continuar</button>
 </div>
