@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {PacienteDTO} from "../../../../core/dto/PacienteDTO";
+import {RegisterState} from "../../../../core/dto/RegisterState";
+import {DataRegisterService} from "../../../../core/services/DataRegister.service";
+import {Utils} from "../../../../core/utils/utils";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -9,21 +13,18 @@ import {PacienteDTO} from "../../../../core/dto/PacienteDTO";
     styleUrls: ['./form-register1.component.css']
 })
 export class FormRegister1Component implements OnInit {
-
+    router: Router;
     registerForm: FormGroup
-    pacienteDTO: PacienteDTO
+    registerState: RegisterState;
 
     ngOnInit(): void {
         this.initializeFormGroup();
+        this.registerState = new RegisterState();
     }
 
 
-    constructor(private fb: FormBuilder) {
-        this.pacienteDTO = new PacienteDTO();
-    }
-
-    public registrar(): void {
-        console.log(this.pacienteDTO)
+    constructor(router: Router, private fb: FormBuilder, private sharedData: DataRegisterService) {
+        this.router = router;
     }
 
     get emailNoValid() {
@@ -48,22 +49,40 @@ export class FormRegister1Component implements OnInit {
         })
     }
 
- public passwordsMatch(): boolean {
-    const password = this.registerForm.get('password');
-    const confirmation = this.registerForm.get('confirmation');
+    public passwordsMatch(): boolean {
+        const password = this.registerForm.get('password');
+        const confirmation = this.registerForm.get('confirmation');
 
-    // Check if the passwords are different
-    if (password.value !== confirmation.value) {
-      // Check if the form controls are  touched
-      if (password.touched && confirmation.touched) {
-        return true;
-      }
+        // Check if the passwords are different
+        if (password.value !== confirmation.value) {
+            // Check if the form controls are  touched
+            if (password.touched && confirmation.touched) {
+                return true;
+            }
+        }
+        return false;
     }
-    return false;
-  }
 
 
     continuar() {
-        console.log(Object.values(this.registerForm.value))
+        if (this.registerForm.valid) {
+            this.registerState.nombre = this.registerForm.get('nombre')?.value;
+            this.registerState.cedula = this.registerForm.get('cedula')?.value;
+            this.registerState.fechaNacimiento = this.registerForm.get('fechaNacimiento')?.value;
+            this.registerState.email = this.registerForm.get('email')?.value;
+            this.registerState.password = this.registerForm.get('password')?.value;
+            this.registerState.ciudadResidencia = this.registerForm.get('ciudadResidencia')?.value;
+            this.registerState.telefono = this.registerForm.get('telefono')?.value;
+            /*
+            La siguiente linea es importante. Se llama al servicios que guarda estados
+            luego seteamos el dto en el mismo para que lo recuerde y en la siguiente vista (register2)
+            lo usaremos para enviarselo a la API del backend.
+            */
+            this.sharedData.setState(this.registerState);
+            this.router.navigate(['/register2']);
+
+        } else {
+            Utils.showAlertError("Verifica los campos")
+        }
     }
 }
