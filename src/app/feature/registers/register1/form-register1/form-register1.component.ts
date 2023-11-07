@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, ValidatorFn} from "@angular/forms";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {PacienteDTO} from "../../../../core/dto/PacienteDTO";
-import {RegisterState} from "../../../../core/dto/RegisterState";
 
 
 @Component({
@@ -39,14 +37,14 @@ export class FormRegister1Component implements OnInit {
 
     private initializeFormGroup() {
         this.registerForm = this.fb.group({
-            nombre: '',
-            cedula: '',
-            fechaNacimiento: '',
-            email: '',
-            password: '',
-            confirmation: '',
-            ciudadResidencia: '',
-            telefono: ''
+            nombre: ['', Validators.required],
+            cedula: ['', Validators.required],
+            fechaNacimiento: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', Validators.required],
+            confirmation: ['', Validators.required],
+            ciudadResidencia: ['', Validators.required],
+            telefono: ['', Validators.required]
         })
     }
 
@@ -56,16 +54,16 @@ export class FormRegister1Component implements OnInit {
 
     // Check if the passwords are different
     if (password.value !== confirmation.value) {
-      // Check if the form controls are touched
+      // Check if the form controls are  touched
       if (password.touched && confirmation.touched) {
         return true;
       }
     }
-
     return false;
   }
 
 
     continuar() {
+        console.log(Object.values(this.registerForm.value))
     }
 }
