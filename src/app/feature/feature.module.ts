@@ -4,7 +4,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { FeatureRoutingModule } from './feature-routing.module';
 import { FeatureComponent } from './feature.component';
 import { Register1Component } from './registers/register1/register1.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { VistaAdminComponent } from './admin/vista-admin/vista-admin.component';
 import { Register2Component } from './registers/register2/register2.component';
 import { FormRegister1Component } from './registers/register1/form-register1/form-register1.component';
@@ -52,6 +52,7 @@ import { CrearCitaPacienteComponent } from './crear-cita-paciente/crear-cita-pac
 import { AgendarCitaItemComponent } from './crear-cita-paciente/agendar-cita-item/agendar-cita-item.component';
 import { VerCitasPacienteComponent } from './ver-citas-paciente/ver-citas-paciente.component';
 import { ListaCitasComponent } from './ver-citas-paciente/lista-citas/lista-citas.component';
+import { AlergiaComponent } from './brick/alergia/alergia.component';
 
 
 @NgModule({
@@ -104,13 +105,15 @@ import { ListaCitasComponent } from './ver-citas-paciente/lista-citas/lista-cita
     CrearCitaPacienteComponent,
     AgendarCitaItemComponent,
     VerCitasPacienteComponent,
-    ListaCitasComponent
+    ListaCitasComponent,
+    AlergiaComponent
   ],
   imports: [
     CommonModule,
     FeatureRoutingModule,
     ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormsModule
   ]
 })
 export class FeatureModule { }

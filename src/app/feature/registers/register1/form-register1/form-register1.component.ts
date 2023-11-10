@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
-import {PacienteDTO} from "../../../../core/dto/PacienteDTO";
-import {RegisterState} from "../../../../core/dto/RegisterState";
+    import {RegisterState} from "../../../../core/dto/RegisterState";
 import {DataRegisterService} from "../../../../core/services/DataRegister.service";
 import {Utils} from "../../../../core/utils/utils";
 import {Router} from "@angular/router";
