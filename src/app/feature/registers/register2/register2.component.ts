@@ -12,20 +12,37 @@ export class Register2Component {
   inputValue : ''; // Variable para guardar el valor del input de alergias
   listaAlergias : string[] = [] // Aquí se guardan las alergias cada que se da enter en el input.
   listaCiudades : string [] = [] // Lista de ciudades que se van a mostrar en el html
+  listaTipoSangre : string[] = []
   listaEPS : string [] = [] // Lista de EPS que se van a mostrar en el html
+  
+  //Choicebox variables
+  box_ciudad: '';
+  box_tipoSangre : '';
+  box_eps : '';
 
   
   constructor() {
     this.cargarCiudades();
     this.cargarEPS();
+    this.cargarTiposSangre();
    }
 
-  agregarAlergiaOnEnter() {
-    console.log(this.inputValue);
-    this.listaAlergias.push(this.inputValue)
-    this.inputValue = '';
+   
+   
+   agregarAlergiaOnEnter() {
+     console.log(this.inputValue);
+     this.listaAlergias.push(this.inputValue)
+     this.inputValue = '';
   } 
-
+  
+  onFileChange(event : any){
+    if (event.target.files.length > 0) {
+      const files = event.target.files;
+      console.log(files);
+    }
+  }
+  
+  
   cargarCiudades() {
     this.listaCiudades.push("Bogota");
     this.listaCiudades.push("Medellin");
@@ -44,7 +61,7 @@ export class Register2Component {
     this.listaCiudades.push("Pasto");
   }
 
-
+  
   cargarEPS() {
     this.listaEPS.push("Sura");
     this.listaEPS.push("Sanitas");
@@ -61,4 +78,16 @@ export class Register2Component {
     this.listaEPS.push("Colsubsidio");
     this.listaEPS.push("Salud Vida");
   }
+  
+  cargarTiposSangre() {
+    this.listaTipoSangre.push("A+");
+    this.listaTipoSangre.push("A-");
+    this.listaTipoSangre.push("B+");
+    this.listaTipoSangre.push("B-");
+    this.listaTipoSangre.push("O+");
+    this.listaTipoSangre.push("O-");
+    this.listaTipoSangre.push("AB+");
+    this.listaTipoSangre.push("AB-");
+  }
+  
 }

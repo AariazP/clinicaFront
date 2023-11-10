@@ -15,10 +15,19 @@
         <form class="form">
           <div class="row">
             <h4>¿Tienes alguna alergia?</h4>
-            <br>
             <input [(ngModel)]="inputValue" name="inputValue" (keyup.enter)="agregarAlergiaOnEnter()"
               placeholder="Escribe aquí tu alergia para guardarla">
           </div>
+          <br> 
+
+
+          <!-- IMAGE  -->
+          <div class="text-center">
+            <h4>Sube tu foto de perfil</h4>
+            <input type="file" name="file" id="file" (change)="onFileChange($event)" class="inputfile" />
+          </div>  
+
+
           <app-alergia *ngFor="let element of listaAlergias" [mensaje]=element></app-alergia>
         </form>
 
@@ -43,18 +52,27 @@
         <select class="btn btn-secondary ">
           <option value="" selected>Seleccione una EPS</option>
           <option [value]="element" *ngFor="let element of this.listaEPS; index as i"> {{element}}</option>
-
         </select>
 
-      <br>
+        <br>
 
-      <button class=" btn btn-terminar"> Finalizar</button>
+
+
+      <!-- CHOISEBOX DE EPS -->
+      <div>
+        <h4 class="text-center">Tipo de sangre</h4>
+        <br>
+        <select class="btn btn-secondary ">
+          <option value="" selected>Seleccione tipo de sangre</option>
+          <option [value]="element" *ngFor="let element of this.listaTipoSangre; index as i"> {{element}}</option>
+        </select>
+
+        <br>
+
+
+        <button class=" btn btn-terminar"> Finalizar</button>
+        <br>
+      </div>
 
     </div>
-
-
-
   </div>
-
-
-</div>
