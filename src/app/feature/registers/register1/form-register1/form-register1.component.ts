@@ -62,7 +62,7 @@ export class FormRegister1Component implements OnInit {
         return false;
     }
 
-
+    
     continuar() {
         if (this.registerForm.valid) {
             this.registerState.nombre = this.registerForm.get('nombre')?.value;

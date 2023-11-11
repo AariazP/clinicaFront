@@ -8,8 +8,7 @@ export class RegisterState{
     public confirmation: '';
     public ciudadResidencia: '';
     public telefono: '';
-//Newer vars 
-    public alergias : [];   
+    public alergias : string[];
     public eps: '';
     public tipoSangre : '';
 }

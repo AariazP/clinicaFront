@@ -17,7 +17,7 @@ export class Utils{
       hideClass: {
         popup: 'animate__animated animate__fadeOutUp'
       },
-      timer: 2000,
+      timer: 4000,
       timerProgressBar: true,
     });
   }

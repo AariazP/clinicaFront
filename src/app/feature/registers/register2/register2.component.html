@@ -16,19 +16,19 @@
           <div class="row">
             <h4>¿Tienes alguna alergia?</h4>
             <input [(ngModel)]="inputValue" name="inputValue" (keyup.enter)="agregarAlergiaOnEnter()"
-              placeholder="Escribe aquí tu alergia para guardarla">
+                   placeholder="Escribe aquí tu alergia para guardarla">
           </div>
-          <br> 
+          <br>
+
+          <app-alergia *ngFor="let element of listaAlergias" [mensaje]=element></app-alergia>
 
 
           <!-- IMAGE  -->
           <div class="text-center">
             <h4>Sube tu foto de perfil</h4>
-            <input type="file" name="file" id="file" (change)="onFileChange($event)" class="inputfile" />
-          </div>  
+            <input type="file" name="file" id="file" (change)="onFileChange($event)" class="inputfile"/>
+          </div>
 
-
-          <app-alergia *ngFor="let element of listaAlergias" [mensaje]=element></app-alergia>
         </form>
 
       </div>
@@ -37,7 +37,7 @@
       <div>
         <h4 class="text-center">Selecciona tu ciudad</h4>
         <br>
-        <select class="btn btn-secondary ">
+        <select class="btn btn-secondary" [(ngModel)]="box_ciudad">
           <option value="" selected>Seleccione una ciudad</option>
           <option [value]="element" *ngFor="let element of this.listaCiudades; index as i"> {{element}}</option>
 
@@ -49,7 +49,7 @@
       <div>
         <h4 class="text-center">Selecciona tu EPS</h4>
         <br>
-        <select class="btn btn-secondary ">
+        <select class="btn btn-secondary" [(ngModel)]="box_eps">
           <option value="" selected>Seleccione una EPS</option>
           <option [value]="element" *ngFor="let element of this.listaEPS; index as i"> {{element}}</option>
         </select>
@@ -57,22 +57,26 @@
         <br>
 
 
+        <!-- CHOISEBOX DE EPS -->
+        <div>
+          <h4 class="text-center">Tipo de sangre</h4>
+          <br>
+          <select class="btn btn-secondary" [(ngModel)]="box_tipoSangre">
+            <option value="" selected>Seleccione tipo de sangre</option>
+            <option [value]="element" *ngFor="let element of this.listaTipoSangre; index as i"> {{element}}</option>
+          </select>
 
-      <!-- CHOISEBOX DE EPS -->
-      <div>
-        <h4 class="text-center">Tipo de sangre</h4>
-        <br>
-        <select class="btn btn-secondary ">
-          <option value="" selected>Seleccione tipo de sangre</option>
-          <option [value]="element" *ngFor="let element of this.listaTipoSangre; index as i"> {{element}}</option>
-        </select>
-
-        <br>
+          <br>
 
 
-        <button class=" btn btn-terminar"> Finalizar</button>
-        <br>
+          <button class=" btn btn-terminar" (click)="finalizarRegistro()"> Finalizar</button>
+          <br>
+          <br>
+          <br>
+
+
+        </div>
       </div>
-
     </div>
   </div>
+</div>
