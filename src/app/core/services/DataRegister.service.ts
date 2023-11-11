@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {RegisterState} from "../dto/RegisterState";
+import {PacienteDTO} from "../dto/PacienteDTO";
 
 @Injectable({
     providedIn: 'root'
@@ -10,16 +10,16 @@ import {RegisterState} from "../dto/RegisterState";
  * para luego ser usados en el registro2
  */
 export class DataRegisterService {
-    registerState: RegisterState;
+    pacienteDTO : PacienteDTO;
 
     constructor() {
     }
-    getState(): RegisterState {
-        return this.registerState;
+    getState(): PacienteDTO{
+        return this.pacienteDTO;
     }
 
-    setState(registerState: RegisterState) {
-        this.registerState = registerState;
+    setState(pacienteDTO : PacienteDTO) {
+        this.pacienteDTO = pacienteDTO;
     }
 }
 

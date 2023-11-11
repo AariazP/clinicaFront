@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
-    import {RegisterState} from "../../../../core/dto/RegisterState";
 import {DataRegisterService} from "../../../../core/services/DataRegister.service";
 import {Utils} from "../../../../core/utils/utils";
 import {Router} from "@angular/router";
+import {PacienteDTO} from "../../../../core/dto/PacienteDTO";
 
 
 @Component({
@@ -14,11 +14,11 @@ import {Router} from "@angular/router";
 export class FormRegister1Component implements OnInit {
     router: Router;
     registerForm: FormGroup
-    registerState: RegisterState;
+    pacienteDTO: PacienteDTO;
 
     ngOnInit(): void {
         this.initializeFormGroup();
-        this.registerState = new RegisterState();
+        this.pacienteDTO = new PacienteDTO();
     }
 
 
@@ -62,22 +62,22 @@ export class FormRegister1Component implements OnInit {
         return false;
     }
 
-    
+
     continuar() {
         if (this.registerForm.valid) {
-            this.registerState.nombre = this.registerForm.get('nombre')?.value;
-            this.registerState.cedula = this.registerForm.get('cedula')?.value;
-            this.registerState.fechaNacimiento = this.registerForm.get('fechaNacimiento')?.value;
-            this.registerState.email = this.registerForm.get('email')?.value;
-            this.registerState.password = this.registerForm.get('password')?.value;
-            this.registerState.ciudadResidencia = this.registerForm.get('ciudadResidencia')?.value;
-            this.registerState.telefono = this.registerForm.get('telefono')?.value;
+            this.pacienteDTO.nombre = this.registerForm.get('nombre')?.value;
+            this.pacienteDTO.cedula = this.registerForm.get('cedula')?.value;
+            this.pacienteDTO.fechaNacimiento = this.registerForm.get('fechaNacimiento')?.value;
+            this.pacienteDTO.email = this.registerForm.get('email')?.value;
+            this.pacienteDTO.password = this.registerForm.get('password')?.value;
+            this.pacienteDTO.ciudadResidencia = this.registerForm.get('ciudadResidencia')?.value;
+            this.pacienteDTO.telefono = this.registerForm.get('telefono')?.value;
             /*
             La siguiente linea es importante. Se llama al servicios que guarda estados
             luego seteamos el dto en el mismo para que lo recuerde y en la siguiente vista (register2)
             lo usaremos para enviarselo a la API del backend.
             */
-            this.sharedData.setState(this.registerState);
+            this.sharedData.setState(this.pacienteDTO);
             this.router.navigate(['/register2']);
 
         } else {

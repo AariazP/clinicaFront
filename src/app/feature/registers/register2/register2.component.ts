@@ -3,7 +3,7 @@ import {AlergiaComponent} from '../../brick/alergia/alergia.component';
 import {DataRegisterService} from 'src/app/core/services/DataRegister.service';
 import {FormsModule} from '@angular/forms';
 import {Utils} from 'src/app/core/utils/utils';
-import {RegisterState} from "../../../core/dto/RegisterState";
+import {PacienteDTO} from "../../../core/dto/PacienteDTO";
 
 @Component({
   selector: 'app-register2',
@@ -21,13 +21,13 @@ export class Register2Component {
   box_ciudad: '';
   box_tipoSangre: '';
   box_eps: '';
-  registerState: RegisterState;
+  pacienteDTO: PacienteDTO;
 
   constructor(private sharedData: DataRegisterService) {
     this.cargarCiudades();
     this.cargarEPS();
     this.cargarTiposSangre();
-    this.registerState = this.sharedData.getState();
+    this.pacienteDTO = this.sharedData.getState();
 
   }
 
@@ -54,11 +54,11 @@ export class Register2Component {
         'Por favor llene al menos su ciudad, eps y tipo de sangre'
       );
     } else {
-      this.registerState.alergias = this.listaAlergias;
-      this.registerState.ciudadResidencia = this.box_ciudad;
-      this.registerState.tipoSangre = this.box_tipoSangre;
-      this.registerState.eps = this.box_eps;
-      console.log(this.registerState);
+      this.pacienteDTO.alergias = this.listaAlergias;
+      this.pacienteDTO.ciudadResidencia = this.box_ciudad;
+      this.pacienteDTO.tipoSangre = this.box_tipoSangre;
+      this.pacienteDTO.eps = this.box_eps;
+      console.log(this.pacienteDTO);
     }
   }
 

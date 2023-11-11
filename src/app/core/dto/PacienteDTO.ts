@@ -4,7 +4,7 @@ export class PacienteDTO{
   email : String = '';
   password : String = '';
   fechaNacimiento : String = '';
-  alergias : String = '';
+  alergias : string [] = [];
   urlFotoPersonal : String = '';
   eps : String = '';
   tipoSangre : String = '';
