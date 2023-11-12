@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {AlergiaComponent} from '../../brick/alergia/alergia.component';
 import {DataRegisterService} from 'src/app/core/services/DataRegister.service';
-import {FormsModule} from '@angular/forms';
 import {Utils} from 'src/app/core/utils/utils';
 import {PacienteDTO} from "../../../core/dto/PacienteDTO";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register2',
@@ -22,13 +22,15 @@ export class Register2Component {
   box_tipoSangre: '';
   box_eps: '';
   pacienteDTO: PacienteDTO;
+  imageIsLoaded: boolean = false;
+  router : Router
 
-  constructor(private sharedData: DataRegisterService) {
+  constructor(router : Router, private sharedData: DataRegisterService) {
     this.cargarCiudades();
     this.cargarEPS();
     this.cargarTiposSangre();
     this.pacienteDTO = this.sharedData.getState();
-
+    this.router = router;
   }
 
   agregarAlergiaOnEnter() {
@@ -37,21 +39,23 @@ export class Register2Component {
     this.inputValue = '';
   }
 
-  onFileChange(event: any) {
+  onFileChange(event: any) : void {
     if (event.target.files.length > 0) {
       const files = event.target.files;
       console.log(files);
+      this.imageIsLoaded = true;
     }
   }
 
-  finalizarRegistro() {
+  registrar() {
     if (
       this.box_ciudad == '' ||
       this.box_tipoSangre == '' ||
-      this.box_eps == ''
+      this.box_eps == '' ||
+      this.imageIsLoaded === false
     ) {
       Utils.showAlertError(
-        'Por favor llene al menos su ciudad, eps y tipo de sangre'
+        'Tienes campos sin llenar, por favor verifica que todos (excepto posiblemente alergias) los campos esten llenos.'
       );
     } else {
       this.pacienteDTO.alergias = this.listaAlergias;
@@ -59,6 +63,8 @@ export class Register2Component {
       this.pacienteDTO.tipoSangre = this.box_tipoSangre;
       this.pacienteDTO.eps = this.box_eps;
       console.log(this.pacienteDTO);
+
+      this.router.navigate(['/']);
     }
   }
 
