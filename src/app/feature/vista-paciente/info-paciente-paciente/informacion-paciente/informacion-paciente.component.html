@@ -4,14 +4,12 @@
 
   <div class="row form">
 
-    <input placeholder="Nombre: Joaquin Sorolla">
-    <input placeholder="Edad: 22 años">
-    <input placeholder="Fecha de nacimiento: 30/06/2002">
-    <input placeholder="email: joaquinSorolla@gmail.com">
-    <input placeholder="constraseña: -----------">
-    <input placeholder="ciudad de residencia: Armenia Quindío">
-    <input placeholder="Telefono: 3152480873">
-    <input placeholder="EPS: Sanitas">
+    <input placeholder="Nombre: {{this.userDTO.nombre}}">
+    <input placeholder="Fecha de nacimiento: {{this.userDTO.fechaNacimiento}}">
+    <input placeholder="email: {{this.userDTO.email}}">
+    <input placeholder="ciudad de residencia: {{this.userDTO.ciudadResidencia}}">
+    <input placeholder="Telefono: {{this.userDTO.telefono}}">
+    <input placeholder="EPS: {{this.userDTO.eps}}">
 
 
   </div>
