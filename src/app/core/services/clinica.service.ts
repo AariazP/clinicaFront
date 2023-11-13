@@ -5,24 +5,25 @@ import {MensajeDTO} from "../dto/auxiliar/MensajeDTO";
 import {environmentDevelopment} from "../../../environments/environment.development";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ClinicaService {
-    private backendUrl: string = environmentDevelopment.apiUrl;
+  private backendUrl: string = environmentDevelopment.apiUrl;
 
-    constructor(private http: HttpClient) {
-    }
+  constructor(private http: HttpClient) {
+  }
 
-    public listarCiudades(): Observable<MensajeDTO> {
-        return this.http.get<MensajeDTO>(environmentDevelopment.registroUrl + '/ciudades');
-    }
+  public listarCiudades(): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(environmentDevelopment.registroUrl + '/ciudades');
+  }
 
-    public listarTipoSangre(): Observable<MensajeDTO> {
-        return this.http.get<MensajeDTO>(`${this.backendUrl}/tiposSangre`);
-    }
-    public listarEPS(): Observable<MensajeDTO> {
-        return this.http.get<MensajeDTO>(`${this.backendUrl}/epss`);
-    }
+  public listarTipoSangre(): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(environmentDevelopment.registroUrl + `/tiposSangre`);
+  }
+
+  public listarEPS(): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(environmentDevelopment.registroUrl + `/epss`);
+  }
 
   //TODO
   /*  public listarEspecialidades(): Observable<MensajeDTO> {

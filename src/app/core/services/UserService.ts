@@ -9,11 +9,11 @@ import {PacienteDTO} from "../dto/paciente/PacienteDTO";
  * Clase encargada de almacenar el estado de los datos del registro1
  * para luego ser usados en el registro2
  */
-export class UserService{
+export class UserService {
   /**
    * Variable que almacen los datos del usuario.
    */
-    pacienteDTO : PacienteDTO  = {
+  pacienteDTO: PacienteDTO = {
     nombre: 'Juan Esteban Parra Parra',
     cedula: '1002555666',
     fechaNacimiento: '31/08/2001',
@@ -30,11 +30,11 @@ export class UserService{
 
   //Aquí deberían estar todos los DTOS para hacer llamadas a una sola clase que contenga toda la información.
 
-  getPacienteDTO(): PacienteDTO{
+  getPacienteDTO(): PacienteDTO {
     return this.pacienteDTO;
   }
 
-  setPacienteDTO(pacienteDTO : PacienteDTO) {
+  setPacienteDTO(pacienteDTO: PacienteDTO) {
     this.pacienteDTO = pacienteDTO;
   }
 }

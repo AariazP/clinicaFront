@@ -10,7 +10,7 @@ import {ClinicaService} from "../../../core/services/clinica.service";
   templateUrl: './register2.component.html',
   styleUrls: ['./register2.component.css'],
 })
-export class Register2Component implements OnInit{
+export class Register2Component implements OnInit {
   inputValue: ''; // Variable para guardar el valor del input de alergias
   listaAlergias: string[] = []; // Aquí se guardan las alergias cada que se da enter en el input.
   listaCiudades: string[] = []; // Lista de ciudades que se van a mostrar en el html
@@ -23,19 +23,19 @@ export class Register2Component implements OnInit{
   box_eps: '';
   pacienteDTO: PacienteDTO;
   imageIsLoaded: boolean = false;
-  router : Router
+  router: Router
 
   ngOnInit(): void {
     this.cargarCiudades();
+    this.cargarEPS();
+    this.cargarTiposSangre();
     console.log(this.listaCiudades)
-
+    console.log(this.listaEPS)
+    console.log(this.listaTipoSangre)
   }
 
 
-
-  constructor(router : Router, private sharedData: DataRegisterService, private clinicaService : ClinicaService) {
-    this.cargarEPS();
-    this.cargarTiposSangre();
+  constructor(router: Router, private sharedData: DataRegisterService, private clinicaService: ClinicaService) {
     this.pacienteDTO = this.sharedData.getState();
     this.router = router;
   }
@@ -46,7 +46,7 @@ export class Register2Component implements OnInit{
     this.inputValue = '';
   }
 
-  onFileChange(event: any) : void {
+  onFileChange(event: any): void {
     if (event.target.files.length > 0) {
       const files = event.target.files;
       console.log(files);
@@ -76,43 +76,39 @@ export class Register2Component implements OnInit{
   }
 
   cargarCiudades() {
-      this.clinicaService.listarCiudades().subscribe({
-          next: data => {
-              this.listaCiudades = data.respuesta;
-            console.log(data)
-          },
-          error: error => {
-              console.log(error);
-          }
-      });
+    this.clinicaService.listarCiudades().subscribe({
+      next: data => {
+        this.listaCiudades = data.respuesta;
+        console.log(data)
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
   cargarEPS() {
-    this.listaEPS.push('Sura');
-    this.listaEPS.push('Sanitas');
-    this.listaEPS.push('Coomeva');
-    this.listaEPS.push('Compensar');
-    this.listaEPS.push('Salud Total');
-    this.listaEPS.push('Famisanar');
-    this.listaEPS.push('Nueva EPS');
-    this.listaEPS.push('Medimas');
-    this.listaEPS.push('Savia Salud');
-    this.listaEPS.push('Aliansalud');
-    this.listaEPS.push('Cafesalud');
-    this.listaEPS.push('Cruz Blanca');
-    this.listaEPS.push('Colsubsidio');
-    this.listaEPS.push('Salud Vida');
+    this.clinicaService.listarEPS().subscribe({
+      next: data => {
+        this.listaEPS = data.respuesta;
+        console.log(data)
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
   cargarTiposSangre() {
-    this.listaTipoSangre.push('A+');
-    this.listaTipoSangre.push('A-');
-    this.listaTipoSangre.push('B+');
-    this.listaTipoSangre.push('B-');
-    this.listaTipoSangre.push('O+');
-    this.listaTipoSangre.push('O-');
-    this.listaTipoSangre.push('AB+');
-    this.listaTipoSangre.push('AB-');
+    this.clinicaService.listarTipoSangre().subscribe({
+      next: data => {
+        this.listaTipoSangre = data.respuesta;
+        console.log(data)
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
 
