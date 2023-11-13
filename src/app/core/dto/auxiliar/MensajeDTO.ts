@@ -1,4 +1,4 @@
-export class MensajeDTO<T> {
+export class MensajeDTO {
   error : boolean;
-  mensaje : T;
+  mensaje : any
 }

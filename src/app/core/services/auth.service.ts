@@ -26,8 +26,8 @@ export class AuthService {
     return this.http.post<AuthLoginResponseDto>(`${this.apiUrl}/login`, login);
   }
 
-  public registrarPaciente(paciente:PacienteDTO):Observable<MensajeDTO<String>>{
-    return this.http.post<MensajeDTO<String>>(`${this.authURL}/registrarse`, paciente);
+  public registrarPaciente(paciente:PacienteDTO):Observable<MensajeDTO>{
+    return this.http.post<MensajeDTO>(`${this.authURL}/registrarse`, paciente);
   }
 
 
