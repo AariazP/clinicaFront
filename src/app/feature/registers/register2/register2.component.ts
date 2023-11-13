@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {AlergiaComponent} from '../../brick/alergia/alergia.component';
 import {DataRegisterService} from 'src/app/core/services/DataRegister.service';
 import {Utils} from 'src/app/core/utils/utils';
-import {PacienteDTO} from "../../../core/dto/PacienteDTO";
+import {PacienteDTO} from "../../../core/dto/paciente/PacienteDTO";
 import {Router} from "@angular/router";
 
 @Component({

@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from "@ang
 import {DataRegisterService} from "../../../../core/services/DataRegister.service";
 import {Utils} from "../../../../core/utils/utils";
 import {Router} from "@angular/router";
-import {PacienteDTO} from "../../../../core/dto/PacienteDTO";
+import {PacienteDTO} from "../../../../core/dto/paciente/PacienteDTO";
 
 
 @Component({

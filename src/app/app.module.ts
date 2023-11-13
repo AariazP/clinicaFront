@@ -8,7 +8,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { AlergiaComponent } from './feature/brick/alergia/alergia.component';
 
 @NgModule({
   declarations: [
