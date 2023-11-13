@@ -14,7 +14,7 @@ export class ClinicaService {
     }
 
     public listarCiudades(): Observable<MensajeDTO> {
-        return this.http.get<MensajeDTO>(`${this.backendUrl}/lista-ciudades`);
+        return this.http.get<MensajeDTO>(environmentDevelopment.registroUrl + '/ciudades');
     }
 
     public listarTipoSangre(): Observable<MensajeDTO> {

@@ -21,7 +21,7 @@ export class UserService{
     password: 'blue',
     ciudadResidencia: 'Armenia',
     telefono: '3053990447',
-    alergias: ['Polem', 'Arañas'],
+    alergias: 'Polem,Arañas',
     tipoSangre: 'A+',
     eps: 'Sanitas',
     urlFotoPersonal: 'https://scontent.fpei3-1.fna.fbcdn.net/v/t39.30808-6/381250945_867716308301050_7577507972825949019_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YXLso-UsGmMAX-BsGks&_nc_ht=scontent.fpei3-1.fna&oh=00_AfDR6_D7dNQBL_JdEmkUIbMErAXd7CDvjpbKDl9j1T8ntA&oe=6554FEF8'

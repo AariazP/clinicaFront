@@ -1,16 +1,16 @@
-import {Component} from '@angular/core';
-import {AlergiaComponent} from '../../brick/alergia/alergia.component';
+import {Component, OnInit} from '@angular/core';
 import {DataRegisterService} from 'src/app/core/services/DataRegister.service';
 import {Utils} from 'src/app/core/utils/utils';
 import {PacienteDTO} from "../../../core/dto/paciente/PacienteDTO";
 import {Router} from "@angular/router";
+import {ClinicaService} from "../../../core/services/clinica.service";
 
 @Component({
   selector: 'app-register2',
   templateUrl: './register2.component.html',
   styleUrls: ['./register2.component.css'],
 })
-export class Register2Component {
+export class Register2Component implements OnInit{
   inputValue: ''; // Variable para guardar el valor del input de alergias
   listaAlergias: string[] = []; // Aquí se guardan las alergias cada que se da enter en el input.
   listaCiudades: string[] = []; // Lista de ciudades que se van a mostrar en el html
@@ -25,8 +25,15 @@ export class Register2Component {
   imageIsLoaded: boolean = false;
   router : Router
 
-  constructor(router : Router, private sharedData: DataRegisterService) {
+  ngOnInit(): void {
     this.cargarCiudades();
+    console.log(this.listaCiudades)
+
+  }
+
+
+
+  constructor(router : Router, private sharedData: DataRegisterService, private clinicaService : ClinicaService) {
     this.cargarEPS();
     this.cargarTiposSangre();
     this.pacienteDTO = this.sharedData.getState();
@@ -58,7 +65,7 @@ export class Register2Component {
         'Tienes campos sin llenar, por favor verifica que todos (excepto posiblemente alergias) los campos esten llenos.'
       );
     } else {
-      this.pacienteDTO.alergias = this.listaAlergias;
+      this.pacienteDTO.alergias = this.listaAlergias.join(', ');
       this.pacienteDTO.ciudadResidencia = this.box_ciudad;
       this.pacienteDTO.tipoSangre = this.box_tipoSangre;
       this.pacienteDTO.eps = this.box_eps;
@@ -69,21 +76,15 @@ export class Register2Component {
   }
 
   cargarCiudades() {
-    this.listaCiudades.push('Bogota');
-    this.listaCiudades.push('Medellin');
-    this.listaCiudades.push('Cali');
-    this.listaCiudades.push('Barranquilla');
-    this.listaCiudades.push('Cartagena');
-    this.listaCiudades.push('Bucaramanga');
-    this.listaCiudades.push('Pereira');
-    this.listaCiudades.push('Santa Marta');
-    this.listaCiudades.push('Manizales');
-    this.listaCiudades.push('Cucuta');
-    this.listaCiudades.push('Armenia');
-    this.listaCiudades.push('Villavicencio');
-    this.listaCiudades.push('Valledupar');
-    this.listaCiudades.push('Ibague');
-    this.listaCiudades.push('Pasto');
+      this.clinicaService.listarCiudades().subscribe({
+          next: data => {
+              this.listaCiudades = data.respuesta;
+            console.log(data)
+          },
+          error: error => {
+              console.log(error);
+          }
+      });
   }
 
   cargarEPS() {
@@ -113,4 +114,6 @@ export class Register2Component {
     this.listaTipoSangre.push('AB+');
     this.listaTipoSangre.push('AB-');
   }
+
+
 }
