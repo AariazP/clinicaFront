@@ -5,7 +5,6 @@ import {HttpClient} from "@angular/common/http";
 import {environmentDevelopment} from "../../../environments/environment.development";
 import {AuthLoginResponseDto} from "../dto/authLoginResponseDto";
 import {PacienteDTO} from "../dto/paciente/PacienteDTO";
-import {TestService} from "./TestService";
 import {MensajeDTO} from "../dto/auxiliar/MensajeDTO";
 
 
@@ -15,10 +14,10 @@ import {MensajeDTO} from "../dto/auxiliar/MensajeDTO";
 export class AuthService {
 
   private apiUrl:string = environmentDevelopment.apiUrl;
-  private authURL  = `${this.apiUrl}/auth`;
+  private authURL : string  = `${this.apiUrl}/auth`;
   private http:HttpClient;
 
-  constructor(http:HttpClient, private testService: TestService) {
+  constructor(http:HttpClient) {
     this.http = http;
   }
 

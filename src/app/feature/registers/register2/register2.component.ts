@@ -4,6 +4,7 @@ import {Utils} from 'src/app/core/utils/utils';
 import {PacienteDTO} from "../../../core/dto/paciente/PacienteDTO";
 import {Router} from "@angular/router";
 import {ClinicaService} from "../../../core/services/clinica.service";
+import {ImagenService} from "../../../core/services/imagen.service";
 
 @Component({
   selector: 'app-register2',
@@ -21,6 +22,8 @@ export class Register2Component implements OnInit {
   box_ciudad: '';
   box_tipoSangre: '';
   box_eps: '';
+
+  imageFile: FileList;
   pacienteDTO: PacienteDTO;
   imageIsLoaded: boolean = false;
   router: Router
@@ -35,7 +38,11 @@ export class Register2Component implements OnInit {
   }
 
 
-  constructor(router: Router, private sharedData: DataRegisterService, private clinicaService: ClinicaService) {
+  constructor(router: Router,
+              private sharedData: DataRegisterService,
+              private clinicaService: ClinicaService,
+              private imagenService: ImagenService
+  ) {
     this.pacienteDTO = this.sharedData.getState();
     this.router = router;
   }
@@ -51,6 +58,7 @@ export class Register2Component implements OnInit {
       const files = event.target.files;
       console.log(files);
       this.imageIsLoaded = true;
+      this.imageFile = files;
     }
   }
 
@@ -59,10 +67,11 @@ export class Register2Component implements OnInit {
       this.box_ciudad == '' ||
       this.box_tipoSangre == '' ||
       this.box_eps == '' ||
-      this.imageIsLoaded === false
+      this.imageFile == null ||
+      this.imageFile.length === 0
     ) {
       Utils.showAlertError(
-        'Tienes campos sin llenar, por favor verifica que todos (excepto posiblemente alergias) los campos esten llenos.'
+        'Tienes campos sin llenar, por favor verifica que todos los campos esten llenos  (excepto posiblemente alergias).'
       );
     } else {
       this.pacienteDTO.alergias = this.listaAlergias.join(', ');
@@ -70,6 +79,19 @@ export class Register2Component implements OnInit {
       this.pacienteDTO.tipoSangre = this.box_tipoSangre;
       this.pacienteDTO.eps = this.box_eps;
       console.log(this.pacienteDTO);
+
+      const formData = new FormData();
+      formData.append('file', this.imageFile[0]);
+
+      this.imagenService.subir(formData).subscribe({
+        next: data => {
+          this.pacienteDTO.urlFotoPersonal = data.respuesta.url;
+        },
+        error: error => {
+          Utils.showAlertError("Debe subir una imagen");
+        }
+      });
+
 
       this.router.navigate(['/']);
     }

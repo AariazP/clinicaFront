@@ -40,4 +40,10 @@ export class TokenService {
     const values = JSON.parse(payloadDecoded);
     return values;
   }
+
+  public login(token: string) {
+    this.setToken(token);
+    this.router.navigate(["/"]);
+
+  }
 }

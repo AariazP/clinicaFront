@@ -1,7 +1,7 @@
 export class InfoPacienteDTO {
-    nombre : String;
-    cedula : String;
-    email : String;
-    fechaNacimiento : Date;
-    telefono : String;
+  nombre: String;
+  fechaNacimiento: Date;
+  email: String;
+  cedula: String;
+  telefono: String;
 }
