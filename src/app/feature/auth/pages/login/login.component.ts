@@ -85,9 +85,7 @@ export class LoginComponent {
         let token = response.respuesta.token
         this.tokenService.setToken(token);
         let userValues = this.tokenService.decodePayload(token);
-        //TODO Aqui se debe navegar a la vista pertinente segun el rol del usuario.
-        // El rol del usuario de obitene mediante los valoes del token que está justo
-        // en la linea de arriba.
+        this.navigateToRole(userValues.rol)
       },
       error => {
         Utils.showAlertError(error.error.Error);
@@ -96,7 +94,8 @@ export class LoginComponent {
   }
 
 
-  private navigateToRole(response: AuthLoginResponseDto): void {
-    if (response.rol === 'ADMIN') this.router.navigate([`/admin`]);
+  private navigateToRole(rol: String): void {
+    if (rol === 'paciente') this.router.navigate([`/paciente`]);
+    if (rol === 'medico') this.router.navigate([`/vista-medico`]);
   }
 }
