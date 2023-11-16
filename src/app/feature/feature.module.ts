@@ -56,7 +56,7 @@ import { AlergiaComponent } from './brick/alergia/alergia.component';
 import {
   CitaUnitComponent
 } from "./vista-paciente/info-paciente-paciente/calendario-citas/cita-unit/cita-unit.component";
-
+import { EditarInfoComponent } from './vista-paciente/editar-info/editar-info.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +110,8 @@ import {
     VerCitasPacienteComponent,
     ListaCitasComponent,
     AlergiaComponent,
-    CitaUnitComponent
+    CitaUnitComponent,
+    EditarInfoComponent,
   ],
   imports: [
     CommonModule,
