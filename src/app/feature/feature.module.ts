@@ -53,6 +53,9 @@ import { AgendarCitaItemComponent } from './crear-cita-paciente/agendar-cita-ite
 import { VerCitasPacienteComponent } from './ver-citas-paciente/ver-citas-paciente.component';
 import { ListaCitasComponent } from './ver-citas-paciente/lista-citas/lista-citas.component';
 import { AlergiaComponent } from './brick/alergia/alergia.component';
+import {
+  CitaUnitComponent
+} from "./vista-paciente/info-paciente-paciente/calendario-citas/cita-unit/cita-unit.component";
 
 
 @NgModule({
@@ -106,7 +109,8 @@ import { AlergiaComponent } from './brick/alergia/alergia.component';
     AgendarCitaItemComponent,
     VerCitasPacienteComponent,
     ListaCitasComponent,
-    AlergiaComponent
+    AlergiaComponent,
+    CitaUnitComponent
   ],
   imports: [
     CommonModule,

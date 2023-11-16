@@ -24,12 +24,8 @@ export class PacienteService {
     return this.http.delete<MensajeDTO>(`${this.userUrl}/eliminar/${codigo}`);
   }
 
-  public editarPerfil(pacienteDTO: DetallePacienteDTO): Observable<MensajeDTO> {
+  public editarPerfil(pacienteDTO: PacienteDTO): Observable<MensajeDTO> {
     return this.http.put<MensajeDTO>(`${this.userUrl}/editar-perfil`, pacienteDTO);
-  }
-
-  public crearPQRS(registroPQRSDTO: RegistroPQRSDTO): Observable<MensajeDTO> {
-    return this.http.post<MensajeDTO>(`${this.userUrl}/crear-pqrs`, registroPQRSDTO);
   }
 
   public listarPQRSPaciente(codigoPaciente: number): Observable<MensajeDTO> {

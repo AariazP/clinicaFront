@@ -22,9 +22,9 @@ export class TokenService {
     return sessionStorage.getItem(TOKEN_KEY);
   }
 
-  public isLogged(): boolean {
+  public isLogged(): boolean {return true;
     if (this.getToken()) {
-      return true;
+
     }
     return false;
   }

@@ -9,7 +9,6 @@ import {environmentDevelopment} from "../../../environments/environment.developm
   providedIn: 'root'
 })
 export class ImagenService {
-  private imgURL = "http://localhost:8080/api/imagenes";
 
   constructor(private http: HttpClient) {
   }
@@ -21,7 +20,6 @@ export class ImagenService {
   public eliminar(imagenDTO: ImagenDTO): Observable<MensajeDTO> {
     return this.http.request<MensajeDTO>('delete', environmentDevelopment.imagenesUrl + "/eliminar", {
       body:
-
       imagenDTO
     });
   }
