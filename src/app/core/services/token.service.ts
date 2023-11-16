@@ -34,10 +34,11 @@ export class TokenService {
     this.router.navigate(["/login"]);
   }
 
-  private decodePayload(token: string): any {
-    const payload = token!.split(".")[1];
+  public decodePayload(token: string): any {
+    const payload = token!.split(".")[1]; //Aqui está el nombre, el rol.
     const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
     const values = JSON.parse(payloadDecoded);
+    console.log(values)
     return values;
   }
 

@@ -22,8 +22,8 @@
       this.http = http;
     }
 
-    public login(login:AuthLoginDTO): Observable<TokenDTO>{
-      return this.http.post<TokenDTO>(environmentDevelopment.AutenticacionUrl + "/login", login);
+    public login(login:AuthLoginDTO): Observable<MensajeDTO>{
+      return this.http.post<MensajeDTO>(environmentDevelopment.AutenticacionUrl + "/login", login);
     }
 
     public registrarPaciente(paciente:PacienteDTO):Observable<MensajeDTO>{

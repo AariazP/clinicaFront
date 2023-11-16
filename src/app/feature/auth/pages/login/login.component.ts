@@ -82,7 +82,12 @@ export class LoginComponent {
 
     this.authService.login(dtoLogin).subscribe(
       response => {
-        this.tokenService.setToken(response.token.valueOf());
+        let token = response.respuesta.token
+        this.tokenService.setToken(token);
+        let userValues = this.tokenService.decodePayload(token);
+        //TODO Aqui se debe navegar a la vista pertinente segun el rol del usuario.
+        // El rol del usuario de obitene mediante los valoes del token que está justo
+        // en la linea de arriba.
       },
       error => {
         Utils.showAlertError(error.error.Error);
