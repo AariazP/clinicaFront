@@ -83,6 +83,7 @@ export class LoginComponent {
     this.authService.login(dtoLogin).subscribe(
       response => {
         let token = response.respuesta.token
+        console.log(token)
         this.tokenService.setToken(token);
         let userValues = this.tokenService.decodePayload(token);
         this.navigateToRole(userValues.rol)
