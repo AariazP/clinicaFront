@@ -15,9 +15,13 @@ export class PacienteService {
   constructor(private http: HttpClient) {
   }
 
-
-  public verDetallePaciente(codigo: number): Observable<MensajeDTO> {
-    return this.http.get<MensajeDTO>(`${this.userUrl}/detalle/${codigo}`);
+  /**
+   *
+   * @param codigo codigo del paciente
+   * @returns Observable<MensajeDTO<PacienteDTOPaciente>>
+   */
+  public obtenerPaciente(codigo: number): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(environmentDevelopment.pacienteUrl + "/" + codigo);
   }
 
   public eliminarCuenta(codigo: number): Observable<MensajeDTO> {
