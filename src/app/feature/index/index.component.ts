@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {TokenService} from "../../core/services/token.service";
 
@@ -7,7 +7,7 @@ import {TokenService} from "../../core/services/token.service";
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent {
+export class IndexComponent implements OnInit{
 
   private router: Router;
   isLogged = () => {
@@ -16,6 +16,10 @@ export class IndexComponent {
 
   constructor(router: Router, private tokenService: TokenService) {
     this.router = router;
+  }
+
+  ngOnInit(): void {
+    console.log(this.isLogged())
   }
 
 
@@ -37,4 +41,6 @@ export class IndexComponent {
 
 
   }
+
+
 }

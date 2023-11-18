@@ -21,19 +21,19 @@
             <a class="nav-link active" aria-current="page" href="#">Sobre nosotros</a>
           </li>
 
-          <li *ngIf="!isLogged" class="button item nav-item button-nav d-inline">
+          <li *ngIf="!isLogged()" class="button item nav-item button-nav d-inline">
             <a class="nav-link active" aria-current="page" (click)="singUp()">Ingresar</a>
           </li>
 
-          <li *ngIf="!isLogged" class="button item nav-item button-nav d-inline">
+          <li *ngIf="!isLogged()" class="button item nav-item button-nav d-inline">
             <a class="nav-link" (click)="SignIn()">Registrarse</a>
           </li>
 
-          <li *ngIf="isLogged" class="button item nav-item button-nav d-inline">
+          <li *ngIf="isLogged()" class="button item nav-item button-nav d-inline">
             <a class="nav-link" (click)="LogOut()">LogOut</a>
           </li>
 
-          <li *ngIf="isLogged" class="button item nav-item button-nav d-inline">
+          <li *ngIf="isLogged()" class="button item nav-item button-nav d-inline">
             <a class="nav-link" (click)="IrACuenta()">Mi Perfil</a>
           </li>
 
