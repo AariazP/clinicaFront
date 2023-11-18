@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
+import {TokenService} from "../../core/services/token.service";
 
 @Component({
   selector: 'app-index',
@@ -8,20 +9,32 @@ import {Router} from "@angular/router";
 })
 export class IndexComponent {
 
-  private route: Router;
+  private router: Router;
+  isLogged = () => {
+    return this.tokenService.isLogged();
+  };
 
-  constructor(route: Router) {
-    this.route = route;
+  constructor(router: Router, private tokenService: TokenService) {
+    this.router = router;
   }
 
 
-
   public singUp(): void {
-    this.route.navigate(["/auth/login"]);
+    this.router.navigate(["/auth/login"]);
   }
 
 
   SignIn() {
-    this.route.navigate(["/register1"]);
+    this.router.navigate(["/register1"]);
+  }
+
+  LogOut() {
+    this.tokenService.logout()
+  }
+
+  IrACuenta() {
+    const rol = () => { this.tokenService.getRol();}
+
+
   }
 }

@@ -14,6 +14,7 @@ import {VistaPacienteComponent} from "./vista-paciente/vista-paciente.component"
 import {CrearCitaPacienteComponent} from "./crear-cita-paciente/crear-cita-paciente.component";
 import {VerCitasPacienteComponent} from "./ver-citas-paciente/ver-citas-paciente.component";
 import {EditarInfoComponent} from "./vista-paciente/editar-info/editar-info.component";
+import {LoginGuard} from "../core/guards/permiso.service";
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   },{
 
     path: "register1",
-    component: Register1Component
+    component: Register1Component,
+    canActivate: [LoginGuard]
   },
   {
     path: "admin",

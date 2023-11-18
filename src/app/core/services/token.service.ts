@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Router} from "@angular/router";
-import { Buffer } from "buffer";
+import {Buffer} from "buffer";
 
 
 const TOKEN_KEY = "AuthToken";
@@ -9,6 +9,16 @@ const TOKEN_KEY = "AuthToken";
   providedIn: 'root'
 })
 export class TokenService {
+
+// The following is an example of a token payload:
+// {
+//   "id": 2,
+//   "nombre": "Juan Esteban Parra Parra",
+//   "rol": "paciente",
+//   "sub": "estebanparra946@gmail.com",
+//   "iat": 1700327416,
+//   "exp": 1700327716
+// }
 
   constructor(private router: Router) {
   }
@@ -22,9 +32,9 @@ export class TokenService {
     return sessionStorage.getItem(TOKEN_KEY);
   }
 
-  public isLogged(): boolean {return true;
+  public isLogged(): boolean {
     if (this.getToken()) {
-
+      return true;
     }
     return false;
   }
@@ -40,6 +50,26 @@ export class TokenService {
     const values = JSON.parse(payloadDecoded);
     console.log(values)
     return values;
+  }
+
+  //Make a function to get the rol of the user based on the values of the token and return it.
+  public getRol(): string {
+    const token = this.getToken();
+    if (token) {
+      const values = this.decodePayload(token);
+      return values.rol;
+    }
+    return "";
+  }
+
+
+  public getEmail(): string {
+    const token = this.getToken();
+    if (token) {
+      const values = this.decodePayload(token);
+      return values.sub;
+    }
+    return "";
   }
 
   public login(token: string) {

@@ -1,15 +1,17 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {PacienteDTO} from "../dto/paciente/PacienteDTO";
+import {TokenService} from "./token.service";
 
 @Injectable({
   providedIn: 'root'
 })
 
-/**
- * Clase encargada de almacenar el estado de los datos del registro1
- * para luego ser usados en el registro2
- */
-export class UserService {
+export class UserService implements OnInit {
+
+  isLogged: boolean = false;
+  email: string = '';
+
+
   /**
    * Variable que almacen los datos del usuario.
    */
@@ -27,8 +29,20 @@ export class UserService {
     urlFotoPersonal: 'https://scontent.fpei3-1.fna.fbcdn.net/v/t39.30808-6/381250945_867716308301050_7577507972825949019_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YXLso-UsGmMAX-BsGks&_nc_ht=scontent.fpei3-1.fna&oh=00_AfDR6_D7dNQBL_JdEmkUIbMErAXd7CDvjpbKDl9j1T8ntA&oe=6554FEF8'
   }
 
+  constructor(private tokenService: TokenService) {
+  }
 
-  //Aquí deberían estar todos los DTOS para hacer llamadas a una sola clase que contenga toda la información.
+  ngOnInit(): void {
+    this.isLogged = this.tokenService.isLogged();
+    if (this.isLogged) {
+      this.email = this.tokenService.getEmail();
+    }
+  }
+
+  public logout() {
+    this.tokenService.logout();
+  }
+
 
   getPacienteDTO(): PacienteDTO {
     return this.pacienteDTO;
