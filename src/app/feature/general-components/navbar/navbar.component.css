@@ -22,3 +22,7 @@
   font-weight: bold;
   font-family: 'Times New Roman', sans-serif;
 }
+
+.nav-link {
+  cursor : pointer;
+}
