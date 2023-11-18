@@ -6,6 +6,7 @@ import {ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot} from
 @Injectable({
   providedIn: 'root'
 })
+
 export class PermisoService {
 
   constructor(private tokenService: TokenService, private router: Router) {
@@ -24,6 +25,12 @@ export const LoginGuard: CanActivateFn = (next: ActivatedRouteSnapshot, state:
   RouterStateSnapshot): boolean => {
   return inject(PermisoService).canActivate(next, state);
 }
+
+export const RegisterGuard: CanActivateFn = (next: ActivatedRouteSnapshot, state:
+  RouterStateSnapshot): boolean => {
+  return inject(PermisoService).canActivate(next, state);
+}
+
 
 
 

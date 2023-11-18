@@ -8,7 +8,7 @@ const TOKEN_KEY = "AuthToken";
 @Injectable({
   providedIn: 'root'
 })
-export class TokenService{
+export class TokenService {
 
 // The following is an example of a token payload:
 // {
@@ -55,16 +55,14 @@ export class TokenService{
     return values;
   }
 
-  //Make a function to get the rol of the user based on the values of the token and return it.
-  public getRol(): string {
+  public getRole(): string[] {
     const token = this.getToken();
     if (token) {
       const values = this.decodePayload(token);
       return values.rol;
     }
-    return "";
+    return [];
   }
-
 
   public getEmail(): string {
     const token = this.getToken();

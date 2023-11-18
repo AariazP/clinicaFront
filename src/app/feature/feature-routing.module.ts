@@ -15,16 +15,17 @@ import {CrearCitaPacienteComponent} from "./crear-cita-paciente/crear-cita-pacie
 import {VerCitasPacienteComponent} from "./ver-citas-paciente/ver-citas-paciente.component";
 import {EditarInfoComponent} from "./vista-paciente/editar-info/editar-info.component";
 import {LoginGuard} from "../core/guards/permiso.service";
+import {RolesGuard} from "../core/guards/roles.service";
 
 
 const routes: Routes = [
   {
-  path: "auth",
-  loadChildren: () => import('./auth/auth-routing.module').then(m => m.AuthRoutingModule)
-  },{
+    path: "auth",
+    loadChildren: () => import('./auth/auth-routing.module').then(m => m.AuthRoutingModule)
+  }, {
     path: "",
     component: IndexComponent
-  },{
+  }, {
 
     path: "register1",
     component: Register1Component,
@@ -35,37 +36,46 @@ const routes: Routes = [
     component: VistaAdminComponent
   },
   {
-    path:"register2",
-    component: Register2Component
+    path: "register2",
+    component: Register2Component,
+    canActivate: [LoginGuard]
   },
   {
     path: "pqrs",
-    component: VistaPqrsComponent
+    component: VistaPqrsComponent,
+    //canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
+
   }, {
     path: "admin-ver-consulta",
     component: VistaVerConsultasMedicoComponent
   },
   {
     path: "vista-medico",
-    component: VistaMedicoComponent
+    component: VistaMedicoComponent,
+    //canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
   },
   {
-    path:"medico-consulta",
-    component:MedicoHacerconsultaComponent
+    path: "medico-consulta",
+    component: MedicoHacerconsultaComponent,
+    //canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
   },
   {
     path: "paciente",
-    component: VistaPacienteComponent
-  },{
-    path: "editar-info",
-    component: EditarInfoComponent
+    component: VistaPacienteComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
   }, {
-     path: "crear-cita-paciente",
-     component: CrearCitaPacienteComponent
+    path: "editar-info",
+    component: EditarInfoComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
+  }, {
+    path: "crear-cita-paciente",
+    component: CrearCitaPacienteComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
   },
   {
-    path:"ver-citas",
-    component: VerCitasPacienteComponent
+    path: "ver-citas",
+    component: VerCitasPacienteComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
   }
 ];
 

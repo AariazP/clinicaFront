@@ -37,8 +37,14 @@ export class IndexComponent implements OnInit{
   }
 
   IrACuenta() {
-    const rol = () => { this.tokenService.getRol();}
-
+    const rol = () : any  => { this.tokenService.getRole();}
+    if (rol() === "paciente") {
+      this.router.navigate(["/paciente"]);
+    } else if (rol() === "medico") {
+      this.router.navigate(["/vista-medico"]);
+    } else if (rol() === "admin") {
+      this.router.navigate(["/admin"]);
+    }
 
   }
 
