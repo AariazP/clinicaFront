@@ -1,4 +1,4 @@
-<div id="div-background">
+<div id="div-background" *ngIf="(userInfo$ | async) as userInfo">
 
   <h2 class="text-center">Tu informacion</h2>
 

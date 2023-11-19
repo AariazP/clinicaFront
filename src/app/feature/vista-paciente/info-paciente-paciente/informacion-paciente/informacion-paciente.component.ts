@@ -3,6 +3,7 @@ import {UserService} from "../../../../core/services/UserService";
 import {ClinicaService} from "../../../../core/services/clinica.service";
 import {PacienteDTO} from "../../../../core/dto/paciente/PacienteDTO";
 import {PacienteDTOPaciente} from "../../../../core/dto/paciente/PacienteDTOPaciente";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-informacion-paciente',
@@ -22,11 +23,17 @@ export class InformacionPacienteComponent {
 
   // --- CAMPOS AUXILIARES  --------
   listaEPS: string[] = [];
-  userInfo: PacienteDTOPaciente;
+  userInfo$: Observable<PacienteDTOPaciente>;
 
 
   constructor(private userService: UserService,
               private clinicaService: ClinicaService) {
+  }
+
+  ngOnInit(): void {
+    this.userInfo$ = this.userService.getUserInfo();
+    this.cargarCiudades();
+    this.cargarEPS();
   }
 
 
@@ -36,7 +43,6 @@ export class InformacionPacienteComponent {
     this.clinicaService.listarCiudades().subscribe({
       next: data => {
         this.listaCiudades = data.respuesta;
-        console.log(data)
       },
       error: error => {
         console.log(error);

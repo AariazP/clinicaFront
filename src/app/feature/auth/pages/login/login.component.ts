@@ -7,6 +7,7 @@ import {Utils} from "../../../../core/utils/utils";
 import {AuthLoginResponseDto} from "../../../../core/dto/authLoginResponseDto";
 import {FormControl, ValidatorFn} from "@angular/forms";
 import {TokenService} from "../../../../core/services/token.service";
+import {UserService} from "../../../../core/services/UserService";
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,9 @@ export class LoginComponent {
   constructor(router: Router,
               private fb: FormBuilder,
               private authService: AuthService,
-              private tokenService: TokenService) {
+              private tokenService: TokenService,
+              private userService: UserService
+              ) {
     this.router = router;
     this.initializeForm();
   }
@@ -83,9 +86,9 @@ export class LoginComponent {
     this.authService.login(dtoLogin).subscribe(
       response => {
         let token = response.respuesta.token
-        console.log(token)
         this.tokenService.setToken(token);
         let userValues = this.tokenService.decodePayload(token);
+        this.userService.getUserInfo();
         this.navigateToRole(userValues.rol)
       },
       error => {

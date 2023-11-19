@@ -51,7 +51,7 @@ export class TokenService {
         const payload = token!.split(".")[1]; //Aqui está el nombre, el rol.
         const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
         const values = JSON.parse(payloadDecoded);
-        console.log(values)
+        //console.log(values)
         return values;
     }
 
@@ -83,7 +83,7 @@ export class TokenService {
 
     getID() {
         const token = this.getToken();
-        console.log("TOKEN ---->\n" +token)
+        //console.log("TOKEN ---->\n" +token)
         if (token) {
             const values = this.decodePayload(token);
             return values.id;
