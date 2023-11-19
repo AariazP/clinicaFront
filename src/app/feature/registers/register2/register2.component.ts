@@ -77,20 +77,19 @@ export class Register2Component implements OnInit {
       formData.append('file', this.imageFileList[0]);
       this.imagenService.subir(formData).subscribe({
         next: data => {
-          console.log("URL IMAGEN: " + data.respuesta.url) //TODO Console log
           this.pacienteDTO.urlFotoPersonal = data.respuesta.url;
         },
         error: error => {
           Utils.showAlertError("Debe subir una imagen");
+        },
+        complete: () => {
+          if (this.enviarPeticionDeRegistro()) {
+            this.router.navigate(['/']);
+          }
         }
       });
-
-      if (this.enviarPeticionDeRegistro()) {
-        this.router.navigate(['/']);
-      }
     }
   }
-
 
   enviarPeticionDeRegistro(): boolean {
     console.log(this.pacienteDTO) //TODO console log
