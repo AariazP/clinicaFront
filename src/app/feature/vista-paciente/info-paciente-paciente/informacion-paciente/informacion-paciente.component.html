@@ -4,10 +4,10 @@
 
   <div class="row form">
 
-    <input [(ngModel)]="nombre" type="text" placeholder="Nombre: {{this.pacienteDTO.nombre}}">
+    <input [(ngModel)]="nombre" type="text" placeholder="Nombre: {{this.userInfo.nombre}}">
     <input [(ngModel)]="fechaNacimiento" type="date"
-           placeholder="Fecha de nacimiento: {{this.pacienteDTO.fechaNacimiento}}">
-    <input [(ngModel)]="email" type="email" placeholder="email: {{this.pacienteDTO.email}}">
+           placeholder="Fecha de nacimiento: {{this.userInfo.fechaNacimiento}}">
+    <input [(ngModel)]="email" type="email" placeholder="email: {{this.userInfo.email}}">
 
     <!--  CIUDAD   -->
     <div>
@@ -20,8 +20,8 @@
     </div>
 
 
-    <input [(ngModel)]="telefono" type="text" placeholder="Telefono: {{this.pacienteDTO.telefono}}">
-    <input placeholder="EPS: {{this.pacienteDTO.eps}}">
+    <input [(ngModel)]="telefono" type="text" placeholder="Telefono: {{this.userInfo.telefono}}">
+    <input placeholder="EPS: {{this.userInfo.eps}}">
 
     <!-- EPS -->
     <select class="btn btn-secondary" [(ngModel)]="box_eps">

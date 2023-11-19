@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {UserService} from "../../../../core/services/UserService";
 import {ClinicaService} from "../../../../core/services/clinica.service";
 import {PacienteDTO} from "../../../../core/dto/paciente/PacienteDTO";
+import {PacienteDTOPaciente} from "../../../../core/dto/paciente/PacienteDTOPaciente";
 
 @Component({
   selector: 'app-informacion-paciente',
@@ -21,19 +22,12 @@ export class InformacionPacienteComponent {
 
   // --- CAMPOS AUXILIARES  --------
   listaEPS: string[] = [];
-  pacienteDTO : PacienteDTO;
+  userInfo: PacienteDTOPaciente;
 
 
   constructor(private userService: UserService,
               private clinicaService: ClinicaService) {
   }
-
-
-
-
-
-
-
 
 
 // COMUNICACION CON LOS ENDPOINTS

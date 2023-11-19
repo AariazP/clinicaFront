@@ -6,7 +6,7 @@ import {Buffer} from "buffer";
 const TOKEN_KEY = "AuthToken";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class TokenService {
 
@@ -20,73 +20,73 @@ export class TokenService {
 //   "exp": 1700327716
 // }
 
-  constructor(private router: Router) {
-  }
-
-
-  public setToken(token: string) {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
-  }
-
-  public getToken(): string | null {
-    return sessionStorage.getItem(TOKEN_KEY);
-  }
-
-  public isLogged(): boolean {
-    if (this.getToken()) {
-      return true;
+    constructor(private router: Router) {
     }
-    return false;
-  }
 
-  public logout() {
-    window.sessionStorage.clear();
-    this.router.navigate(["/"]).then(() => {
-      window.location.reload();
-    });
-  }
 
-  public decodePayload(token: string): any {
-    const payload = token!.split(".")[1]; //Aqui está el nombre, el rol.
-    const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
-    const values = JSON.parse(payloadDecoded);
-    console.log(values)
-    return values;
-  }
-
-  public getRole(): string[] {
-    const token = this.getToken();
-    if (token) {
-      const values = this.decodePayload(token);
-      return values.rol;
+    public setToken(token: string) {
+        window.sessionStorage.removeItem(TOKEN_KEY);
+        window.sessionStorage.setItem(TOKEN_KEY, token);
     }
-    return [];
-  }
 
-  public getEmail(): string {
-    const token = this.getToken();
-    if (token) {
-      const values = this.decodePayload(token);
-      return values.sub;
+    public getToken(): string | null {
+        return sessionStorage.getItem(TOKEN_KEY);
     }
-    return "";
-  }
 
-  public login(token: string) {
-    this.setToken(token);
-    this.router.navigate(["/"]).then(() => {
-      window.location.reload();
-    });
-  }
-
-
-  getID() {
-    const token = this.getToken();
-    if (token) {
-      const values = this.decodePayload(token);
-      return values.id;
+    public isLogged(): boolean {
+        if (this.getToken()) {
+            return true;
+        }
+        return false;
     }
-    return "";
-  }
+
+    public logout() {
+        window.sessionStorage.clear();
+        this.router.navigate(["/"]).then(() => {
+            window.location.reload();
+        });
+    }
+
+    public decodePayload(token: string): any {
+        const payload = token!.split(".")[1]; //Aqui está el nombre, el rol.
+        const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
+        const values = JSON.parse(payloadDecoded);
+        console.log(values)
+        return values;
+    }
+
+    public getRole(): string[] {
+        const token = this.getToken();
+        if (token) {
+            const values = this.decodePayload(token);
+            return values.rol;
+        }
+        return [];
+    }
+
+    public getEmail(): string {
+        const token = this.getToken();
+        if (token) {
+            const values = this.decodePayload(token);
+            return values.sub;
+        }
+        return "";
+    }
+
+    public login(token: string) {
+        this.setToken(token);
+        this.router.navigate(["/"]).then(() => {
+            window.location.reload();
+        });
+    }
+
+
+    getID() {
+        const token = this.getToken();
+        if (token) {
+            const values = this.decodePayload(token);
+            return values.id;
+        }
+        return "";
+    }
 }

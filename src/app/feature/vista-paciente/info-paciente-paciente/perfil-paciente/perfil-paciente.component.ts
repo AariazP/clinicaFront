@@ -8,8 +8,8 @@ import {UserService} from "../../../../core/services/UserService";
 })
 export class PerfilPacienteComponent {
 
-  userDTO = this.userService.pacienteDTO;
-  constructor(private  userService: UserService) {
+  userInfo = this.userService.userInfo();
+  constructor(private userService: UserService) {
   }
 
 

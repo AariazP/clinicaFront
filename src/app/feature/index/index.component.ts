@@ -45,8 +45,5 @@ export class IndexComponent implements OnInit{
     } else if (rol() === "admin") {
       this.router.navigate(["/admin"]);
     }
-
   }
-
-
 }

@@ -2,6 +2,7 @@ import {Injectable, OnInit} from '@angular/core';
 import {PacienteDTO} from "../dto/paciente/PacienteDTO";
 import {TokenService} from "./token.service";
 import {PacienteService} from "./paciente.service";
+import {PacienteDTOPaciente} from "../dto/paciente/PacienteDTOPaciente";
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,11 @@ export class UserService implements OnInit {
 
   isLogged: boolean = false;
   email: string = '';
-  pacienteDTO: PacienteDTO;
+  userInfo: PacienteDTOPaciente;
 
-  constructor(private tokenService: TokenService, private pacienteService: PacienteService) {
+
+  constructor(private tokenService: TokenService,
+              private pacienteService: PacienteService) {
   }
 
   ngOnInit(): void {
@@ -29,25 +32,14 @@ export class UserService implements OnInit {
     this.tokenService.logout();
   }
 
-
-  getPacienteDTO()
-    :
-    PacienteDTO {
-    return this.pacienteDTO;
-  }
-
-  setPacienteDTO(pacienteDTO
-                   :
-                   PacienteDTO
-  ) {
-    this.pacienteDTO = pacienteDTO;
-  }
-
   cargarDatosPaciente() {
-    this.pacienteDTO = this.pacienteService.obtenerPaciente(this.tokenService.getID()).subscribe(
+    this.pacienteService.obtenerPaciente(this.tokenService.getID()).subscribe(
       data => {
-        this.pacienteDTO = data
+        data.respuesta
+      }, error => {
+        console.log(error)
       }
     );
   }
+
 }

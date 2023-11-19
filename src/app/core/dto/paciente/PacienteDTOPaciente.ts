@@ -1,4 +1,4 @@
-export class PacienteDTO {
+export class PacienteDTOPaciente{
   nombre: string;
   cedula: string;
   email: string;
