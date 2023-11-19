@@ -83,6 +83,7 @@ export class TokenService {
 
     getID() {
         const token = this.getToken();
+        console.log("TOKEN ---->\n" +token)
         if (token) {
             const values = this.decodePayload(token);
             return values.id;

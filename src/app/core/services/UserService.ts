@@ -34,12 +34,14 @@ export class UserService implements OnInit {
 
   getUserInfo() {
 
-    if (this.userInfo == null) {
+    if (!this.userInfo) {
       this.pacienteService.obtenerPaciente(this.tokenService.getID()).subscribe(
         (response) => {
           this.userInfo = response.respuesta;
+          console.log("USER INFO SUCCESSULLY OBTAINED----------------->")
           console.log(this.userInfo)
         }, (error) => {
+          console.log("ERROR OBTAINING USER INFO----------------->")
           console.log(error)
         }
         )

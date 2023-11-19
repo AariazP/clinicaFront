@@ -14,7 +14,7 @@ import {TokenDTO} from "../dto/auxiliar/TokenDTO";
 })
 export class AuthService {
 
-    private apiUrl:string = environmentDevelopment.apiUrl;
+    private apiUrl:string = environmentDevelopment.apiUrl; //http://localhost:8080/api
     private authURL : string  = `${this.apiUrl}/auth`;
     private http:HttpClient;
 

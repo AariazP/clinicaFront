@@ -13,6 +13,7 @@ export class PerfilPacienteComponent implements OnInit {
     userInfo: PacienteDTOPaciente;
 
     constructor(private userService: UserService) {
+        this.userInfo = this.userService.getUserInfo();
     }
 
     ngOnInit(): void {

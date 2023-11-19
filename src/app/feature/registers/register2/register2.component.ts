@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {ClinicaService} from "../../../core/services/clinica.service";
 import {ImagenService} from "../../../core/services/imagen.service";
 import {AuthService} from 'src/app/core/services/auth.service';
+import {LoginGuard} from "../../../core/guards/permiso.service";
 
 @Component({
   selector: 'app-register2',
@@ -76,6 +77,7 @@ export class Register2Component implements OnInit {
       formData.append('file', this.imageFileList[0]);
       this.imagenService.subir(formData).subscribe({
         next: data => {
+          console.log("URL IMAGEN: " + data.respuesta.url) //TODO Console log
           this.pacienteDTO.urlFotoPersonal = data.respuesta.url;
         },
         error: error => {
@@ -91,6 +93,7 @@ export class Register2Component implements OnInit {
 
 
   enviarPeticionDeRegistro(): boolean {
+    console.log(this.pacienteDTO) //TODO console log
     this.authService.registrarPaciente(this.pacienteDTO).subscribe({
       error: error => {
         Utils.showAlertError(error)
