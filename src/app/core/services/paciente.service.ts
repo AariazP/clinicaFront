@@ -21,7 +21,7 @@ export class PacienteService {
    * @returns Observable<MensajeDTO<PacienteDTOPaciente>>
    */
   public obtenerPaciente(codigo: number): Observable<MensajeDTO> {
-    return this.http.get<MensajeDTO>(environmentDevelopment.pacienteUrl + "/" + codigo);
+    return this.http.get<MensajeDTO>(environmentDevelopment.pacienteUrl + "/verPerfil/" + codigo);
   }
 
   public eliminarCuenta(codigo: number): Observable<MensajeDTO> {

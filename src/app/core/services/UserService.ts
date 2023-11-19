@@ -23,7 +23,6 @@ export class UserService implements OnInit {
     this.isLogged = this.tokenService.isLogged();
     if (this.isLogged) {
       this.email = this.tokenService.getEmail();
-      this.cargarDatosPaciente();
     }
   }
 
@@ -32,14 +31,19 @@ export class UserService implements OnInit {
     this.tokenService.logout();
   }
 
-  cargarDatosPaciente() {
-    this.pacienteService.obtenerPaciente(this.tokenService.getID()).subscribe(
-      data => {
-        data.respuesta
-      }, error => {
-        console.log(error)
-      }
-    );
-  }
 
+  getUserInfo() {
+
+    if (this.userInfo == null) {
+      this.pacienteService.obtenerPaciente(this.tokenService.getID()).subscribe(
+        (response) => {
+          this.userInfo = response.respuesta;
+          console.log(this.userInfo)
+        }, (error) => {
+          console.log(error)
+        }
+        )
+    }
+    return this.userInfo;
+  }
 }
