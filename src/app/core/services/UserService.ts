@@ -61,4 +61,12 @@ export class UserService implements OnInit {
     this.auxGetUserInfo();
     return this.userInfo$;
   }
+
+  public getIdPaciente(): number {
+    if (!this.userInfo) {
+      throw new Error("User info not loaded yet");
+    }
+    return this.tokenService.getID();
+
+  }
 }

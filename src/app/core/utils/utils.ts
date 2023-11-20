@@ -22,7 +22,7 @@ export class Utils{
     });
   }
 
-  public static showAlerSuccess(message:string): void {
+  public static showAlertSuccess(message:string): void {
     Swal.fire({
       icon: 'success',
       title: 'OK',

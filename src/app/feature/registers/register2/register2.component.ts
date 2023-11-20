@@ -99,7 +99,7 @@ export class Register2Component implements OnInit {
         return false
       },
       next: data => {
-        Utils.showAlerSuccess(data.respuesta);
+        Utils.showAlertSuccess(data.respuesta);
       }
     });
     return true;

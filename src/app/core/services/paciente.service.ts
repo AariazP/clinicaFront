@@ -28,8 +28,8 @@ export class PacienteService {
     return this.http.delete<MensajeDTO>(`${this.userUrl}/eliminar/${codigo}`);
   }
 
-  public editarPerfil(pacienteDTO: PacienteDTO): Observable<MensajeDTO> {
-    return this.http.put<MensajeDTO>(`${this.userUrl}/editar-perfil`, pacienteDTO);
+  public editarPerfil(pacienteDTO: PacienteDTO, idPaciente : number): Observable<MensajeDTO> {
+    return this.http.put<MensajeDTO>(environmentDevelopment.pacienteUrl + "/editarPerfil/" + idPaciente, pacienteDTO);
   }
 
   public listarPQRSPaciente(codigoPaciente: number): Observable<MensajeDTO> {
