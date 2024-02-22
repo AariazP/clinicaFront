@@ -1,0 +1,33 @@
+#container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+form input, select, textarea{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f96800;
+}
+
+button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f96800;
+    background-color: #f96800;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover{
+    background-color: #ff802c;
+    border: 1px solid #ff802c;
+}

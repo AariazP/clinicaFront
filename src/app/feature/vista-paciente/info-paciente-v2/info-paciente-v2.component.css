@@ -42,10 +42,10 @@ form label{
     background-color: #8fff4e;
     color: black;
     border-color: transparent;
-    width: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
 
 }
 
@@ -53,8 +53,8 @@ form label{
     background-color: #ff4e4e;
     color: black;
     border-color: transparent;
-    width: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
 }
