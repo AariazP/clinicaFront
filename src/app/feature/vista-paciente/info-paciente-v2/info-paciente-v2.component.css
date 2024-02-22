@@ -45,7 +45,7 @@ form label{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
 
 }
 
@@ -56,5 +56,6 @@ form label{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
+
 }
