@@ -1,0 +1,44 @@
+<div id="container" *ngIf="(userInfo | async) as userInfo">
+
+    <h2 class="text-center"> Tu información</h2>
+    <div class="row">
+        <div class="col-lg-2 col-md-4">
+            <img class="img-fluid" loading="lazy" [src]="this.userInfo.urlFotoPersonal" alt="USER_IMG">
+            <h5 class="text-center">Tu perfil</h5>
+        </div>
+        <div class="col-lg-10 col-md-8">
+            <form>
+
+                <label for="nombre">Nombre</label>
+                <input disabled type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="this.userInfo.nombre" required>
+
+                <label for="apellido">Cédula</label>
+                <input disabled type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="this.userInfo.cedula" required>
+
+                <label for="email">Email</label>
+                <input disabled type="email" class="form-control" id="email" name="email" [(ngModel)]="this.userInfo.email" required>
+
+                <label for="telefono">Teléfono</label>
+                <input disabled type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="this.userInfo.telefono" required>
+
+                <label for="eps">EPS</label>
+                <input disabled type="text" class="form-control" id="eps" name="eps" [(ngModel)]="this.userInfo.eps" required>
+
+                <label for="direccion">Ciudad</label>
+                <input disabled type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="this.userInfo.ciudadResidencia" required>
+
+            </form>
+
+            <div class="row btns-actions">
+                <div class="col-lg-6 col-sm-12">
+                    <button id="edit" class="btn btn-primary" (click)="editInfo()">Editar</button>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <button id="delete" class="btn btn-danger" (click)="deleteUser()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>

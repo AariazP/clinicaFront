@@ -16,6 +16,7 @@ import {VerCitasPacienteComponent} from "./ver-citas-paciente/ver-citas-paciente
 import {EditarInfoComponent} from "./vista-paciente/editar-info/editar-info.component";
 import {LoginGuard} from "../core/guards/permiso.service";
 import {RolesGuard} from "../core/guards/roles.service";
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -80,7 +81,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),FormsModule],
   exports: [RouterModule]
 })
 export class FeatureRoutingModule {

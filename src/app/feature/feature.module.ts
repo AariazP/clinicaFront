@@ -49,9 +49,6 @@ import {LateralBarComponent} from './lateral-bar/lateral-bar.component';
 import {InfoPacientePacienteComponent} from './vista-paciente/info-paciente-paciente/info-paciente-paciente.component';
 import {PqrsPacienteComponent} from './vista-paciente/pqrs-paciente/pqrs-paciente.component';
 import {
-  PerfilPacienteComponent
-} from './vista-paciente/info-paciente-paciente/perfil-paciente/perfil-paciente.component';
-import {
   InformacionPacienteComponent
 } from './vista-paciente/info-paciente-paciente/informacion-paciente/informacion-paciente.component';
 import {
@@ -69,6 +66,7 @@ import {
 import {EditarInfoComponent} from './vista-paciente/editar-info/editar-info.component';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {UsuarioInterceptor} from "../core/services/interceptor.service";
+import { InfoPacienteV2Component } from './vista-paciente/info-paciente-v2/info-paciente-v2.component';
 
 @NgModule({
 
@@ -119,7 +117,6 @@ import {UsuarioInterceptor} from "../core/services/interceptor.service";
     LateralBarComponent,
     InfoPacientePacienteComponent,
     PqrsPacienteComponent,
-    PerfilPacienteComponent,
     InformacionPacienteComponent,
     CalendarioCitasComponent,
     PqrItemPacienteComponent,
@@ -130,6 +127,7 @@ import {UsuarioInterceptor} from "../core/services/interceptor.service";
     AlergiaComponent,
     CitaUnitComponent,
     EditarInfoComponent,
+    InfoPacienteV2Component
   ],
   imports: [
     CommonModule,
