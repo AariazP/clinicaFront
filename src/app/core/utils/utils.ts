@@ -17,10 +17,27 @@ export class Utils{
       hideClass: {
         popup: 'animate__animated animate__fadeOutUp'
       },
-      timer: 2000,
+      timer: 4000,
       timerProgressBar: true,
     });
   }
 
+  public static showAlertSuccess(message:string): void {
+    Swal.fire({
+      icon: 'success',
+      title: 'OK',
+      text: '¡' + message + '!',
+      background: '#252525',
+      color: '#fff',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      },
+      timer: 4000,
+      timerProgressBar: true,
+    });
+  }
 
 }

@@ -1,18 +1,42 @@
-<div id="div-background">
-
-  <h2 class="text-center">Tu informacion</h2>
+<div id="div-background" *ngIf="(userInfo$ | async) as userInfo">
+  <h2 class="text-center">Tu información</h2>
 
   <div class="row form">
 
-    <input placeholder="Nombre: Joaquin Sorolla">
-    <input placeholder="Edad: 22 años">
-    <input placeholder="Fecha de nacimiento: 30/06/2002">
-    <input placeholder="email: joaquinSorolla@gmail.com">
-    <input placeholder="constraseña: -----------">
-    <input placeholder="ciudad de residencia: Armenia Quindío">
-    <input placeholder="Telefono: 3152480873">
-    <input placeholder="EPS: Sanitas">
+    <input [(ngModel)]="nombre" type="text" placeholder="Nombre: {{ userInfo.nombre }}">
+    <input [(ngModel)]="email" type="email" placeholder="Email: {{ userInfo.email }}">
+    <input [(ngModel)]="telefono" type="text" placeholder="Teléfono: {{ userInfo.telefono }}">
+    <input [(ngModel)]="password" type="password" placeholder="Modifica tu contraseña">
 
+    <!-- EPS -->
+    <div class="choice-box">
+      <label>Tu EPS : {{userInfo.eps}}</label>
+      <br>
+      <select class="btn-secondary" [(ngModel)]="box_eps">
+        <option value="" selected>Seleccione una EPS</option>
+        <option [value]="element" *ngFor="let element of listaEPS; index as i">{{ element }}</option>
+      </select>
+    </div>
+
+    <!-- CIUDAD -->
+    <div class="choice-box">
+      <label>Tu ciudad : {{userInfo.ciudadResidencia}}</label>
+      <br>
+      <select class=" btn-secondary" [(ngModel)]="box_ciudad">
+        <option value="" selected>Seleccione una ciudad</option>
+        <option [value]="element" *ngFor="let element of listaCiudades; index as i">{{ element }}</option>
+      </select>
+    </div>
+    <!-- IMAGE -->
+    <div >
+      <br>
+      <label>Tu de foto perfil</label>
+      <input type="file" name="file" id="file" (change)="onFileChange($event)" class="inputfile" />
+    </div>
+
+    <div>
+      <button class="btn" id="button-edit" (click)="actualizarPaciente()">Editar datos</button>
+    </div>
 
   </div>
 </div>

@@ -1,0 +1,68 @@
+#div-background{
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 600px;
+  margin-right: 40px;
+}
+
+h2{
+  margin-left: 40px;
+  color: rgb(253, 119, 35);
+  padding-top: 20px;
+}
+
+.dropdown{
+  margin-left: 350px;
+  margin-top: 20px;
+}
+
+.dropdown button{
+  background-color: #b2b2b2;
+  border-color: transparent;
+  color:BLACK;
+}
+
+h3{
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+
+#detalle-cita{
+
+  height: 200px;
+  width: 500px;
+  margin-left: 200px;
+  margin-right: 0;
+  border:  rgb(253, 119, 35) 2px solid;
+  border-radius: 10px;
+  padding:30px 10px;
+}
+
+
+input{
+
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom: 1px solid rgb(253, 119, 35);
+}
+
+.buttons-section{
+  margin-left: 160px;
+  margin-top: 60px;
+}
+
+#btn-reagendar{
+  background-color: rgb(253, 119, 35);
+  border-color: transparent;
+}
+
+#btn-cancelar{
+  background-color: #f85959;
+  border-color: transparent;
+}
+
+button{
+  width: 220px;
+  height: 40px;
+}

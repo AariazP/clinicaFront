@@ -5,6 +5,9 @@ import {AuthLoginDTO} from "../../../../core/dto/authLoginDTO";
 import {AuthService} from "../../../../core/services/auth.service";
 import {Utils} from "../../../../core/utils/utils";
 import {AuthLoginResponseDto} from "../../../../core/dto/authLoginResponseDto";
+import {FormControl, ValidatorFn} from "@angular/forms";
+import {TokenService} from "../../../../core/services/token.service";
+import {UserService} from "../../../../core/services/UserService";
 
 @Component({
   selector: 'app-login',
@@ -12,15 +15,17 @@ import {AuthLoginResponseDto} from "../../../../core/dto/authLoginResponseDto";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
   private router: Router;
   public loginForm: FormGroup;
 
-  constructor(router: Router, private fb: FormBuilder, private authService: AuthService) {
+  constructor(router: Router,
+              private fb: FormBuilder,
+              private authService: AuthService,
+              private tokenService: TokenService,
+              private userService: UserService
+              ) {
     this.router = router;
-
     this.initializeForm();
-
   }
 
 
@@ -76,27 +81,25 @@ export class LoginComponent {
     Utils.showAlertError('Verifica los campos')
   }
 
-  private login(dtoLogin: AuthLoginDTO):void {
+  private login(dtoLogin: AuthLoginDTO): void {
 
     this.authService.login(dtoLogin).subscribe(
-
-      (response) => {
-        this.navigateToRole(response);
+      response => {
+        let token = response.respuesta.token
+        this.tokenService.setToken(token);
+        let userValues = this.tokenService.decodePayload(token);
+        this.userService.getUserInfo();
+        this.navigateToRole(userValues.rol)
       },
-      (error) => {
+      error => {
         Utils.showAlertError(error.error.Error);
       }
-
     );
-
   }
 
 
-  private navigateToRole(response: AuthLoginResponseDto): void {
-
-    if (response.rol === 'ADMIN') this.router.navigate([`/admin`]);
-
-
+  private navigateToRole(rol: String): void {
+    if (rol === 'paciente') this.router.navigate([`/paciente`]);
+    if (rol === 'medico') this.router.navigate([`/vista-medico`]);
   }
-
 }

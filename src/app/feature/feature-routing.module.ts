@@ -11,51 +11,77 @@ import {
 import {VistaMedicoComponent} from "./vista-medico/vista-medico.component";
 import {MedicoHacerconsultaComponent} from "./medico-hacerconsulta/medico-hacerconsulta.component";
 import {VistaPacienteComponent} from "./vista-paciente/vista-paciente.component";
+import {CrearCitaPacienteComponent} from "./crear-cita-paciente/crear-cita-paciente.component";
+import {VerCitasPacienteComponent} from "./ver-citas-paciente/ver-citas-paciente.component";
+import {EditarInfoComponent} from "./vista-paciente/editar-info/editar-info.component";
+import {LoginGuard} from "../core/guards/permiso.service";
+import {RolesGuard} from "../core/guards/roles.service";
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
   {
-  path: "auth",
-  loadChildren: () => import('./auth/auth-routing.module').then(m => m.AuthRoutingModule)
-  },{
+    path: "auth",
+    loadChildren: () => import('./auth/auth-routing.module').then(m => m.AuthRoutingModule)
+  }, {
     path: "",
     component: IndexComponent
-  },{
+  }, {
 
     path: "register1",
-    component: Register1Component
+    component: Register1Component,
+    canActivate: [LoginGuard]
   },
   {
     path: "admin",
     component: VistaAdminComponent
   },
   {
-    path:"register2",
-    component: Register2Component
+    path: "register2",
+    component: Register2Component,
+    canActivate: [LoginGuard]
   },
   {
     path: "pqrs",
-    component: VistaPqrsComponent
+    component: VistaPqrsComponent,
+    //canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
+
   }, {
     path: "admin-ver-consulta",
     component: VistaVerConsultasMedicoComponent
   },
   {
     path: "vista-medico",
-    component: VistaMedicoComponent
+    component: VistaMedicoComponent,
+    //canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
   },
   {
-    path:"medico-consulta",
-    component:MedicoHacerconsultaComponent
+    path: "medico-consulta",
+    component: MedicoHacerconsultaComponent,
+    //canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
   },
   {
     path: "paciente",
-    component: VistaPacienteComponent
+    component: VistaPacienteComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
+  }, {
+    path: "editar-info",
+    component: EditarInfoComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
+  }, {
+    path: "crear-cita-paciente",
+    component: CrearCitaPacienteComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
+  },
+  {
+    path: "ver-citas",
+    component: VerCitasPacienteComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),FormsModule],
   exports: [RouterModule]
 })
 export class FeatureRoutingModule {

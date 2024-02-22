@@ -1,24 +1,40 @@
-<div class="vh-100 div-pane" >
+<div class="vh-100 div-pane">
+
+  <!--  --------------NAVBAR  ------------>
+
   <nav class="nav navbar navbar-expand-lg ">
     <div class="container-fluid">
+
       <a class="navbar-brand d-flex align-items-center text-light">
         <img src="/assets/index/logoEvovital.svg" alt="Logo" width="30" height="24">
         Evovital
       </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="ul" class="navbar-nav ms-auto mb-2 mb-lg-0 ">
           <li class=" sobre-nosotros nav-item button-nav">
             <a class="nav-link active" aria-current="page" href="#">Sobre nosotros</a>
           </li>
-          <li class="item nav-item button-nav d-inline">
+
+          <li *ngIf="!isLogged()" class="button item nav-item button-nav d-inline">
             <a class="nav-link active" aria-current="page" (click)="singUp()">Ingresar</a>
           </li>
-          <li class="item nav-item button-nav d-inline">
+
+          <li *ngIf="!isLogged()" class="button item nav-item button-nav d-inline">
             <a class="nav-link" (click)="SignIn()">Registrarse</a>
+          </li>
+
+          <li *ngIf="isLogged()" class="button item nav-item button-nav d-inline">
+            <a class="nav-link" (click)="LogOut()">LogOut</a>
+          </li>
+
+          <li *ngIf="isLogged()" class="button item nav-item button-nav d-inline">
+            <a class="nav-link" (click)="IrACuenta()">Mi Perfil</a>
           </li>
 
         </ul>

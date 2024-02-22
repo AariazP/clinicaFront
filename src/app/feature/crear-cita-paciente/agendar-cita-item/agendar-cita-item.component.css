@@ -1,0 +1,47 @@
+#div-background{
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 600px;
+  margin-right: 40px;
+  margin-top: 150px;
+}
+
+h2{
+  color: rgb(253, 119, 35);
+  padding-top: 20px;
+}
+
+
+.form{
+  margin-top: 90px;
+  margin-left: 120px;
+  margin-bottom: 20px;
+}
+
+
+.dropdown button{
+  background-color: transparent;
+  border-color: RGB(253, 119, 35);
+  color:BLACK;
+}
+
+#medicos-drop button{
+  background-color: #b2b2b2;
+  border-color: #b2b2b2;
+  margin-left: 300px;
+  margin-top: 40px;
+
+}
+
+#btn-agendar{
+
+  background-color: RGB(253, 119, 35);
+  border-color: RGB(253, 119, 35);
+  height: 80px;
+  width: 150px;
+  border-radius: 40px;
+  box-shadow: #b2b2b2 10px 10px 15px;
+  margin-left: 340px;
+  margin-top: 70px;
+
+}

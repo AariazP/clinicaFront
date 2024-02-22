@@ -1,27 +1,49 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {TokenService} from "../../core/services/token.service";
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent {
+export class IndexComponent implements OnInit{
 
-  private route: Router;
+  private router: Router;
+  isLogged = () => {
+    return this.tokenService.isLogged();
+  };
 
-  constructor(route: Router) {
-    this.route = route;
+  constructor(router: Router, private tokenService: TokenService) {
+    this.router = router;
+  }
+
+  ngOnInit(): void {
+    console.log("Hay token :" + this.isLogged())
   }
 
 
-
   public singUp(): void {
-    this.route.navigate(["/auth/login"]);
+    this.router.navigate(["/auth/login"]);
   }
 
 
   SignIn() {
-    this.route.navigate(["/register1"]);
+    this.router.navigate(["/register1"]);
+  }
+
+  LogOut() {
+    this.tokenService.logout()
+  }
+
+  IrACuenta() {
+    const rol = () : any  => { this.tokenService.getRole();}
+    if (rol() === "paciente") {
+      this.router.navigate(["/paciente"]);
+    } else if (rol() === "medico") {
+      this.router.navigate(["/vista-medico"]);
+    } else if (rol() === "admin") {
+      this.router.navigate(["/admin"]);
+    }
   }
 }

@@ -67,3 +67,6 @@ form{
 }
 
 
+.nav-link{
+  cursor : pointer;
+}

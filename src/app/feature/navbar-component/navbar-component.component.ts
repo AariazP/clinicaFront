@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
+import {TokenService} from "../../core/services/token.service";
 
 @Component({
   selector: 'app-navbar-component',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponentComponent {
 
+  constructor(private tokenService: TokenService) {
+  }
+
+  cerrarSesion() {
+    this.tokenService.logout();
+  }
 }
