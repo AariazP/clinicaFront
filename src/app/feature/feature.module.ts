@@ -67,6 +67,8 @@ import {EditarInfoComponent} from './vista-paciente/editar-info/editar-info.comp
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {UsuarioInterceptor} from "../core/services/interceptor.service";
 import { InfoPacienteV2Component } from './vista-paciente/info-paciente-v2/info-paciente-v2.component';
+import { TusCitasComponent } from './vista-paciente/tus-citas/tus-citas.component';
+import { PedirCitaComponent } from './vista-paciente/pedir-cita/pedir-cita.component';
 
 @NgModule({
 
@@ -127,7 +129,9 @@ import { InfoPacienteV2Component } from './vista-paciente/info-paciente-v2/info-
     AlergiaComponent,
     CitaUnitComponent,
     EditarInfoComponent,
-    InfoPacienteV2Component
+    InfoPacienteV2Component,
+    TusCitasComponent,
+    PedirCitaComponent
   ],
   imports: [
     CommonModule,

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlergiaComponent } from './alergia.component';
+import { PedirCitaComponent } from './pedir-cita.component';
 
-describe('AlergiaComponent', () => {
-  let component: AlergiaComponent;
-  let fixture: ComponentFixture<AlergiaComponent>;
+describe('PedirCitaComponent', () => {
+  let component: PedirCitaComponent;
+  let fixture: ComponentFixture<PedirCitaComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AlergiaComponent]
+      declarations: [PedirCitaComponent]
     });
-    fixture = TestBed.createComponent(AlergiaComponent);
+    fixture = TestBed.createComponent(PedirCitaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -27,6 +27,14 @@
                 <label for="direccion">Ciudad</label>
                 <input disabled type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="this.userInfo.ciudadResidencia" required>
 
+                <label for="direccion">Tipo de sangre</label>
+                <input disabled type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="this.userInfo.tipoSangre" required>
+
+                <label for="direccion">Alergias</label>
+                <br>
+                <app-alergia *ngFor="let element of userInfo.alergias.split(' ')" [mensaje]=element></app-alergia>
+                
+                
             </form>
 
             <div class="row btns-actions">

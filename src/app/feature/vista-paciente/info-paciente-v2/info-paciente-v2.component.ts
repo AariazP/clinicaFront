@@ -23,7 +23,7 @@ export class InfoPacienteV2Component {
 
 
   deleteUser() {
-    
+    console.log(this.userInfo.subscribe(data => console.log(data.alergias)));
   }
     editInfo() {
   
