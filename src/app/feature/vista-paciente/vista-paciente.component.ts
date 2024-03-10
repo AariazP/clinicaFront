@@ -1,15 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ConsultaDTOPaciente } from 'src/app/core/dto/consulta/ConsultaDTOPaciente';
+import { UserService } from 'src/app/core/services/UserService';
+import { PacienteService } from 'src/app/core/services/paciente.service';
+import { UsuarioactivoService } from 'src/app/core/services/usuarioactivo.service';
 
 @Component({
   selector: 'app-vista-paciente',
   templateUrl: './vista-paciente.component.html',
   styleUrls: ['./vista-paciente.component.css']
 })
-export class VistaPacienteComponent {
+export class VistaPacienteComponent implements OnInit{
 
 
   active: string = 'info';
+  id: number = -1;
+  listaCitas: ConsultaDTOPaciente[] = [];
 
+  constructor(private usuarioActivo:UsuarioactivoService, 
+                private pacienteService:PacienteService) { }
+
+  ngOnInit(): void {
+    this.id = this.usuarioActivo.getId();
+    this.pacienteService.listarCitasPaciente(this.id).subscribe(
+      (response) => {
+        this.listaCitas = response.respuesta;
+      }
+    );
+  }
 
   changeView(view: string) {
     this.active = view;

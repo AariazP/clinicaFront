@@ -13,35 +13,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr >
-                    <td>11/12/24</td>
-                    <td>15:00</td>
-                    <td>Tarjeta</td>
-                    <td>Estoy enfermo</td>
-                </tr>
-                <tr >
-                    <td>11/12/24</td>
-                    <td>15:00</td>
-                    <td>Tarjeta</td>
-                    <td>Estoy enfermo</td>
-                </tr>
-                <tr >
-                    <td>11/12/24</td>
-                    <td>15:00</td>
-                    <td>Tarjeta</td>
-                    <td>Estoy enfermo</td>
-                </tr>
-                <tr >
-                    <td>11/12/24</td>
-                    <td>15:00</td>
-                    <td>Tarjeta</td>
-                    <td>Estoy enfermo</td>
-                </tr>
-                <tr >
-                    <td>11/12/24</td>
-                    <td>15:00</td>
-                    <td>Tarjeta</td>
-                    <td>Estoy enfermo</td>
+                
+                <tr *ngFor="let cita of citas">
+                    <td>{{cita.fechaYHoraAtencion }}</td>
+                    <td>{{cita.fechaYHoraAtencion}}</td>
+                    <td>{{cita.metodoDePago}}</td>
+                    <td>{{cita.estadoConsulta}}</td>
                 </tr>
                 
             </tbody>

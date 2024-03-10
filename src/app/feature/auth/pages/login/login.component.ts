@@ -8,6 +8,7 @@ import {AuthLoginResponseDto} from "../../../../core/dto/authLoginResponseDto";
 import {FormControl, ValidatorFn} from "@angular/forms";
 import {TokenService} from "../../../../core/services/token.service";
 import {UserService} from "../../../../core/services/UserService";
+import { UsuarioactivoService } from 'src/app/core/services/usuarioactivo.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent {
               private fb: FormBuilder,
               private authService: AuthService,
               private tokenService: TokenService,
-              private userService: UserService
+              private userService: UserService,
+              private usuarioActivo: UsuarioactivoService
               ) {
     this.router = router;
     this.initializeForm();
@@ -86,11 +88,11 @@ export class LoginComponent {
     this.authService.login(dtoLogin).subscribe(
       response => {
         let token = response.respuesta.token
-        console.log("El token es "+ token);
         this.tokenService.setToken(token);
         let userValues = this.tokenService.decodePayload(token);
-        this.userService.getUserInfo();
-        this.navigateToRole(userValues.rol)
+        //this.userService.getUserInfo();
+        this.usuarioActivo.setUsuario(userValues.rol, userValues.id, token);
+        this.navigateToRole(userValues.rol);
       },
       error => {
         Utils.showAlertError(error.error.Error);

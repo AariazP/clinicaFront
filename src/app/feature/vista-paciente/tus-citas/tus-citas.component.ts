@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ConsultaDTOPaciente } from 'src/app/core/dto/consulta/ConsultaDTOPaciente';
 
 @Component({
   selector: 'app-tus-citas',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tus-citas.component.css']
 })
 export class TusCitasComponent {
+
+  @Input() citas: ConsultaDTOPaciente[] = [];
 
 }

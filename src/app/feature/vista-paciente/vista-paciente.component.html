@@ -29,7 +29,7 @@
         <app-info-paciente-v2/>
       </div>
       <div *ngIf="active== 'historial-citas'" >
-        <app-tus-citas></app-tus-citas>
+        <app-tus-citas [citas]="listaCitas"></app-tus-citas>
       </div>
 
       <div *ngIf="active=='pedir-cita'" class="row">

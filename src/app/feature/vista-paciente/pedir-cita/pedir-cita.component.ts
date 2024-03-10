@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ConsultaDTOPaciente } from 'src/app/core/dto/consulta/ConsultaDTOPaciente';
 
 @Component({
@@ -12,6 +12,7 @@ export class PedirCitaComponent {
   consulta: ConsultaDTOPaciente;
 
   selectedPaymentMethod!: string;
+  
 
   constructor() { }
 

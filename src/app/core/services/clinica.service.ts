@@ -25,8 +25,4 @@ export class ClinicaService {
     return this.http.get<MensajeDTO>(environmentDevelopment.registroUrl + `/epss`);
   }
 
-  //TODO
-  /*  public listarEspecialidades(): Observable<MensajeDTO> {
-      return this.http.get<MensajeDTO>(`${this.backendUrl}/lista-especialidades`);
-    }*/
 }

@@ -43,13 +43,9 @@ export class UserService implements OnInit {
       this.pacienteService.obtenerPaciente(this.tokenService.getID()).subscribe(
         (response) => {
           this.userInfo = response.respuesta;
-          console.log("USER INFO SUCCESSFULLY OBTAINED----------------->");
-          console.log(this.userInfo);
           this.userInfoSubject.next(this.userInfo);
         },
         (error) => {
-          console.log("ERROR OBTAINING USER INFO----------------->");
-          console.log(error);
         }
       );
     } else {

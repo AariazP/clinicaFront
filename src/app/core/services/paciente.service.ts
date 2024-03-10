@@ -35,4 +35,8 @@ export class PacienteService {
   public listarPQRSPaciente(codigoPaciente: number): Observable<MensajeDTO> {
     return this.http.get<MensajeDTO>(`${this.userUrl}/listar-pqrs/${codigoPaciente}`);
   }
+
+  public listarCitasPaciente(codigoPaciente: number): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userUrl}/consulta/filtrar/medico/${codigoPaciente}/2`);
+  }
 }
