@@ -86,6 +86,7 @@ export class LoginComponent {
     this.authService.login(dtoLogin).subscribe(
       response => {
         let token = response.respuesta.token
+        console.log("El token es "+ token);
         this.tokenService.setToken(token);
         let userValues = this.tokenService.decodePayload(token);
         this.userService.getUserInfo();
@@ -93,13 +94,16 @@ export class LoginComponent {
       },
       error => {
         Utils.showAlertError(error.error.Error);
+        console.log("hay un error "+ error);
       }
     );
   }
 
 
   private navigateToRole(rol: String): void {
+    console.log(rol);
     if (rol === 'paciente') this.router.navigate([`/paciente`]);
     if (rol === 'medico') this.router.navigate([`/vista-medico`]);
+    if (rol === 'admin') this.router.navigate([`/admin`]);
   }
 }

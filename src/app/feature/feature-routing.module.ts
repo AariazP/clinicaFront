@@ -34,7 +34,8 @@ const routes: Routes = [
   },
   {
     path: "admin",
-    component: VistaAdminComponent
+    component: VistaAdminComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["admin"]}
   },
   {
     path: "register2",
