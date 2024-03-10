@@ -3,7 +3,7 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #eee;
+  background: #000000;
 }
 .h-custom {
   height: calc(100% - 73px);
@@ -15,30 +15,36 @@
 }
 
 .div-general{
-  background-color: #252525;
+  background-color: #69bed8;
 }
 
 form{
 
-  color: white;
+  color: rgb(0, 0, 0);
 
 }
 
 
 .bi-boostrap i{
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 13px;
 }
 
 #ul .item{
 
   border-radius: 10px ;
-  background-color: #505050;
+  background-color: white;
   cursor: Hand;
+  color: black;
 
 }
+
+#ul .item a{
+  color: black;
+}
+
 .nav{
-  background-color: #252525;
+  background-color: #69bed8;
   color: white;
 }
 
@@ -69,4 +75,12 @@ form{
 
 .nav-link{
   cursor : pointer;
+}
+#link-info{
+  color: rgb(72, 72, 72);
+  cursor: pointer;
+}
+#forgot-passwd{
+  color: rgb(72, 72, 72);
+  cursor: pointer;
 }

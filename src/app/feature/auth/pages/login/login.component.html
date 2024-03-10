@@ -1,6 +1,6 @@
 <nav class="nav navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center text-light">
+    <a class="navbar-brand d-flex align-items-center">
       <img src="/assets/index/logoEvovital.svg" alt="Logo" width="30" height="24">
       Evovital
     </a>
@@ -24,7 +24,7 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
 
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <h1 class="text-center mb-4 text-light">Inicia sesión</h1>
+          <h1 class="text-center mb-4">Inicia sesión</h1>
           <form role="form" [formGroup]="loginForm" (ngSubmit)="signIn()" >
             <!-- Email input -->
             <div class="form-outline mb-4">
@@ -52,7 +52,7 @@
                   Recuérdame
                 </label>
               </div>
-              <a href="#!" class="text-light">Forgot password?</a>
+              <a href="#!" id="forgot-passwd">Forgot password?</a>
             </div>
 
             <div class="text-center text-lg-start mt-4 pt-2">
@@ -62,7 +62,7 @@
               </div>
 
               <p class="small fw-bold mt-2 pt-1 mb-0"> ¿No tienes una cuenta?
-                <a href="#!" class="link-info">Registrate</a>
+                <a href="#!" id="link-info">Registrate</a>
               </p>
             </div>
           </form>

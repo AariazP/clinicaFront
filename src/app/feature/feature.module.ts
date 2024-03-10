@@ -8,7 +8,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {VistaAdminComponent} from './admin/vista-admin/vista-admin.component';
 import {Register2Component} from './registers/register2/register2.component';
 import {FormRegister1Component} from './registers/register1/form-register1/form-register1.component';
-import {NavbarComponent} from './general-components/navbar/navbar.component';
 import {CrearMedicoComponentComponent} from './admin/crear-medico-component/crear-medico-component.component';
 import {MedicoActivoComponentComponent} from './admin/medico-activo-component/medico-activo-component.component';
 import {
@@ -69,6 +68,7 @@ import {UsuarioInterceptor} from "../core/services/interceptor.service";
 import { InfoPacienteV2Component } from './vista-paciente/info-paciente-v2/info-paciente-v2.component';
 import { TusCitasComponent } from './vista-paciente/tus-citas/tus-citas.component';
 import { PedirCitaComponent } from './vista-paciente/pedir-cita/pedir-cita.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
 
