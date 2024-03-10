@@ -92,7 +92,6 @@ export class Register2Component implements OnInit {
   }
 
   enviarPeticionDeRegistro(): boolean {
-    console.log(this.pacienteDTO) //TODO console log
     this.authService.registrarPaciente(this.pacienteDTO).subscribe({
       error: error => {
         Utils.showAlertError(error)
@@ -109,10 +108,8 @@ export class Register2Component implements OnInit {
     this.clinicaService.listarCiudades().subscribe({
       next: data => {
         this.listaCiudades = data.respuesta;
-        console.log(data)
       },
       error: error => {
-        console.log(error);
         return false;
       }
     });
@@ -122,7 +119,6 @@ export class Register2Component implements OnInit {
     this.clinicaService.listarEPS().subscribe({
       next: data => {
         this.listaEPS = data.respuesta;
-        console.log(data)
       },
       error: error => {
         console.log(error);
@@ -134,7 +130,6 @@ export class Register2Component implements OnInit {
     this.clinicaService.listarTipoSangre().subscribe({
       next: data => {
         this.listaTipoSangre = data.respuesta;
-        console.log(data)
       },
       error: error => {
         console.log(error);

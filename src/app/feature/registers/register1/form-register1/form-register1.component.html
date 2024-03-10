@@ -1,50 +1,52 @@
 <div class="div-form">
 
-  <h1 class="text-center">Registrate</h1>
+  <h1 class="text-center text-dark">Registrate</h1>
 
   <form class="form" [formGroup]="registerForm">
 
     <div class="row">
-      <input class="input-item" required type="text" placeholder="Nombre" formControlName="nombre">
+      <label class="text-dark">Nombre</label>
+      <input class="input-item" required type="text" placeholder="Escribe aquí" formControlName="nombre">
       <small *ngIf="registerForm.get('nombre')?.invalid && registerForm.get('nombre').touched" class="text-danger">Este campo es obligatorio</small>
     </div>
 
     <div class="row">
-      <input class="input-item" type="text" placeholder="Cedula" formControlName="cedula">
+      <label class="text-dark">Cedula</label>
+      <input class="input-item" type="text" placeholder="Escribe aquí" formControlName="cedula">
       <small *ngIf="registerForm.get('cedula')?.value == '' && registerForm.get('cedula').touched" class="text-danger">Este campo es obligatorio</small>
     </div>
 
     <div class="row">
-      <input class="align-content-around input-item" type="date" placeholder="Fecha de nacimiento"
+      <label class="text-dark">Fecha de nacimiento</label>
+      <input class="align-content-around input-item" type="date" placeholder="Escribe aquí"
              formControlName="fechaNacimiento">
       <small *ngIf="registerForm.get('fechaNacimiento')?.value == '' && registerForm.get('fechaNacimiento').touched"
              class="text-danger">Este campo es obligatorio</small>
     </div>
 
     <div class="row">
-      <input class="input-item" type="text" placeholder="Email" formControlName="email">
+      <label class="text-dark">Email</label>
+      <input class="input-item" type="text" placeholder="Escribe aquí" formControlName="email">
       <small *ngIf="registerForm.get('email')?.value == ''&& registerForm.get('email').touched" class="text-danger">Este campo es obligatorio</small>
     </div>
 
     <div class="row">
-      <input class="input-item" type="password" placeholder="Contraseña" formControlName="password">
+      <label class="text-dark">Contraseña</label>
+      <input class="input-item" type="password" placeholder="Escribe aquí" formControlName="password">
       <small *ngIf="passwordsMatch()" class="text-danger">Las contraseñas no coinciden</small>
       <small *ngIf="registerForm.get('password')?.value == '' && registerForm.get('password').touched" class="text-danger">Este campo es obligatorio</small>
     </div>
 
     <div class="row">
-      <input class="input-item" type="password" placeholder="Repite tu constraseña" formControlName="confirmation">
+      <label class="text-dark">Repite la contraseña</label>
+      <input class="input-item" type="password" placeholder="Escribe aquí" formControlName="confirmation">
       <small *ngIf="passwordsMatch()" class="text-danger">Las contraseñas no coinciden</small>
       <small *ngIf="registerForm.get('confirmation')?.value == '' && registerForm.get('confirmation').touched" class="text-danger">Este campo es obligatorio</small>
     </div>
 
     <div class="row">
-      <input class="input-item" type="text" placeholder="Ciudad de residencia" formControlName="ciudadResidencia">
-      <small *ngIf="registerForm.get('ciudadResidencia')?.value == '' && registerForm.get('ciudadResidencia').touched" class="text-danger">Este campo es obligatorio</small>
-    </div>
-
-    <div class="row">
-      <input class="input-item" type="text" placeholder="Teléfono" formControlName="telefono">
+      <label class="text-dark">Telefono</label>
+      <input class="input-item" type="text" placeholder="Escribe aquí" formControlName="telefono">
       <small *ngIf="registerForm.get('telefono')?.invalid && registerForm.get('telefono').touched" class="text-danger">Este campo es obligatorio</small>
     </div>
 

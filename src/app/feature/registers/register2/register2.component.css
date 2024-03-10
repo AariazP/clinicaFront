@@ -1,5 +1,5 @@
 .background{
-  background-color: #252525;
+  background-color: #69bed8;
 }
 
 .form-div{
@@ -12,30 +12,23 @@
 h4{
   margin-top: 2rem;
   font-weight: bold;
+  color: #000000;
 }
 
 input{
-  background-color: #252525;
+  background-color: #ffffff;
   border-bottom-color: #ffffff;
   border-left-color: transparent;
   border-right-color: transparent;
   border-top-color: transparent;
   margin-top: 2rem;
-  color: white;
+  color: black;
 
 }
 
-input .placeholder{
-  color: #ffffff;
-}
 
 
-.badge-enfermedad{
 
-  background-color: #ff4300;
-  font-size: 20px;
-  border-radius: 80px;
-}
 
 .badges{
   margin-top: 1rem;
@@ -74,4 +67,17 @@ input[type=file]::file-selector-button {
 
 input[type=file]::file-selector-button:hover {
   background: #0d45a5;
+}
+
+.combo{
+ background-color: rgb(255, 255, 255);
+ color: black;
+}
+
+.combo option{
+  color: black;
+}
+
+#choice-photo input{
+  background-color: transparent;
 }

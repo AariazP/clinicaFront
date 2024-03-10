@@ -5,14 +5,15 @@
 
 #ul .item{
 
-  border-radius: 20px ;
-  background-color: #505050;
+  border-radius: 10px ;
+  background-color: #ffffff;
   cursor: Hand;
+  
 
 }
 
 #ul li a{
-  color: white;
+  color: black;
 }
 
 

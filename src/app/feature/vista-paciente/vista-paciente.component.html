@@ -1,22 +1,50 @@
-<div class="container-fluid " id="div-background">
+<div class="container-fluid vh-100 " id="div-background">
 
   <app-navbar-component></app-navbar-component>
   <h1 class="text-center text-light">Paciente</h1>
 
-    <div class="row">
-      <app-info-paciente-v2/>
+
+  <div class="row">
+
+    <div class="col-1">
+      
+      <div class="row"  (click)="changeView('info')">
+        <img class="img-fluid icons" src="../../../assets/icons/profile.png" alt="user">
+        <h4 class="text-center">Tú información</h4>
+      </div>
+      <div class="row" (click)="changeView('historial-citas')" >
+        <img class="img-fluid icons" src="../../../assets/icons/agendarCitaIcon.png" alt="user">
+        <h4 class="text-center"> tu historial de citas</h4>
+      </div>
+      <div class="row icons" (click)="changeView('pedir-cita')">
+        <img class="img-fluid icons" src="../../../assets/icons/citas.png" alt="user">
+        <h4 class="text-center">Pedir cita</h4>
+      </div>
+
+
     </div>
 
-    <div class="row">
-
-      <div class="col-lg-6 col-md-12">
+    <div class="col-11">
+      <div *ngIf="active=='info'" class="row">
+        <app-info-paciente-v2/>
+      </div>
+      <div *ngIf="active== 'historial-citas'" >
         <app-tus-citas></app-tus-citas>
       </div>
-      <div class="col-lg-6 col-md-12">
+
+      <div *ngIf="active=='pedir-cita'" class="row">
+        
         <app-pedir-cita></app-pedir-cita>
+        
       </div>
 
     </div>
+
+  </div>
+
+    
+
+    
 
 </div>
 

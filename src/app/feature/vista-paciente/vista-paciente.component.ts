@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class VistaPacienteComponent {
 
+
+  active: string = 'info';
+
+
+  changeView(view: string) {
+    this.active = view;
+  }
+    
+
 }

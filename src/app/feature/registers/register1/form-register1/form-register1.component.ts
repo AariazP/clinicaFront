@@ -43,7 +43,6 @@ export class FormRegister1Component implements OnInit {
             email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required],
             confirmation: ['', Validators.required],
-            ciudadResidencia: ['', Validators.required],
             telefono: ['', Validators.required]
         })
     }
@@ -64,13 +63,13 @@ export class FormRegister1Component implements OnInit {
 
 
     continuar() {
+        console.log(this.registerForm);
         if (this.registerForm.valid) {
             this.pacienteDTO.nombre = this.registerForm.get('nombre')?.value;
             this.pacienteDTO.cedula = this.registerForm.get('cedula')?.value;
             this.pacienteDTO.fechaNacimiento = this.registerForm.get('fechaNacimiento')?.value;
             this.pacienteDTO.email = this.registerForm.get('email')?.value;
             this.pacienteDTO.password = this.registerForm.get('password')?.value;
-            this.pacienteDTO.ciudadResidencia = this.registerForm.get('ciudadResidencia')?.value;
             this.pacienteDTO.telefono = this.registerForm.get('telefono')?.value;
             /*
             La siguiente linea es importante. Se llama al servicios que guarda estados
