@@ -6,20 +6,21 @@
 
 
 .nav{
-  background-color: #252525;
-  color: white;
+  background-color: #69bed8;
+  color: rgb(0, 0, 0);
 }
 
 #ul .item{
 
   border-radius: 20px ;
-  background-color: #505050;
+  background-color: white;
   cursor: Hand;
+  color:black;
 
 }
 
 #ul li a{
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 
@@ -31,7 +32,7 @@
 }
 
 .section{
-  background-color: #252525;
+  background-color: #69bed8;
   color: white;
 }
 
@@ -55,6 +56,7 @@
   min-height: 48vh;
   font-size: 5vh;
   text-align: center;
+  color:black;
 }
 
 #btnInscribete{
@@ -75,12 +77,12 @@
 }
 
 #footer{
-  background-color: #252525;
+  background-color: #69bed8;
   margin-bottom: -200px;
 }
 
 .div-pane{
-  background-color: #252525;
+  background-color: #69bed8;
 }
 
 Main{
