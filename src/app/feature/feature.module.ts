@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import {FeatureRoutingModule} from './feature-routing.module';
-import {FeatureComponent} from './feature.component';
 import {Register1Component} from './registers/register1/register1.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {VistaAdminComponent} from './admin/vista-admin/vista-admin.component';
@@ -69,6 +68,11 @@ import { InfoPacienteV2Component } from './vista-paciente/info-paciente-v2/info-
 import { TusCitasComponent } from './vista-paciente/tus-citas/tus-citas.component';
 import { PedirCitaComponent } from './vista-paciente/pedir-cita/pedir-cita.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid';
+
+
+
 
 @NgModule({
 
@@ -78,7 +82,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 
   declarations: [
-    FeatureComponent,
     Register1Component,
     VistaAdminComponent,
     Register2Component,
@@ -135,6 +138,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     CommonModule,
+    FullCalendarModule,
     FeatureRoutingModule,
     ReactiveFormsModule,
     NgOptimizedImage,

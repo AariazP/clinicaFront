@@ -8,12 +8,14 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {UsuarioInterceptor} from "./core/services/interceptor.service";
+import { FullCalendarModule } from '@fullcalendar/angular';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import {UsuarioInterceptor} from "./core/services/interceptor.service";
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    FullCalendarModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: UsuarioInterceptor, multi: true}
