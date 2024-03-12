@@ -7,11 +7,15 @@
             <form>
 
                 <label>Fecha de la cita</label>
-                <input value={{fecha}} type="date" class="form-control" id="fechaCita" name="fechaCita" required disabled>
+                <input value={{fecha}} type="date" class="form-control" id="fechaCita" name="fechaCita" required
+                    disabled>
 
                 <label>Hora de la cita</label>
-                <input type="time" class="form-control" id="horaCita" name="horaCita" required>
-                
+                <br>
+                <select (change)="onHoraChange($event.target)">
+                    <option *ngFor="let hora of horasCerradas" [value]="hora">{{ hora }}</option>
+                </select>
+                <br>
                 <label>Observaciones</label>
                 <textarea class="form-control" id="observaciones" name="observaciones" required></textarea>
                 <br>
