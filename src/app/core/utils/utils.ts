@@ -40,4 +40,19 @@ export class Utils{
     });
   }
 
+  public static showAlertTitleSuccess(title:string,message:string): Promise<boolean> {
+    return Swal.fire({
+      title: title,
+      text: message,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, estoy seguro",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      return result.isConfirmed;
+    });
+  }
+
 }

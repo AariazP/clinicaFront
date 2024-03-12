@@ -31,3 +31,17 @@ button:hover{
     background-color: #ff802c;
     border: 1px solid #ff802c;
 }
+
+
+#div-calendar{
+    max-width: 700px;
+    max-height: 700px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#div-calendar full-calendar {
+   
+    margin-left: 75rem;
+}

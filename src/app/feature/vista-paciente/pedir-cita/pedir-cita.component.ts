@@ -3,6 +3,8 @@ import { ConsultaDTOPaciente } from 'src/app/core/dto/consulta/ConsultaDTOPacien
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { Utils } from 'src/app/core/utils/utils';
+import { S, co } from '@fullcalendar/core/internal-common';
 
 @Component({
   selector: 'app-pedir-cita',
@@ -11,31 +13,43 @@ import interactionPlugin from '@fullcalendar/interaction';
 })
 export class PedirCitaComponent {
 
+  citas: any[] = [];
+
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
     plugins: [dayGridPlugin, interactionPlugin],
     dateClick: (arg) => this.handleDateClick(arg),
     weekends: false,
-    events: [
-      { title: 'Cita \n 10:00 ', 
-        hora: '10:00',
-      date: '2024-03-01' },
-      { title: 'event 2', date: '2019-04-02' }
-    ]
+    events: this.citas
   };
-
+  
+  
   consulta: ConsultaDTOPaciente;
-
-  selectedPaymentMethod!: string;
+  fecha:string;
   
 
-  constructor() { }
+  constructor() {
+      this.citas = [
+        { title: 'Cita \n 10:00 ', 
+          hora: '10:00',
+        date: '2024-03-01' },
+        { title: 'event 2', date: '2019-04-02' }
+      ];
+
+      this.fecha = "";
+   }
 
   ngOnInit(): void {
     this.consulta = new ConsultaDTOPaciente();
   }
 
   handleDateClick(arg:any) {
-    alert('date click! ' + arg.dateStr)
+    Utils.showAlertTitleSuccess("Cita seleccionada", "¿Desea pedir una cita para el día " + arg.dateStr + "?")
+    .then(response => {
+      if (response) {
+        //formateo la arg.dateStr a mm/dd/yyyy
+        this.fecha = ""+arg.dateStr.split("-").join("-");
+      }
+    });
   }
 }

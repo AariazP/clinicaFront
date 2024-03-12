@@ -7,26 +7,11 @@
             <form>
 
                 <label>Fecha de la cita</label>
-                <input type="date" class="form-control" id="fechaCita" name="fechaCita" required>
+                <input value={{fecha}} type="date" class="form-control" id="fechaCita" name="fechaCita" required disabled>
 
                 <label>Hora de la cita</label>
                 <input type="time" class="form-control" id="horaCita" name="horaCita" required>
-
-                <label>Metodo de pago</label>
-                <select class="form-control" id="metodoPago" name="metodoPago" [(ngModel)]="selectedPaymentMethod"
-                    required>
-                    <option value="efectivo">Efectivo</option>
-                    <option value="tarjeta">Tarjeta</option>
-                </select>
-                <!--Si seleccionó tarjeta quiero que ponga el numero y el ccv-->
-                <div *ngIf="selectedPaymentMethod === 'tarjeta'">
-                    <label>Numero de tarjeta</label>
-                    <input type="text" class="form-control" id="numeroTarjeta" name="numeroTarjeta" required>
-
-                    <label>CCV</label>
-                    <input type="text" class="form-control" id="ccv" name="ccv" required>
-                </div>
-
+                
                 <label>Observaciones</label>
                 <textarea class="form-control" id="observaciones" name="observaciones" required></textarea>
                 <br>
@@ -35,7 +20,7 @@
         </div>
 
 
-        <div class="row container-fluid">
+        <div class="row container-fluid" id="div-calendar">
             <full-calendar [options]="calendarOptions"></full-calendar>
         </div>
     </div>
