@@ -1,33 +1,42 @@
 <div id="container">
 
-    <h3 class="text-center">Pide tu cita</h3>
+    <div class="row">
+        <div class="row">
+            <h3 class="text-center">Pide tu cita</h3>
 
-    <form>
+            <form>
 
-        <label>Fecha de la cita</label>
-        <input type="date" class="form-control" id="fechaCita" name="fechaCita" required>
+                <label>Fecha de la cita</label>
+                <input type="date" class="form-control" id="fechaCita" name="fechaCita" required>
 
-        <label>Hora de la cita</label>
-        <input type="time" class="form-control" id="horaCita" name="horaCita" required>
+                <label>Hora de la cita</label>
+                <input type="time" class="form-control" id="horaCita" name="horaCita" required>
 
-        <label>Metodo de pago</label>
-        <select class="form-control" id="metodoPago" name="metodoPago" [(ngModel)]="selectedPaymentMethod" required>
-            <option value="efectivo">Efectivo</option>
-            <option value="tarjeta">Tarjeta</option>
-        </select>
-        <!--Si seleccionó tarjeta quiero que ponga el numero y el ccv-->
-        <div *ngIf="selectedPaymentMethod === 'tarjeta'">
-            <label>Numero de tarjeta</label>
-            <input type="text" class="form-control" id="numeroTarjeta" name="numeroTarjeta" required>
+                <label>Metodo de pago</label>
+                <select class="form-control" id="metodoPago" name="metodoPago" [(ngModel)]="selectedPaymentMethod"
+                    required>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta">Tarjeta</option>
+                </select>
+                <!--Si seleccionó tarjeta quiero que ponga el numero y el ccv-->
+                <div *ngIf="selectedPaymentMethod === 'tarjeta'">
+                    <label>Numero de tarjeta</label>
+                    <input type="text" class="form-control" id="numeroTarjeta" name="numeroTarjeta" required>
 
-            <label>CCV</label>
-            <input type="text" class="form-control" id="ccv" name="ccv" required>
+                    <label>CCV</label>
+                    <input type="text" class="form-control" id="ccv" name="ccv" required>
+                </div>
+
+                <label>Observaciones</label>
+                <textarea class="form-control" id="observaciones" name="observaciones" required></textarea>
+                <br>
+                <button type="submit" class="btn ">Pedir cita</button>
+            </form>
         </div>
 
-        <label>Observaciones</label>
-        <textarea class="form-control" id="observaciones" name="observaciones" required></textarea>
-        <br>
-        <button type="submit" class="btn ">Pedir cita</button>
-    </form>
 
+        <div class="row container-fluid">
+            <full-calendar [options]="calendarOptions"></full-calendar>
+        </div>
+    </div>
 </div>

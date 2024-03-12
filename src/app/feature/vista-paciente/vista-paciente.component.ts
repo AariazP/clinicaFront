@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core';
 import { ConsultaDTOPaciente } from 'src/app/core/dto/consulta/ConsultaDTOPaciente';
-import { UserService } from 'src/app/core/services/UserService';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { UsuarioactivoService } from 'src/app/core/services/usuarioactivo.service';
-import dayGridPlugin from '@fullcalendar/daygrid';
+
 
 @Component({
   selector: 'app-vista-paciente',
@@ -13,10 +12,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 })
 export class VistaPacienteComponent implements OnInit{
 
-  calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
-    plugins: [dayGridPlugin]
-  };
+  
 
   active: string = 'info';
   id: number = -1;
