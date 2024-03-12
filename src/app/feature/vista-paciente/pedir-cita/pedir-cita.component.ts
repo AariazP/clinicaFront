@@ -4,7 +4,7 @@ import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { Utils } from 'src/app/core/utils/utils';
-import { S, co } from '@fullcalendar/core/internal-common';
+
 
 @Component({
   selector: 'app-pedir-cita',
