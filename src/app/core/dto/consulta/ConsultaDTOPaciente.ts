@@ -6,5 +6,5 @@ export class ConsultaDTOPaciente {
     estadoConsulta : String;
     fechaYHoraAtencion : Date;
     metodoDePago : String;
-
+    motivo: String;
 }

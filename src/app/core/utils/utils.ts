@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 
 export class Utils{
+  
 
 
 
@@ -27,8 +28,8 @@ export class Utils{
       icon: 'success',
       title: 'OK',
       text: '¡' + message + '!',
-      background: '#252525',
-      color: '#fff',
+      background: '#FFFFFF',
+      color: 'BLACK',
       showClass: {
         popup: 'animate__animated animate__fadeInDown'
       },
@@ -52,6 +53,18 @@ export class Utils{
       cancelButtonText: "Cancelar",
     }).then((result) => {
       return result.isConfirmed;
+    });
+  }
+
+  static showAlertTitleError(title: string, body: string) {
+    
+    Swal.fire({
+      title: title,
+      text: body,
+      icon: "error",
+      showCancelButton: false,
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "Aceptar",
     });
   }
 

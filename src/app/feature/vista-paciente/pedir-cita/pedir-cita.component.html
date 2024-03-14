@@ -12,14 +12,15 @@
 
                 <label>Hora de la cita</label>
                 <br>
-                <select (change)="onHoraChange($event.target)">
+                <select (change)="onHoraChange($event)">
                     <option *ngFor="let hora of horasCerradas" [value]="hora">{{ hora }}</option>
                 </select>
                 <br>
                 <label>Observaciones</label>
-                <textarea class="form-control" id="observaciones" name="observaciones" required></textarea>
+                <textarea class="form-control" id="observaciones" [(ngModel)]="observaciones" name="observaciones" required></textarea>
+                
                 <br>
-                <button type="submit" class="btn ">Pedir cita</button>
+                <button type="submit" class="btn " (click)="pedirCita()">Pedir cita</button>
             </form>
         </div>
 

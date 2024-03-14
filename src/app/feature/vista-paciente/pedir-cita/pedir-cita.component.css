@@ -47,6 +47,10 @@ button:hover{
 
 }
 
+#hora-cita{
+    min-width: none;
+}
+
 @media screen and (max-width: 1024px){
 
     #div-calendar full-calendar {
