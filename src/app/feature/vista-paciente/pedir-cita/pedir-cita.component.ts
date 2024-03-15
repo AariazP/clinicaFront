@@ -87,7 +87,15 @@ export class PedirCitaComponent {
     .then(response => {
       if (response) {
         this.consulta.estadoConsulta = "Pendiente";
-        this.consulta.fechaYHoraAtencion = new Date(this.fecha+"T"+this.horaSeleccionada+":00");
+
+        let year = this.fecha.split("-")[0];
+        let month = this.fecha.split("-")[1];
+        let day = this.fecha.split("-")[2];
+
+        let hora = this.horaSeleccionada.split(":")[0];
+        let minutos = this.horaSeleccionada.split(":")[1];
+
+        this.consulta.fechaYHoraAtencion = new Date(Number(year), Number(month)-1, Number(day), Number(hora), Number(minutos));
         this.consulta.medico = this.medicoDTO;
         this.consulta.motivo = this.observaciones;
         console.log(this.consulta);
