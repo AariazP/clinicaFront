@@ -68,4 +68,37 @@ export class Utils{
     });
   }
 
+
+  public static async selectPaymentMethod(): Promise<any> {
+    let fruit =  await Swal.fire({
+      title: "Select field validation",
+      input: "select",
+      inputOptions: {
+        tarjeta: "Tarjeta de crédito",
+        efectivo: "Efectivo",
+      },
+      inputPlaceholder: "Selecciona un método de pago",
+      showCancelButton: true,
+
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value === "Tarjeta de crédito") {
+            resolve();
+          } else {
+            resolve("You need to select a payment method");
+          }
+        });
+      }
+
+    });
+
+    if (fruit) {
+      Swal.fire(`You selected: ${fruit}`);
+    }else{
+      Utils.showAlertError("Error al seleccionar el método de pago");
+    }
+
+    return fruit;
+  }
+
 }

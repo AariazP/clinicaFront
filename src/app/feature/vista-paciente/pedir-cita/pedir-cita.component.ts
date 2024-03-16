@@ -73,7 +73,6 @@ export class PedirCitaComponent {
 
   onHoraChange(event: any) {
     this.horaSeleccionada = event.target.value;
-    console.log(this.horaSeleccionada);
     this.cdr.detectChanges();
   }
   
@@ -98,9 +97,14 @@ export class PedirCitaComponent {
         this.consulta.fechaYHoraAtencion = new Date(Number(year), Number(month)-1, Number(day), Number(hora), Number(minutos));
         this.consulta.medico = this.medicoDTO;
         this.consulta.motivo = this.observaciones;
-        console.log(this.consulta);
         this.citaService.saveCita(this.consulta);
-        Utils.showAlertSuccess("Cita solicitada con éxito");
+        Utils.selectPaymentMethod().then(response => {
+          if (response) {
+            Utils.showAlertTitleSuccess("Cita solicitada", "Se ha solicitado la cita con éxito");
+          } else {
+            Utils.showAlertTitleError("Error", "No se ha seleccionado un método de pago");
+          }
+        });
       }
     });
 
