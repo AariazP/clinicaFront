@@ -13,7 +13,8 @@
                 <label>Hora de la cita</label>
                 <br>
                 <select (change)="onHoraChange($event)">
-                    <option *ngFor="let hora of horasCerradas" [value]="hora">{{ hora }}</option>
+                    <option [ngValue]="null" disabled selected>Selecciona una hora</option>
+                    <option *ngFor="let hora of horasCerradas" [value]="hora" >{{ hora }}</option>
                 </select>
                 <br>
                 <label>Observaciones</label>

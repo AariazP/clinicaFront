@@ -9,5 +9,6 @@ export const environmentDevelopment = {
     imagenesUrl: apiUrl + '/imagenes',
     medicoUrl: apiUrl + '/medico',
     pacienteUrl: apiUrl + '/paciente',
-    registroUrl: apiUrl + '/registro'
+    registroUrl: apiUrl + '/registro',
+    consultaUrl: apiUrl + '/paciente/consulta',
 }

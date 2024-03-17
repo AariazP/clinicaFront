@@ -8,6 +8,8 @@ import { co } from '@fullcalendar/core/internal-common';
 import { MedicoDTOPaciente } from 'src/app/core/dto/medico/MedicoDTOPaciente';
 import { CitaService } from 'src/app/core/services/cita.service';
 import { InfoConsultaDTO } from 'src/app/core/dto/consulta/InfoConsultaDTO';
+import { UsuarioactivoService } from 'src/app/core/services/usuarioactivo.service';
+import { medico } from 'src/environments/medico.development';
 
 
 @Component({
@@ -21,10 +23,10 @@ export class PedirCitaComponent {
   citas: any[] = [];
   horasCerradas: string[] = ['8:00', '9:00','10:00','11:00', '14:00', '15:00', '16:00', '17:00'];
   consulta: InfoConsultaDTO;
+  private medicoDTO = medico.medicoDTO;
   fecha:string;
   observaciones: string;
   horaSeleccionada: string;
-  medicoDTO: MedicoDTOPaciente;
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -38,13 +40,16 @@ export class PedirCitaComponent {
   
   
 
-  constructor(private cdr: ChangeDetectorRef, private citaService: CitaService) {
+  constructor(private cdr: ChangeDetectorRef, 
+                private citaService: CitaService, 
+                private usuarioActivo: UsuarioactivoService) {
       this.citas = [
         { title: 'Cita \n 10:00 ', 
           hora: '10:00',
         date: '2024-03-01' },
         { title: 'event 2', date: '2019-04-02' }
       ];
+      this.horaSeleccionada = "";
 
       this.fecha = "";
    }
@@ -53,16 +58,22 @@ export class PedirCitaComponent {
 
     this.observaciones = "";
     this.consulta = new InfoConsultaDTO();
-    this.medicoDTO = new MedicoDTOPaciente();
-    this.medicoDTO.idMedico = 1;
-    this.medicoDTO.nombre = "DoctorArias";
-    this.medicoDTO.especialidad = "Medicina General";
-    this.horaSeleccionada = "8:00";
+   
 
     
   }
 
   handleDateClick(arg:any) {
+
+    //comparo la fecha seleccionada con la fecha actual
+    let fechaActual = new Date();
+    let fechaSeleccionada = new Date(arg.dateStr.split("-").join("-"));
+
+    if(fechaSeleccionada < fechaActual) {
+      Utils.showAlertTitleError("Error", "No se puede seleccionar una fecha anterior a la actual");
+      return;
+    }
+
     Utils.showAlertTitleSuccess("Cita seleccionada", "¿Desea pedir una cita para el día " + arg.dateStr + "?")
     .then(response => {
       if (response) {
@@ -96,12 +107,13 @@ export class PedirCitaComponent {
 
         this.consulta.fechaYHoraDeAtencion = new Date(Number(year), Number(month)-1, Number(day), Number(hora), Number(minutos));
         this.consulta.idMedico = this.medicoDTO.idMedico;
+        this.consulta.idPaciente = this.usuarioActivo.getId();
+        console.log(this.usuarioActivo.getId());
         this.consulta.motivo = this.observaciones;
         Utils.selectPaymentMethod().then(response => {
           if (response) {
-            this.consulta.metodoDePago = response;
-            this.citaService.saveCita(this.consulta);
-            Utils.showAlertSuccess( "Se ha solicitado la cita con éxito");
+            this.consulta.metodoPago = response;
+            Utils.showAlertSuccess("La consulta ha sido creada");
           } else {
             Utils.showAlertTitleError("Error", "No se ha seleccionado un método de pago");
           }

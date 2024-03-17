@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
 import { InfoConsultaDTO } from '../dto/consulta/InfoConsultaDTO';
+import { HttpClient } from '@angular/common/http';
+import { MensajeDTO } from '../dto/auxiliar/MensajeDTO';
+import { environmentDevelopment } from 'src/environments/environment.development';
+import { Observable } from 'rxjs';
+import { J } from '@fullcalendar/core/internal-common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CitaService {
  
-  private consulta: InfoConsultaDTO;
+  private userUrl = environmentDevelopment.consultaUrl;
+  
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  saveCita(consulta: InfoConsultaDTO) {
-    this.consulta = consulta;
-    console.log("Cita guardada: ", JSON.stringify(this.consulta));
+  saveCita(consulta: InfoConsultaDTO):  Observable<MensajeDTO> {
+    return this.http.post<MensajeDTO>(`${this.userUrl}/agendar`, consulta);
   }
 }
