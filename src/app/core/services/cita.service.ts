@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { MensajeDTO } from '../dto/auxiliar/MensajeDTO';
 import { environmentDevelopment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
-import { J } from '@fullcalendar/core/internal-common';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,7 @@ export class CitaService {
   constructor(private http:HttpClient) { }
 
   saveCita(consulta: InfoConsultaDTO):  Observable<MensajeDTO> {
+    console.log(JSON.stringify(consulta));
     return this.http.post<MensajeDTO>(`${this.userUrl}/agendar`, consulta);
   }
 }

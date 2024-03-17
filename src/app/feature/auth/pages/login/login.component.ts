@@ -96,14 +96,12 @@ export class LoginComponent {
       },
       error => {
         Utils.showAlertError(error.error.Error);
-        console.log("hay un error "+ error);
       }
     );
   }
 
 
   private navigateToRole(rol: String): void {
-    console.log(rol);
     if (rol === 'paciente') this.router.navigate([`/paciente`]);
     if (rol === 'medico') this.router.navigate([`/vista-medico`]);
     if (rol === 'admin') this.router.navigate([`/admin`]);

@@ -19,7 +19,7 @@ export class IndexComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log("Hay token :" + this.isLogged())
+    
   }
 
 

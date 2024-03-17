@@ -102,17 +102,17 @@ export class PedirCitaComponent {
         let month = this.fecha.split("-")[1];
         let day = this.fecha.split("-")[2];
 
-        let hora = this.horaSeleccionada.split(":")[0];
+        let hora = Number(this.horaSeleccionada.split(":")[0]) -5 ;
         let minutos = this.horaSeleccionada.split(":")[1];
 
         this.consulta.fechaYHoraDeAtencion = new Date(Number(year), Number(month)-1, Number(day), Number(hora), Number(minutos));
         this.consulta.idMedico = this.medicoDTO.idMedico;
         this.consulta.idPaciente = this.usuarioActivo.getId();
-        console.log(this.usuarioActivo.getId());
         this.consulta.motivo = this.observaciones;
         Utils.selectPaymentMethod().then(response => {
           if (response) {
             this.consulta.metodoPago = response;
+            console.log( JSON.stringify(this.citaService.saveCita(this.consulta) ));
             Utils.showAlertSuccess("La consulta ha sido creada");
           } else {
             Utils.showAlertTitleError("Error", "No se ha seleccionado un método de pago");
