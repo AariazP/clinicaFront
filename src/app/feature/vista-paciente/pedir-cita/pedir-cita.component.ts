@@ -74,6 +74,16 @@ export class PedirCitaComponent {
       return;
     }
 
+    //verifico que la fecha seleccionada sea al menos 5 días después de la fecha actual
+
+    let fechaMaxima = new Date();
+    fechaMaxima.setDate(fechaMaxima.getDate() + 5);
+
+    if(fechaSeleccionada > fechaMaxima) {
+      Utils.showAlertTitleError("Error", "La fecha seleccionada debe ser al menos 5 días después de la fecha actual");
+      return;
+    }
+
     Utils.showAlertTitleSuccess("Cita seleccionada", "¿Desea pedir una cita para el día " + arg.dateStr + "?")
     .then(response => {
       if (response) {
@@ -112,7 +122,8 @@ export class PedirCitaComponent {
         Utils.selectPaymentMethod().then(response => {
           if (response) {
             this.consulta.metodoPago = response;
-            console.log( JSON.stringify(this.citaService.saveCita(this.consulta) ));
+            this.citaService.saveCita(this.consulta).forEach(response => {
+              console.log(response)});
             Utils.showAlertSuccess("La consulta ha sido creada");
           } else {
             Utils.showAlertTitleError("Error", "No se ha seleccionado un método de pago");

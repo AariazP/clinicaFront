@@ -4,30 +4,35 @@
         <div class="row">
             <h3 class="text-center">Pide tu cita</h3>
 
-            <form>
+            <div class="col-lg-6 col-sm-10 ">
 
-                <label>Fecha de la cita</label>
-                <input value={{fecha}} type="date" class="form-control" id="fechaCita" name="fechaCita" required
-                    disabled>
+            
+                <form>
 
-                <label>Hora de la cita</label>
-                <br>
-                <select (change)="onHoraChange($event)">
-                    <option [ngValue]="null" disabled selected>Selecciona una hora</option>
-                    <option *ngFor="let hora of horasCerradas" [value]="hora" >{{ hora }}</option>
-                </select>
-                <br>
-                <label>Observaciones</label>
-                <textarea class="form-control" id="observaciones" [(ngModel)]="observaciones" name="observaciones" required></textarea>
-                
-                <br>
-                <button type="submit" class="btn " (click)="pedirCita()">Pedir cita</button>
-            </form>
+                    <label>Fecha de la cita</label>
+                    <input value={{fecha}} type="date" class="form-control" id="fechaCita" name="fechaCita" required
+                        disabled>
+
+                    <label>Hora de la cita</label>
+                    <br>
+                    <select (change)="onHoraChange($event)">
+                        <option [ngValue]="null" disabled selected>Selecciona una hora</option>
+                        <option *ngFor="let hora of horasCerradas" [value]="hora" >{{ hora }}</option>
+                    </select>
+                    <br>
+                    <label>Observaciones</label>
+                    <textarea class="form-control" id="observaciones" [(ngModel)]="observaciones" name="observaciones" required></textarea>
+                    
+                    <br>
+                    <button type="submit" class="btn " (click)="pedirCita()">Pedir cita</button>
+                </form>
+            </div>
+            <div class="col-lg-6 mx-auto">
+                <full-calendar [options]="calendarOptions"></full-calendar>
+            </div>
         </div>
 
 
-        <div class="col-lg-4 mx-auto">
-            <full-calendar [options]="calendarOptions"></full-calendar>
-        </div>
+        
     </div>
 </div>
