@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { ConsultaDTOPaciente } from '../dto/consulta/ConsultaDTOPaciente';
+import { InfoConsultaDTO } from '../dto/consulta/InfoConsultaDTO';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CitaService {
  
-  private consulta: ConsultaDTOPaciente;
+  private consulta: InfoConsultaDTO;
 
   constructor() { }
 
-  saveCita(consulta: ConsultaDTOPaciente) {
+  saveCita(consulta: InfoConsultaDTO) {
     this.consulta = consulta;
+    console.log("Cita guardada: ", JSON.stringify(this.consulta));
   }
 }

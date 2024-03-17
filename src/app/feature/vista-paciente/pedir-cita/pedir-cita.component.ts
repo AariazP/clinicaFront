@@ -7,6 +7,7 @@ import { Utils } from 'src/app/core/utils/utils';
 import { co } from '@fullcalendar/core/internal-common';
 import { MedicoDTOPaciente } from 'src/app/core/dto/medico/MedicoDTOPaciente';
 import { CitaService } from 'src/app/core/services/cita.service';
+import { InfoConsultaDTO } from 'src/app/core/dto/consulta/InfoConsultaDTO';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class PedirCitaComponent {
 
   citas: any[] = [];
   horasCerradas: string[] = ['8:00', '9:00','10:00','11:00', '14:00', '15:00', '16:00', '17:00'];
-  consulta: ConsultaDTOPaciente;
+  consulta: InfoConsultaDTO;
   fecha:string;
   observaciones: string;
   horaSeleccionada: string;
@@ -51,7 +52,7 @@ export class PedirCitaComponent {
   ngOnInit(): void {
 
     this.observaciones = "";
-    this.consulta = new ConsultaDTOPaciente();
+    this.consulta = new InfoConsultaDTO();
     this.medicoDTO = new MedicoDTOPaciente();
     this.medicoDTO.idMedico = 1;
     this.medicoDTO.nombre = "DoctorArias";
@@ -85,7 +86,6 @@ export class PedirCitaComponent {
     Utils.showAlertTitleSuccess("Cita solicitada", "¿Desea pedir una cita para el día " + this.fecha + " a las " + this.horaSeleccionada + "?")
     .then(response => {
       if (response) {
-        this.consulta.estadoConsulta = "Pendiente";
 
         let year = this.fecha.split("-")[0];
         let month = this.fecha.split("-")[1];
@@ -94,13 +94,14 @@ export class PedirCitaComponent {
         let hora = this.horaSeleccionada.split(":")[0];
         let minutos = this.horaSeleccionada.split(":")[1];
 
-        this.consulta.fechaYHoraAtencion = new Date(Number(year), Number(month)-1, Number(day), Number(hora), Number(minutos));
-        this.consulta.medico = this.medicoDTO;
+        this.consulta.fechaYHoraDeAtencion = new Date(Number(year), Number(month)-1, Number(day), Number(hora), Number(minutos));
+        this.consulta.idMedico = this.medicoDTO.idMedico;
         this.consulta.motivo = this.observaciones;
-        this.citaService.saveCita(this.consulta);
         Utils.selectPaymentMethod().then(response => {
           if (response) {
-            Utils.showAlertTitleSuccess("Cita solicitada", "Se ha solicitado la cita con éxito");
+            this.consulta.metodoDePago = response;
+            this.citaService.saveCita(this.consulta);
+            Utils.showAlertSuccess( "Se ha solicitado la cita con éxito");
           } else {
             Utils.showAlertTitleError("Error", "No se ha seleccionado un método de pago");
           }

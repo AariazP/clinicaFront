@@ -70,8 +70,8 @@ export class Utils{
 
 
   public static async selectPaymentMethod(): Promise<any> {
-    let fruit =  await Swal.fire({
-      title: "Select field validation",
+    let opcion =  await Swal.fire({
+      title: "Selecciona un método de pago",
       input: "select",
       inputOptions: {
         tarjeta: "Tarjeta de crédito",
@@ -82,23 +82,20 @@ export class Utils{
 
       inputValidator: (value) => {
         return new Promise((resolve) => {
-          if (value === "Tarjeta de crédito") {
-            resolve();
+          if (value === "tarjeta" || value === "efectivo") {
+            resolve(); // Resuelve la promesa con el valor seleccionado
           } else {
-            resolve("You need to select a payment method");
+            resolve(null); // Resuelve la promesa con null si el valor no es válido
           }
         });
       }
 
     });
 
-    if (fruit) {
-      Swal.fire(`You selected: ${fruit}`);
-    }else{
-      Utils.showAlertError("Error al seleccionar el método de pago");
+    if (opcion.dismiss) {
+      return null;
     }
-
-    return fruit;
+    return opcion.value;
   }
 
 }
