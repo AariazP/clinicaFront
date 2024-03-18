@@ -17,7 +17,12 @@ export class CitaService {
   constructor(private http:HttpClient) { }
 
   saveCita(consulta: InfoConsultaDTO):  Observable<MensajeDTO> {
-    console.log(JSON.stringify(consulta));
     return this.http.post<MensajeDTO>(`${this.userUrl}/agendar`, consulta);
   }
+
+  listarCitasPaciente(id: number): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userUrl}/listar/${id}`);
+  }
+
+
 }

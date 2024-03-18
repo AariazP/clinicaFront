@@ -5,4 +5,6 @@ export class ConsultaDTOPaciente {
     medico : MedicoDTOPaciente;
     estadoConsulta : String;
     fechaYHoraAtencion : Date;
+    motivo: String;
+
 }

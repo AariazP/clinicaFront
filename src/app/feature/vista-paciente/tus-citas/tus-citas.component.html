@@ -8,15 +8,17 @@
                 <tr>
                     <th>Fecha</th>
                     <th>Hora</th>
-                    <th>Metodo de pago</th>
-                    <th>Observaciones</th>
+                    <th>Estado consulta</th>
+                    <th>Motivo</th>
                 </tr>
             </thead>
             <tbody>
                 
                 <tr *ngFor="let cita of citas">
-                    <td>{{cita.fechaYHoraDeAtencion }}</td>
-                    <td>{{cita.metodoPago}}</td>
+                    <td>{{ cita.fechaYHoraAtencion.toString().split("T")[0] }}</td>
+                    <td>{{ cita.fechaYHoraAtencion.toString().split("T")[1].split(":")[0] 
+                                +":"+ cita.fechaYHoraAtencion.toString().split("T")[1].split(":")[1]}}</td>
+                    <td>{{cita.estadoConsulta}}</td> 
                     <td>{{cita.motivo}}</td>
                 </tr>
                 

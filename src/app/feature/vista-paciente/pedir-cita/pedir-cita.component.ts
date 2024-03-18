@@ -122,8 +122,9 @@ export class PedirCitaComponent {
         Utils.selectPaymentMethod().then(response => {
           if (response) {
             this.consulta.metodoPago = response;
-            this.citaService.saveCita(this.consulta).forEach(response => {
-              console.log(response)});
+            this.citaService.saveCita(this.consulta).forEach(data => {
+              
+            });
             Utils.showAlertSuccess("La consulta ha sido creada");
           } else {
             Utils.showAlertTitleError("Error", "No se ha seleccionado un método de pago");
