@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { MedicoDTO } from '../dto/medico/MedicoDTO';
 import { HttpClient } from '@angular/common/http';
+import { environmentDevelopment } from 'src/environments/environment.development';
+import { Observable } from 'rxjs';
+import { MensajeDTO } from '../dto/auxiliar/MensajeDTO';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MedicoService {
   
+  private userUrl = environmentDevelopment.medicoUrl;
+
+
   medico: MedicoDTO;
   constructor(private http: HttpClient) { }
 
@@ -34,4 +40,12 @@ export class MedicoService {
     });
     
   }
+
+  getListaConsultas(): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userUrl}/consulta/filtrar/pendiente/2`);
+  }
+
+
+
+
 }

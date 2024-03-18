@@ -25,14 +25,10 @@
 
   <div class="overflow-x-scroll row flex-nowrap" id="carrousel">
 
-    <app-cita-item class="col-auto"></app-cita-item>
-    <app-cita-item class="col-auto"></app-cita-item>
-    <app-cita-item class="col-auto"></app-cita-item>
-    <app-cita-item class="col-auto"></app-cita-item>
-    <app-cita-item class="col-auto"></app-cita-item>
-    <app-cita-item class="col-auto"></app-cita-item>
-    <app-cita-item class="col-auto"></app-cita-item>
-    <app-cita-item class="col-auto"></app-cita-item>
+    
+    <app-cita-item *ngFor="let cita of citas" [cita]="cita" class="col-auto"></app-cita-item>
+    
+    
 
   </div>
 
