@@ -1,54 +1,14 @@
-#div-background{
-
-  border-radius: 10px;
-
+#cita{
+  background-color: aliceblue;
 }
 
-.bg{
-  background-color: #e1e1e1;
-  border-radius: 10px;
-}
-
-i{
-  margin-left: 230px;
-  margin-top: 10px;
-  font-size: 40px;
-}
-
-.form{
-
-  margin: 50px 30px 0;
-
+textarea{
+  background-color: aliceblue;
+  display:flex;
+  margin: 10%;
 }
 
 #item{
 
-  width: 500px;
-  height: 550px;
-  margin-top: 50px;
-}
-
-h3{
-
-    font-size: 15px;
-}
-
-#motivo{
-  width: 300px;
-  height: 100px;
-  margin-left: 110px;
-  margin-top: 50px;
-}
-
-
-textarea{
-  resize: none;
-  border-color: transparent;
-  border-radius: 5px;
-}
-
-.buttons-section{
-  margin-left: 60px;
-  margin-top: 60px;
-  margin-bottom: 50px;
+  margin : 10px
 }

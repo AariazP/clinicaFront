@@ -1,93 +1,19 @@
-<div class="bg">
+<div class="row" id="item">
 
-  <div id="item">
-    <div class="bg">
-      <i class="bi bi-calendar-check text-center"></i>
-
-      <div class="form">
-
-        <div class="row">
-
-          <div class="col-6">
-            <h3 class="fw-bold">Fecha de creacion</h3>
-          </div>
-          <div class="col-6">
-            <h3 class="fw-light">{{cita.fechaYHoraAtencion}}</h3>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-          <div class="col-6">
-            <h3 class="fw-bold">Fecha de asignación</h3>
-          </div>
-          <div class="col-6">
-            <h3 class="fw-light">{{cita.fechaYHoraAtencion}}</h3>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-          <div class="col-6">
-            <h3 class="fw-bold">Hora de asignación</h3>
-          </div>
-          <div class="col-6">
-            <h3 class="fw-light">{{cita.fechaYHoraAtencion}}</h3>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-          <div class="col-6">
-            <h3 class="fw-bold">Médico</h3>
-          </div>
-          <div class="col-6">
-            <h3 class="fw-light">Doctor Arias</h3>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-          <div class="col-6">
-            <h3 class="fw-bold">Paciente</h3>
-          </div>
-          <div class="col-6">
-            <h3 class="fw-light">{{cita.paciente.nombre}}</h3>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div id="motivo">
-      <div class="row">
-        <h3 class="fw-bold text-center">Motivo</h3>
-      </div>
-      <div class="row">
-    <textarea class="text-wrap"> {{cita.motivo}}</textarea>
-      </div>
-    </div>
-
-
-    <div class="row buttons">
-
-      <div class="col-6">
-        <button class="btn btn-danger">Cancelar cita</button>
-      </div>
-
-      <div class="col-6">
-        <button class="btn btn-success"> Hacer consulta </button>
-      </div>
-
+  <div class="col-lg-3 col-md-3">
+    {{index}}
+  </div>
+  <div class="col-lg-3 col-md-3">
+    {{cita.fechaYHoraAtencion | date: 'dd/MM/yyyy HH:mm'}}
+  </div>
+  <div class="col-lg-3 col-md-3">
+    {{cita.paciente.nombre}}
+  </div>
+  <div class="col-lg-3 col-md-3">
+    <div class="row position-relative">
+      <button class="col-lg-6 col-md-6 col-sm-6 btn btn-success">Atender</button>
+      <button class="col-lg-6 col-md-6 col-sm-6 btn btn-danger">Cancelar</button>
     </div>
   </div>
-
-
-
 
 </div>

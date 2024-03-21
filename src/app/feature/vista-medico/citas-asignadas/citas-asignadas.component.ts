@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultaDTOMedico } from 'src/app/core/dto/consulta/ConsultaDTOMedico';
+import { DetalleCitaService } from 'src/app/core/services/detalle-cita.service';
 import { MedicoService } from 'src/app/core/services/medicoService.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { MedicoService } from 'src/app/core/services/medicoService.service';
 })
 export class CitasAsignadasComponent implements OnInit {
 
+
   citas: ConsultaDTOMedico[];
 
-  constructor(private medicoService: MedicoService) {
+  constructor(private medicoService: MedicoService,
+                private detalleCitaService: DetalleCitaService) {
     this.citas = [];
   }
 
@@ -28,4 +31,7 @@ export class CitasAsignadasComponent implements OnInit {
 
   }
 
+  mostrarDetalle() {
+    console.log("mostrar detalle");
+  }
 }

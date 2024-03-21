@@ -1,35 +1,22 @@
 <div class="row" id="div-background">
 
   <h2 class="text-center">Citas asignadas</h2>
-    <div class="citas-desde">
 
-      <div class="row">
-        <div class="col-6">
-          <h3 class="text-dark">Citas desde</h3>
-        </div>
-        <div class="col-6">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </button>
-            <ul class="dropdown-menu">
-              <li><button class="dropdown-item" type="button">Action</button></li>
-              <li><button class="dropdown-item" type="button">Another action</button></li>
-              <li><button class="dropdown-item" type="button">Something else here</button></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="row">
 
+      <div class="col-lg-3 col-md-3 col-sm-3">Número de cita</div>
+      <div class="col-lg-3 col-md-3 col-sm-3">Fecha de la cita</div>
+      <div class="col-lg-3 col-md-3 col-sm-3">Paciente</div>
+      <div class="col-lg-3 col-md-3 col-sm-3">Opciones</div>
 
-  <div class="overflow-x-scroll row flex-nowrap" id="carrousel">
+  </div>
+
+  <div id="carrousel">
 
     
-    <app-cita-item *ngFor="let cita of citas" [cita]="cita" class="col-auto"></app-cita-item>
+    <app-cita-item *ngFor="let cita of citas; track item; let  i = index" [cita]="cita" class="row" [index]="i"
+            (click)="mostrarDetalle()"></app-cita-item>
     
-    
-
   </div>
 
 </div>

@@ -9,5 +9,6 @@ import { ConsultaDTOMedico } from 'src/app/core/dto/consulta/ConsultaDTOMedico';
 export class CitaItemComponent {
 
   @Input() cita:ConsultaDTOMedico;
+  @Input() index:number;
 
 }
