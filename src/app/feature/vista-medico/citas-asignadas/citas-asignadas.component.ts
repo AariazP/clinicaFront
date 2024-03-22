@@ -29,9 +29,11 @@ export class CitasAsignadasComponent implements OnInit {
       )
     });
 
+    this.mostrarDetalle(this.citas[0]);
+
   }
 
-  mostrarDetalle() {
-    console.log("mostrar detalle");
+  mostrarDetalle(cita:ConsultaDTOMedico) {
+    this.detalleCitaService.setCita(cita);
   }
 }

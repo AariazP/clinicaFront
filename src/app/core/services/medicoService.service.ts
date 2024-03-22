@@ -4,11 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { environmentDevelopment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
 import { MensajeDTO } from '../dto/auxiliar/MensajeDTO';
+import { O } from '@fullcalendar/core/internal-common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MedicoService {
+  
   
   private userUrl = environmentDevelopment.medicoUrl;
 

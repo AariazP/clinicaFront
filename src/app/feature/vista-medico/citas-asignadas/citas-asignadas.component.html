@@ -15,7 +15,7 @@
 
     
     <app-cita-item *ngFor="let cita of citas; track item; let  i = index" [cita]="cita" class="row" [index]="i"
-            (click)="mostrarDetalle()"></app-cita-item>
+            (click)="mostrarDetalle(cita)"></app-cita-item>
     
   </div>
 
