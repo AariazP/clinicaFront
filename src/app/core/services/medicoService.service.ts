@@ -48,7 +48,9 @@ export class MedicoService {
     return this.http.get<MensajeDTO>(`${this.userUrl}/consulta/filtrar/pendiente/${this.medicoBd}`);
   }
 
-
+  cancelarCita(idConsulta: number): Observable<MensajeDTO> {
+    return this.http.delete<MensajeDTO>(`${this.userUrl}/consulta/cancelar/${idConsulta}`);
+  }
 
 
 }

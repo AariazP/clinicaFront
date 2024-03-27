@@ -24,7 +24,5 @@ export class CitaService {
     return this.http.get<MensajeDTO>(`${this.userUrl}/listar/${id}`);
   }
 
-  cancelarCita(idConsulta: number) {
-    console.log("Cita cancelada"+ " "+ idConsulta);
-  }
+  
 }

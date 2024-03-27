@@ -12,18 +12,20 @@ import { MedicoService } from 'src/app/core/services/medicoService.service';
 export class CitasAsignadasComponent implements OnInit {
 
 
-  citas: ConsultaDTOMedico[];
+  citasPendientes: ConsultaDTOMedico[];
+  citasAnteriores: ConsultaDTOMedico[];
 
   constructor(private medicoService: MedicoService,
     private detalleCitaService: DetalleCitaService) {
-    this.citas = [];
+    this.citasPendientes = [];
+    this.citasAnteriores = [];
   }
 
 
   ngOnInit(): void {
 
     this.llenarCitas();
-    this.mostrarDetalle(this.citas[0]);
+    
 
   }
 
@@ -44,10 +46,16 @@ export class CitasAsignadasComponent implements OnInit {
         aux.paciente = cita.paciente;
         aux.estado = cita.estado;
 
-        this.citas.push(aux);
+        if (aux.estado == "Pendiente"){
+          this.citasPendientes.push(aux);
+        }else if(aux.estado == "Atendida" || aux.estado == "Cancelada"){
+          this.citasAnteriores.push(aux);
+        }
+
+        
       }
       )
     });
-
+    this.mostrarDetalle(this.citasPendientes[0]);
   }
 }

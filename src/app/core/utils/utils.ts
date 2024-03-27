@@ -2,9 +2,6 @@ import Swal from "sweetalert2";
 
 export class Utils{
   
-
-
-
   public static showAlertError(message:string): void {
     Swal.fire({
       icon: 'error',
@@ -54,6 +51,21 @@ export class Utils{
     }).then((result) => {
       return result.isConfirmed;
     });
+  }
+
+  public static async cancelarCita(title:string,message:string): Promise<boolean> {
+    const result = await Swal.fire({
+      title: title,
+      text: message,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, estoy seguro",
+      cancelButtonText: "Cancelar",
+    });
+  
+    return result.isConfirmed;
   }
 
   static showAlertTitleError(title: string, body: string) {
