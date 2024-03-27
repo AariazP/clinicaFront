@@ -1,6 +1,6 @@
 export const medico = {
     medicoDTO: {
-        idMedico: 2,
+        idMedico: 3,
         nombre: "DoctorArias",
         especialidad: "Medicina General"
     }

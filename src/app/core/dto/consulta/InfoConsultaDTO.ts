@@ -4,5 +4,4 @@ export class InfoConsultaDTO {
         idMedico: number;
         fechaYHoraDeAtencion: Date;
         motivo: string;
-        metodoPago: string;
 }

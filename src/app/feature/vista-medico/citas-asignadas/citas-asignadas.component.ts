@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { co } from '@fullcalendar/core/internal-common';
 import { ConsultaDTOMedico } from 'src/app/core/dto/consulta/ConsultaDTOMedico';
 import { DetalleCitaService } from 'src/app/core/services/detalle-cita.service';
 import { MedicoService } from 'src/app/core/services/medicoService.service';
@@ -14,26 +15,39 @@ export class CitasAsignadasComponent implements OnInit {
   citas: ConsultaDTOMedico[];
 
   constructor(private medicoService: MedicoService,
-                private detalleCitaService: DetalleCitaService) {
+    private detalleCitaService: DetalleCitaService) {
     this.citas = [];
   }
 
 
   ngOnInit(): void {
 
-    this.medicoService.getListaConsultas().forEach(data => {
-
-      data.respuesta.forEach((cita: ConsultaDTOMedico) => {
-        this.citas.push(cita);
-      }
-      )
-    });
-
+    this.llenarCitas();
     this.mostrarDetalle(this.citas[0]);
 
   }
 
-  mostrarDetalle(cita:ConsultaDTOMedico) {
+  mostrarDetalle(cita: ConsultaDTOMedico) {
     this.detalleCitaService.setCita(cita);
+  }
+
+
+  async llenarCitas() {
+
+    await this.medicoService.getListaConsultas().forEach(data => {
+
+      data.respuesta.forEach((cita: ConsultaDTOMedico) => {
+        let aux = new ConsultaDTOMedico();
+        aux.idConsulta = cita.idConsulta;
+        aux.fechaYHoraAtencion = cita.fechaYHoraAtencion;
+        aux.motivo = cita.motivo;
+        aux.paciente = cita.paciente;
+
+
+        this.citas.push(aux);
+      }
+      )
+    });
+
   }
 }

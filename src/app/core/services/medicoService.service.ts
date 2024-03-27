@@ -5,6 +5,7 @@ import { environmentDevelopment } from 'src/environments/environment.development
 import { Observable } from 'rxjs';
 import { MensajeDTO } from '../dto/auxiliar/MensajeDTO';
 import { O } from '@fullcalendar/core/internal-common';
+import { medico } from 'src/environments/medico.development';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class MedicoService {
   
   
   private userUrl = environmentDevelopment.medicoUrl;
-
+  private medicoBd = medico.medicoDTO.idMedico;
 
   medico: MedicoDTO;
   constructor(private http: HttpClient) { }
@@ -44,7 +45,7 @@ export class MedicoService {
   }
 
   getListaConsultas(): Observable<MensajeDTO> {
-    return this.http.get<MensajeDTO>(`${this.userUrl}/consulta/filtrar/pendiente/2`);
+    return this.http.get<MensajeDTO>(`${this.userUrl}/consulta/filtrar/pendiente/${this.medicoBd}`);
   }
 
 

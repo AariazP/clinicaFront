@@ -119,17 +119,14 @@ export class PedirCitaComponent {
         this.consulta.idMedico = this.medicoDTO.idMedico;
         this.consulta.idPaciente = this.usuarioActivo.getId();
         this.consulta.motivo = this.observaciones;
-        Utils.selectPaymentMethod().then(response => {
-          if (response) {
-            this.consulta.metodoPago = response;
-            this.citaService.saveCita(this.consulta).forEach(data => {
-              
-            });
-            Utils.showAlertSuccess("La consulta ha sido creada");
-          } else {
-            Utils.showAlertTitleError("Error", "No se ha seleccionado un método de pago");
+        this.citaService.saveCita(this.consulta).subscribe(
+          data => {
+            Utils.showAlertTitleSuccess("Cita solicitada", data.respuesta);
+          },
+          error => {
+            console.log(error.error.respuesta);
           }
-        });
+        );
       }
     });
 
