@@ -78,6 +78,11 @@ const routes: Routes = [
     path: "ver-citas",
     component: VerCitasPacienteComponent,
     canActivate: [RolesGuard], data: {expectedRole: ["paciente"]}
+  },
+  {
+    path: "atender-cita",
+    component: MedicoHacerconsultaComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
   }
 ];
 

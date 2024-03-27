@@ -1,6 +1,6 @@
 #div-background{
 
-  background-color: #252525;
+  background-color: #69bed8;
   max-height: 1700px;
   min-height: 1200px;
 
@@ -10,4 +10,8 @@
 
   margin-left: 450px;
 
+}
+
+#buttons{
+  margin-top: 30px;
 }

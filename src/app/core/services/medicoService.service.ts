@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 import { MensajeDTO } from '../dto/auxiliar/MensajeDTO';
 import { O } from '@fullcalendar/core/internal-common';
 import { medico } from 'src/environments/medico.development';
+import { PacienteDTO } from '../dto/paciente/PacienteDTO';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MedicoService {
-  
-  
+ 
   private userUrl = environmentDevelopment.medicoUrl;
   private medicoBd = medico.medicoDTO.idMedico;
 
@@ -52,5 +52,8 @@ export class MedicoService {
     return this.http.delete<MensajeDTO>(`${this.userUrl}/consulta/cancelar/${idConsulta}`);
   }
 
+  getPaciente(idConsulta: number): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userUrl}/consulta/informacion-paciente/${idConsulta}`);
+  }
 
 }

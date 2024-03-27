@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConsultaDTOMedico } from 'src/app/core/dto/consulta/ConsultaDTOMedico';
+import { AtencionCitaService } from 'src/app/core/services/atencion-cita.service';
 import { MedicoService } from 'src/app/core/services/medicoService.service';
 import { Utils } from 'src/app/core/utils/utils';
 
@@ -15,7 +16,9 @@ export class CitaItemComponent {
   @Input() index:number;
 
   constructor(private medicoService: MedicoService, 
-    private router:Router) { }
+    private router:Router,
+    private atencionCita: AtencionCitaService
+    ) { }
 
 
   async cancelarCita() {
@@ -29,8 +32,8 @@ export class CitaItemComponent {
   }
 
   atenderCita() {
-    console.log("Cita atendida"+ " "+ this.cita.idConsulta);
-    console.log("Estado de la cita: "+ this.cita.estado);
+    this.atencionCita.setConsulta(this.cita);
+    this.router.navigate(['/atender-cita']);
   }
     
 
