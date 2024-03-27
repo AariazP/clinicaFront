@@ -5,4 +5,5 @@ export class ConsultaDTOMedico {
     paciente : PacienteDTOMedico;
     fechaYHoraAtencion : Date;
     motivo : String;
+    estado: string;
 }

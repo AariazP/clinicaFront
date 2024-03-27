@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CitaService {
+export class CitaService { 
  
   private userUrl = environmentDevelopment.consultaUrl;
   
@@ -24,5 +24,7 @@ export class CitaService {
     return this.http.get<MensajeDTO>(`${this.userUrl}/listar/${id}`);
   }
 
-
+  cancelarCita(idConsulta: number) {
+    console.log("Cita cancelada"+ " "+ idConsulta);
+  }
 }

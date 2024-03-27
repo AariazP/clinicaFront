@@ -42,7 +42,7 @@ export class CitasAsignadasComponent implements OnInit {
         aux.fechaYHoraAtencion = cita.fechaYHoraAtencion;
         aux.motivo = cita.motivo;
         aux.paciente = cita.paciente;
-
+        aux.estado = cita.estado;
 
         this.citas.push(aux);
       }
