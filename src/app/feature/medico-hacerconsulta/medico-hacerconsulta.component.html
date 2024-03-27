@@ -10,20 +10,10 @@
     
 
     <div class="row">
-      <app-resumen-consulta></app-resumen-consulta>
+      <app-resumen-consulta [cita]="cita"></app-resumen-consulta>
     </div>
 
   
-  <div class="row justify-content-center" id="buttons">
-
-    <div class="col-6 text-center">
-      <button class="btn btn-danger" (click)="cancelarConsulta()"> Cancelar consulta</button>
-    </div>
-
-    <div class="col-6 text-center" >
-      <button class="btn btn-success" (click)="finalizarConsulta()"> Finalizar consulta</button>
-    </div>
-
-  </div>
+  
 
 </div>
