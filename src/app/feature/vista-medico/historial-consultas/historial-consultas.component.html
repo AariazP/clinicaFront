@@ -3,25 +3,7 @@
   <h2 class="text-center">Historial de consultas</h2>
 
   <div class="overflow-y-scroll" id="ultimas-consultas">
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
-    <app-ultimas-consultas-item></app-ultimas-consultas-item>
+    <app-ultimas-consultas-item *ngFor="let cita of citas" [cita]="cita"></app-ultimas-consultas-item>
   </div>
 
   <app-detalle-consulta-medico></app-detalle-consulta-medico>

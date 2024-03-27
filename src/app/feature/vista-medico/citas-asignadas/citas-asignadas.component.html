@@ -14,8 +14,8 @@
   <div id="carrousel">
 
 
-    <app-cita-item *ngFor="let cita of citasPendientes; track item; let  i = index" [cita]="cita" class="row" [index]="i"
-            (click)="mostrarDetalle(cita)"></app-cita-item>
+    <app-cita-item *ngFor="let cita of citas; let  i = index" [cita]="cita" class="row" [index]="i"
+            (click)="mostrarDetalleCita(cita)"></app-cita-item>
     
   </div>
 

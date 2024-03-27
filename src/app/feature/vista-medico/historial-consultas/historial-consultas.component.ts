@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ConsultaDTOMedico } from 'src/app/core/dto/consulta/ConsultaDTOMedico';
+
 
 @Component({
   selector: 'app-historial-consultas',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class HistorialConsultasComponent {
 
+  @Input()citas:ConsultaDTOMedico[];
+
+  constructor() { 
+    this.citas = [];
+  }
+
+  
 }

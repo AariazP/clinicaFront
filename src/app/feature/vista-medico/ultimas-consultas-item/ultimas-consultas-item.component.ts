@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ConsultaDTOMedico } from 'src/app/core/dto/consulta/ConsultaDTOMedico';
 
 @Component({
   selector: 'app-ultimas-consultas-item',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ultimas-consultas-item.component.css']
 })
 export class UltimasConsultasItemComponent {
-
+  @Input() cita:ConsultaDTOMedico;
 }

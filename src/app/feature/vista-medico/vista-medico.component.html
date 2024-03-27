@@ -7,13 +7,13 @@
     <div class="col-8">
 
       <div class="row">
-        <app-citas-asignadas></app-citas-asignadas>
+        <app-citas-asignadas [citas]="citasPendientes" ></app-citas-asignadas>
       </div>
 
     </div>
 
     <div class="col-4">
-       <app-historial-consultas></app-historial-consultas>
+       <app-historial-consultas [citas]="citasAnteriores"></app-historial-consultas>
     </div>
 
   </div>

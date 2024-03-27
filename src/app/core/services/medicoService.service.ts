@@ -45,7 +45,7 @@ export class MedicoService {
   }
 
   getListaConsultas(): Observable<MensajeDTO> {
-    return this.http.get<MensajeDTO>(`${this.userUrl}/consulta/filtrar/pendiente/${this.medicoBd}`);
+    return this.http.get<MensajeDTO>(`${this.userUrl}/consulta/todas-consultas/${this.medicoBd}`);
   }
 
   cancelarCita(idConsulta: number): Observable<MensajeDTO> {

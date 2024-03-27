@@ -11,7 +11,7 @@
         <h3 class="fw-semibold text"> Id</h3>
       </div>
       <div class="col-6">
-        <h3 class="fw-light text">1</h3>
+        <h3 class="fw-light text">{{cita == null ? ""  :cita.idConsulta}}</h3>
       </div>
 
     </div>
@@ -22,7 +22,7 @@
         <h3 class="fw-semibold text"> Fecha de la cita</h3>
       </div>
       <div class="col-6">
-        <h3 class="fw-light text">{{cita.fechaYHoraAtencion.toString().split("T")[0]}}</h3>
+        <h3 class="fw-light text">{{cita == null ? ""  :cita.fechaYHoraAtencion.toString().split("T")[0]}}</h3>
       </div>
 
     </div>
@@ -32,7 +32,7 @@
         <h3 class="fw-semibold text"> Hora de la cita</h3>
       </div>
       <div class="col-6">
-        <h3 class="fw-light text">{{cita.fechaYHoraAtencion.toString().split("T")[1]}}</h3>
+        <h3 class="fw-light text">{{ cita == null ? ""  : cita.fechaYHoraAtencion.toString().split("T")[1]}}</h3>
       </div>
 
     </div>
@@ -54,7 +54,7 @@
         <h3 class="fw-semibold text">Motivo</h3>
       </div>
       <div class="col-6">
-        <h3 class="fw-light text">{{cita.motivo}}</h3>
+        <h3 class="fw-light text">{{cita == null ? ""  :cita.motivo}}</h3>
       </div>
 
     </div>
