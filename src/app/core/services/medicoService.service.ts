@@ -8,12 +8,13 @@ import { O } from '@fullcalendar/core/internal-common';
 import { medico } from 'src/environments/medico.development';
 import { PacienteDTO } from '../dto/paciente/PacienteDTO';
 import { AtencionConsultaDTOMedico } from '../dto/atencionConsulta/AtencionConsultaDTOMedico';
+import { MetodoPagoDTO } from '../dto/consulta/MetodoPagoDTO';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MedicoService {
-  
+   
   private userUrl = environmentDevelopment.medicoUrl;
   private medicoBd = medico.medicoDTO.idMedico;
 
@@ -58,7 +59,10 @@ export class MedicoService {
   }
 
   saveAtencionConsulta(atencionConsulta: AtencionConsultaDTOMedico, idConsulta: number): Observable<MensajeDTO> {
-    return this.http.post<MensajeDTO>(`${this.userUrl}/consulta/atencion-consulta/${idConsulta}`, atencionConsulta);
+    return this.http.post<MensajeDTO>(`${this.userUrl}/consulta/atender/${idConsulta}`, atencionConsulta);
+  }
+  saveMetodoPago(metodoPago: MetodoPagoDTO, idConsulta: number) {
+    return this.http.post<MensajeDTO>(`${this.userUrl}/consulta/hacer-factura/${idConsulta}`, metodoPago);
   }
  
 }

@@ -17,6 +17,7 @@ import {EditarInfoComponent} from "./vista-paciente/editar-info/editar-info.comp
 import {LoginGuard} from "../core/guards/permiso.service";
 import {RolesGuard} from "../core/guards/roles.service";
 import { FormsModule } from '@angular/forms';
+import { PagarConsultaComponent } from './medico-hacerconsulta/pagar-consulta/pagar-consulta.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,11 @@ const routes: Routes = [
   {
     path: "atender-cita",
     component: MedicoHacerconsultaComponent,
+    canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
+  },
+  {
+    path: "pagar-consulta",
+    component: PagarConsultaComponent,
     canActivate: [RolesGuard], data: {expectedRole: ["medico"]}
   }
 ];

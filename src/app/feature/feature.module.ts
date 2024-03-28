@@ -70,6 +70,7 @@ import { PedirCitaComponent } from './vista-paciente/pedir-cita/pedir-cita.compo
 import { NavbarComponent } from './navbar/navbar.component';
 import { FullCalendarModule } from '@fullcalendar/angular'; 
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { PagarConsultaComponent } from './medico-hacerconsulta/pagar-consulta/pagar-consulta.component';
 
 
 
@@ -134,7 +135,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
     EditarInfoComponent,
     InfoPacienteV2Component,
     TusCitasComponent,
-    PedirCitaComponent
+    PedirCitaComponent,
+    PagarConsultaComponent
   ],
   imports: [
     CommonModule,

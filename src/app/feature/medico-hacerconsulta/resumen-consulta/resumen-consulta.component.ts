@@ -6,6 +6,7 @@ import { Cons } from 'rxjs';
 import { AtencionConsultaDTOMedico } from 'src/app/core/dto/atencionConsulta/AtencionConsultaDTOMedico';
 import { ConsultaDTOMedico } from 'src/app/core/dto/consulta/ConsultaDTOMedico';
 import { MedicoService } from 'src/app/core/services/medicoService.service';
+import { PagoServiceService } from 'src/app/core/services/pago-service.service';
 import { Utils } from 'src/app/core/utils/utils';
 
 
@@ -23,7 +24,8 @@ export class ResumenConsultaComponent {
 
   constructor( private fb: FormBuilder,
     private medicoService: MedicoService,
-    private router: Router) { 
+    private router: Router,
+    private pagoService: PagoServiceService) { 
 
     this.form = this.fb.group({
       notasMedicas: [''],
@@ -34,7 +36,7 @@ export class ResumenConsultaComponent {
 
   }
 
-  finalizarConsulta() {
+  async finalizarConsulta() {
     
     this.atencionConsulta = new AtencionConsultaDTOMedico();
     this.atencionConsulta.notasMedicas = this.form.get('notasMedicas').value;
@@ -42,11 +44,11 @@ export class ResumenConsultaComponent {
     this.atencionConsulta.tratamiento = this.form.get('tratamiento').value;
     this.atencionConsulta.sintomas = this.form.get('sintomas').value;
   
-    this.medicoService.saveAtencionConsulta(this.atencionConsulta, this.cita.idConsulta).subscribe(data => {
+    await this.medicoService.saveAtencionConsulta(this.atencionConsulta, this.cita.idConsulta).subscribe(data => {
       Utils.showAlertSuccess("Atencion de consulta guardada");
     });
+    this.pagoService.setCita(this.cita);
     this.router.navigate(['/pagar-consulta']);
-    //window.location.reload();
   }
   
   cancelarConsulta() {
@@ -57,8 +59,5 @@ export class ResumenConsultaComponent {
     window.location.reload();
   }
 
-  saveAtencionConsulta() {
-    console.log("Atencion Consulta guardada");
-  }
 
 }

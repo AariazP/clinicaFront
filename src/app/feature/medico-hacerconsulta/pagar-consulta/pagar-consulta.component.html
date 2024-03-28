@@ -1,0 +1,38 @@
+<div class="container-fluid vh-100" id="div-background">
+
+    <app-navbar-component></app-navbar-component>
+
+    <h1 class="text-dark text-center">Pagar consulta</h1>
+
+    <form [formGroup]="form">
+
+        <h3>Fecha de la consulta</h3>
+        <input type="date" class="form-control" placeholder="Fecha de la consulta" formControlName="fecha" required>
+
+        <h3>Estado de la consulta</h3>
+        <select class="btn combo" [(ngModel)]="box_estado" formControlName="estado">
+            <option class="text-dark" value="" selected>Seleccione una ciudad</option>
+            <option [value]="element" *ngFor="let element of this.listaEstados; index as i"> {{element}}</option>
+        </select>
+
+        <h3>Metodo pago</h3>
+        <select class="btn combo" [(ngModel)]="box_metodoPago" formControlName="metodoPago">
+            <option class="text-dark" value="" selected>Seleccione una ciudad</option>
+            <option [value]="element" *ngFor="let element of this.listaMetodosPago; index as i"> {{element}}</option>
+        </select>
+
+        <h3>Valor</h3>
+        <input type="text" class="form-control" placeholder="Valor" formControlName="valor" required>
+
+        <h3>Descripción</h3>
+        <textarea class="form-control" placeholder="Descripción" formControlName="descripcion" required=""></textarea>
+
+
+        <div class="text-center">
+            <button class="btn btn-success text-center" (click)="pagarConsulta()">Pagar</button>
+        </div>
+        
+    </form>
+
+   
+</div>
